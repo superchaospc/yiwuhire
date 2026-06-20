@@ -15,19 +15,20 @@ function getStorage() {
 }
 
 function initialLanguage() {
-  const storage = getStorage();
   try {
-    const stored = storage?.getItem(LANGUAGE_KEY);
+    const requested = new URL(window.location.href).searchParams.get('lang');
+    if (supportedLanguages.has(requested)) return requested;
+  } catch {
+    // Continue to the saved preference when the URL is unavailable.
+  }
+
+  try {
+    const stored = getStorage()?.getItem(LANGUAGE_KEY);
     if (supportedLanguages.has(stored)) return stored;
   } catch {
     // Storage is optional for this static demo.
   }
-
-  try {
-    return new URL(window.location.href).searchParams.get('lang') === 'zh' ? 'zh' : 'en';
-  } catch {
-    return 'en';
-  }
+  return 'en';
 }
 
 const state = {
@@ -56,6 +57,7 @@ const elements = {
 
 const dialogTriggers = new WeakMap();
 const suppressedFocusRestore = new WeakSet();
+const formTimers = new WeakMap();
 
 function localized(value) {
   return value?.[state.language] ?? value?.en ?? '';
@@ -77,13 +79,15 @@ function renderCopy() {
   document.querySelectorAll('[data-placeholder]').forEach((element) => {
     element.placeholder = copyFor(copy, state.language, element.dataset.placeholder);
   });
+  document.querySelectorAll('[data-aria-copy]').forEach((element) => {
+    element.setAttribute('aria-label', copyFor(copy, state.language, element.dataset.ariaCopy));
+  });
+  document.querySelectorAll('.form-status[data-message-key]').forEach((status) => {
+    status.textContent = copyFor(copy, state.language, status.dataset.messageKey);
+  });
 
   const languageButton = document.querySelector('[data-action="toggle-language"]');
   languageButton.textContent = state.language === 'en' ? '中文' : 'English';
-  languageButton.setAttribute('aria-label', state.language === 'en' ? 'Switch language to Chinese' : '切换为英文');
-  document.querySelectorAll('[data-close-dialog]').forEach((button) => {
-    button.setAttribute('aria-label', copyFor(copy, state.language, 'closeDialogLabel'));
-  });
 
   if (copy.pageTitle) document.title = copyFor(copy, state.language, 'pageTitle');
   const description = document.querySelector('meta[name="description"]');
@@ -258,6 +262,7 @@ function openJob(jobId, trigger) {
 
 function openApplication(trigger) {
   if (!selectedJob()) return;
+  resetFormState(elements.applyForm);
   renderApplyHeading();
   openDialog(elements.applyDialog, dialogTriggers.get(elements.jobDialog) ?? trigger);
 }
@@ -287,23 +292,56 @@ function setLanguage(language) {
   renderAll();
 }
 
-function setFormStatus(form, message, stateName) {
+function clearValidationState(form) {
+  [...form.elements].forEach((control) => {
+    control.removeAttribute?.('aria-invalid');
+    if (control.getAttribute?.('aria-describedby') === `${form.id}-status`) {
+      control.removeAttribute('aria-describedby');
+    }
+  });
+}
+
+function resetFormState(form) {
+  const timer = formTimers.get(form);
+  if (timer) window.clearTimeout(timer);
+  formTimers.delete(form);
   const status = form.querySelector('.form-status');
-  status.textContent = message;
+  status.textContent = '';
+  delete status.dataset.state;
+  delete status.dataset.messageKey;
+  status.classList.remove('is-success', 'is-error');
+  status.removeAttribute('role');
+  form.querySelector('[type="submit"]').disabled = false;
+  clearValidationState(form);
+}
+
+function setFormStatus(form, messageKey, stateName, control = null) {
+  const status = form.querySelector('.form-status');
+  status.id ||= `${form.id}-status`;
+  status.textContent = copyFor(copy, state.language, messageKey);
+  status.dataset.messageKey = messageKey;
   status.dataset.state = stateName;
   status.classList.toggle('is-success', stateName === 'success');
   status.classList.toggle('is-error', stateName === 'error');
   status.setAttribute('role', stateName === 'success' ? 'status' : 'alert');
+  if (control) {
+    control.setAttribute('aria-invalid', 'true');
+    control.setAttribute('aria-describedby', status.id);
+  }
 }
 
 function handleSubmission(form, storageKey, successKey, enrich = (payload) => payload) {
+  const submitButton = form.querySelector('[type="submit"]');
+  if (submitButton.disabled) return;
+  clearValidationState(form);
   if (!form.reportValidity()) {
-    setFormStatus(form, copyFor(copy, state.language, 'requiredMessage'), 'error');
+    const invalidControl = [...form.elements]
+      .find((control) => control.willValidate && !control.validity.valid);
+    const messageKey = invalidControl?.validity.typeMismatch ? 'invalidUrlMessage' : 'requiredMessage';
+    setFormStatus(form, messageKey, 'error', invalidControl);
     return;
   }
 
-  const submitButton = form.querySelector('[type="submit"]');
-  if (submitButton.disabled) return;
   submitButton.disabled = true;
   const payload = enrich({
     ...Object.fromEntries(new FormData(form)),
@@ -314,8 +352,12 @@ function handleSubmission(form, storageKey, successKey, enrich = (payload) => pa
   if (form === elements.applyForm && state.selectedJobId) {
     form.elements.jobId.value = state.selectedJobId;
   }
-  setFormStatus(form, copyFor(copy, state.language, successKey), 'success');
-  window.setTimeout(() => { submitButton.disabled = false; }, 1200);
+  setFormStatus(form, successKey, 'success');
+  const timer = window.setTimeout(() => {
+    submitButton.disabled = false;
+    formTimers.delete(form);
+  }, 1200);
+  formTimers.set(form, timer);
 }
 
 elements.searchForm.addEventListener('submit', (event) => {
@@ -343,7 +385,10 @@ document.addEventListener('click', (event) => {
   const action = event.target.closest('[data-action]')?.dataset.action;
   if (action === 'toggle-language') setLanguage(state.language === 'en' ? 'zh' : 'en');
   if (action === 'clear-filters') resetFilters();
-  if (action === 'open-employer') openDialog(elements.employerDialog, event.target.closest('[data-action]'));
+  if (action === 'open-employer') {
+    resetFormState(elements.employerForm);
+    openDialog(elements.employerDialog, event.target.closest('[data-action]'));
+  }
   if (action === 'apply') openApplication(event.target.closest('[data-action]'));
 
   const closeButton = event.target.closest('[data-close-dialog]');
@@ -360,6 +405,8 @@ document.querySelectorAll('dialog').forEach((dialog) => {
   });
   dialog.addEventListener('close', () => {
     updateDialogBodyState();
+    const form = dialog.querySelector('form');
+    if (form) resetFormState(form);
     if (suppressedFocusRestore.delete(dialog)) return;
     let trigger = dialogTriggers.get(dialog);
     if (trigger && !trigger.isConnected && trigger.dataset.jobId) {

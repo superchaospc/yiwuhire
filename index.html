@@ -20,17 +20,17 @@
   <script type="module" src="app.js"></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main" data-copy="skipLink">Skip to content</a>
   <header class="site-header">
-    <nav aria-label="Primary navigation">
-      <a class="brand" href="#top" aria-label="YiwuHire home">YIWU<span aria-hidden="true">/</span>HIRE</a>
+    <nav aria-label="Primary navigation" data-aria-copy="primaryNavigationLabel">
+      <a class="brand" href="#top" aria-label="YiwuHire home" data-aria-copy="homeLabel">YIWU<span aria-hidden="true">/</span>HIRE</a>
       <div class="nav-links">
         <a href="#jobs" data-copy="navJobs">Jobs</a>
         <a href="#services" data-copy="navServices">Talent services</a>
         <a href="#yiwu" data-copy="navYiwu">Why Yiwu</a>
       </div>
       <div class="nav-actions">
-        <button type="button" class="language-button" data-action="toggle-language" aria-label="Switch language to Chinese">中文</button>
+        <button type="button" class="language-button" data-action="toggle-language" aria-label="Switch language to Chinese" data-aria-copy="languageSwitchLabel">中文</button>
         <button type="button" class="button button-small" data-action="open-employer" data-copy="postJob">Post a job</button>
       </div>
     </nav>
@@ -57,7 +57,7 @@
         <p class="eyebrow" data-copy="jobsEyebrow">SELECTED OPPORTUNITIES</p>
         <h2 id="jobs-title" data-copy="jobsTitle">Work with the world, from Yiwu.</h2>
       </div>
-      <div id="category-filters" class="filters" role="group" aria-label="Job categories"></div>
+      <div id="category-filters" class="filters" role="group" aria-label="Job categories" data-aria-copy="categoryGroupLabel"></div>
       <p id="result-summary" class="result-summary" aria-live="polite"></p>
       <div id="job-grid" class="job-grid"></div>
       <div id="empty-state" class="empty-state" hidden>
@@ -74,7 +74,7 @@
         <p data-copy="servicesBody">From a single critical hire to an international growth team, we help Yiwu businesses find people who understand both markets and momentum.</p>
         <button class="button" type="button" data-action="open-employer" data-copy="startHiring">Start hiring</button>
       </div>
-      <div id="service-cards" class="service-grid" aria-label="Employer services"></div>
+      <div id="service-cards" class="service-grid" aria-label="Employer services" data-aria-copy="employerServicesLabel"></div>
     </section>
 
     <section class="yiwu-section" id="yiwu" aria-labelledby="yiwu-title">
@@ -83,7 +83,7 @@
       <div id="yiwu-points" class="yiwu-grid"></div>
     </section>
 
-    <section class="story-section" aria-label="Yiwu story">
+    <section class="story-section" aria-label="Yiwu story" data-aria-copy="storySectionLabel">
       <blockquote>
         <p data-copy="storyQuote">“In Yiwu, global business is not a strategy deck. It is what happens before lunch.”</p>
         <footer data-copy="storyByline">A city built for people who make things move</footer>
@@ -101,19 +101,19 @@
   </main>
 
   <footer class="site-footer">
-    <a class="brand" href="#top" aria-label="YiwuHire home">YIWU<span aria-hidden="true">/</span>HIRE</a>
-    <p>Where Yiwu Meets Global Talent.</p>
+    <a class="brand" href="#top" aria-label="YiwuHire home" data-aria-copy="homeLabel">YIWU<span aria-hidden="true">/</span>HIRE</a>
+    <p data-copy="footerSlogan">Where Yiwu Meets Global Talent.</p>
     <p>© 2026 YiwuHire</p>
   </footer>
 
   <dialog id="job-dialog" aria-labelledby="job-dialog-title">
-    <button class="dialog-close" type="button" data-close-dialog aria-label="Close">×</button>
+    <button class="dialog-close" type="button" data-close-dialog aria-label="Close" data-aria-copy="closeDialogLabel">×</button>
     <h2 id="job-dialog-title" data-copy="jobDetailsTitle">Job details</h2>
     <div id="job-detail"></div>
   </dialog>
 
   <dialog id="apply-dialog" aria-labelledby="apply-title">
-    <button class="dialog-close" type="button" data-close-dialog aria-label="Close">×</button>
+    <button class="dialog-close" type="button" data-close-dialog aria-label="Close" data-aria-copy="closeDialogLabel">×</button>
     <form id="apply-form" method="dialog" novalidate>
       <h2 id="apply-title" data-copy="applyTitle">Apply for this role</h2>
       <input type="hidden" name="jobId">
@@ -121,13 +121,13 @@
       <label><span data-copy="contactLabel">Email or contact</span><input name="contact" autocomplete="email" required></label>
       <label><span data-copy="locationLabel">Current location</span><input name="location" autocomplete="country-name" required></label>
       <label><span data-copy="profileLabel">Profile or portfolio link</span><input name="profile" type="url"></label>
-      <p class="form-status" aria-live="polite"></p>
+      <p id="apply-form-status" class="form-status" aria-live="polite"></p>
       <button class="button" type="submit" data-copy="submitApplication">Submit application</button>
     </form>
   </dialog>
 
   <dialog id="employer-dialog" aria-labelledby="employer-title">
-    <button class="dialog-close" type="button" data-close-dialog aria-label="Close">×</button>
+    <button class="dialog-close" type="button" data-close-dialog aria-label="Close" data-aria-copy="closeDialogLabel">×</button>
     <form id="employer-form" method="dialog" novalidate>
       <h2 id="employer-title" data-copy="employerTitle">Tell us who you need.</h2>
       <label><span data-copy="companyLabel">Company</span><input name="company" autocomplete="organization" required></label>
@@ -136,7 +136,7 @@
       <label><span data-copy="roleLabel">Role to hire</span><input name="role" required></label>
       <label><span data-copy="headcountLabel">Headcount</span><input name="headcount" type="number" min="1" value="1" required></label>
       <label><span data-copy="briefLabel">What does success look like?</span><textarea name="brief" rows="4" required></textarea></label>
-      <p class="form-status" aria-live="polite"></p>
+      <p id="employer-form-status" class="form-status" aria-live="polite"></p>
       <button class="button" type="submit" data-copy="submitBrief">Send hiring brief</button>
     </form>
   </dialog>

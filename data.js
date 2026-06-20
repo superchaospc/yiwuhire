@@ -1,4 +1,17 @@
 export const copy = {
+  pageTitle: { en: 'YiwuHire — Global Talent for Yiwu', zh: 'YiwuHire — 义乌全球人才招聘' },
+  pageDescription: {
+    en: 'Discover international trade, cross-border ecommerce and global growth jobs in Yiwu, or hire talent for your global business.',
+    zh: '发现义乌的国际贸易、跨境电商和全球增长职位，或为你的全球业务招聘人才。',
+  },
+  skipLink: { en: 'Skip to content', zh: '跳到主要内容' },
+  primaryNavigationLabel: { en: 'Primary navigation', zh: '主导航' },
+  homeLabel: { en: 'YiwuHire home', zh: 'YiwuHire 首页' },
+  languageSwitchLabel: { en: 'Switch language to Chinese', zh: '切换为英文' },
+  categoryGroupLabel: { en: 'Job categories', zh: '职位类别' },
+  employerServicesLabel: { en: 'Employer services', zh: '雇主服务' },
+  storySectionLabel: { en: 'Yiwu story', zh: '义乌故事' },
+  footerSlogan: { en: 'Where Yiwu Meets Global Talent.', zh: '让义乌连接全球人才。' },
   navJobs: { en: 'Jobs', zh: '职位' },
   navServices: { en: 'Talent services', zh: '人才服务' },
   navYiwu: { en: 'Why Yiwu', zh: '为什么选义乌' },
