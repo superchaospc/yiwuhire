@@ -85,6 +85,9 @@ function renderCopy() {
   document.querySelectorAll('.form-status[data-message-key]').forEach((status) => {
     status.textContent = copyFor(copy, state.language, status.dataset.messageKey);
   });
+  document.querySelectorAll('[data-copy-key]').forEach((element) => {
+    element.textContent = copyFor(copy, state.language, element.dataset.copyKey);
+  });
 
   const languageButton = document.querySelector('[data-action="toggle-language"]');
   languageButton.textContent = state.language === 'en' ? '中文' : 'English';
@@ -402,12 +405,17 @@ document.addEventListener('click', (event) => {
   if (action === 'toggle-language') setLanguage(state.language === 'en' ? 'zh' : 'en');
   if (action === 'clear-filters') resetFilters();
   if (action === 'clear-local-data') {
+    const status = document.querySelector('#data-clear-status');
+    status.textContent = '';
+    delete status.dataset.copyKey;
+    status.removeAttribute('role');
     const storage = getStorage();
     const cleared = [APPLICATIONS_KEY, EMPLOYER_BRIEFS_KEY]
       .map((key) => clearStorageKey(storage, key));
     const success = cleared.every(Boolean);
-    const status = document.querySelector('#data-clear-status');
-    status.textContent = copyFor(copy, state.language, success ? 'clearSuccess' : 'clearFailure');
+    const copyKey = success ? 'clearSuccess' : 'clearFailure';
+    status.dataset.copyKey = copyKey;
+    status.textContent = copyFor(copy, state.language, copyKey);
     status.setAttribute('role', success ? 'status' : 'alert');
   }
   if (action === 'open-employer') {

@@ -16,7 +16,7 @@ export const copy = {
   languageEntry: { en: '中文', zh: 'English' },
   clearLocalData: { en: 'Clear demo data', zh: '清除演示数据' },
   clearSuccess: { en: 'Local demo data cleared.', zh: '本地演示数据已清除。' },
-  clearFailure: { en: 'Some demo data could not be cleared in this browser. Check your browser site-data settings.', zh: '部分演示数据无法在此浏览器中清除，请检查浏览器的网站数据设置。' },
+  clearFailure: { en: 'Demo data could not be fully cleared. Check your browser’s site-data settings.', zh: '演示数据未能全部清除，请检查浏览器的网站数据设置。' },
   jobsDemoNotice: { en: 'Demo notice: all sample roles and companies are fictional—not live vacancies or partnerships. Demo applications are not sent.', zh: '演示说明：所有示例职位和公司均为虚构，并非真实招聘或合作关系；演示申请不会被发送。' },
   demoRoleLabel: { en: 'Demo role', zh: '演示职位' },
   formDemoNotice: { en: 'Interactive demo only. Data stays in this browser and is not sent to YiwuHire. Do not enter sensitive real information.', zh: '仅供交互演示。数据仅保留在此浏览器中，不会发送给 YiwuHire。请勿输入真实敏感信息。' },
