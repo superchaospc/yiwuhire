@@ -8,7 +8,7 @@
   --paper-deep: #e8e1d2;
   --paper-light: #fbf8f0;
   --forest-soft: #315247;
-  --muted: #63736c;
+  --muted: #5b6b64;
   --rule: rgba(23, 53, 43, 0.2);
   --white-rule: rgba(243, 239, 228, 0.23);
   --serif: Georgia, "Times New Roman", Times, serif;
@@ -34,7 +34,6 @@ html {
 
 body {
   margin: 0;
-  overflow-x: hidden;
   background: var(--paper);
   color: var(--ink);
   font-family: var(--sans);
@@ -305,6 +304,7 @@ main > section {
 
 .hero {
   position: relative;
+  overflow: clip;
   min-height: min(760px, calc(100svh - 5rem));
   display: grid;
   align-content: center;
