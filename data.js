@@ -1,0 +1,257 @@
+export const copy = {
+  navJobs: { en: 'Jobs', zh: '职位' },
+  navServices: { en: 'Talent services', zh: '人才服务' },
+  navYiwu: { en: 'Why Yiwu', zh: '为什么选义乌' },
+  postJob: { en: 'Post a job', zh: '发布职位' },
+  heroEyebrow: { en: 'YIWU ↔ THE WORLD', zh: '义乌 ↔ 世界' },
+  heroLineOne: { en: 'Hire Global.', zh: '连接全球人才。' },
+  heroLineTwo: { en: 'Start in Yiwu.', zh: '从义乌出发。' },
+  heroBody: {
+    en: 'Global talent for the businesses taking Yiwu to the world.',
+    zh: '为从义乌走向世界的企业连接全球人才。',
+  },
+  searchLabel: { en: 'Search jobs', zh: '搜索职位' },
+  searchPlaceholder: { en: 'Role, skill, or keyword', zh: '职位、技能或关键词' },
+  searchButton: { en: 'Search jobs', zh: '搜索职位' },
+  findWork: { en: 'Find work', zh: '寻找工作' },
+  hireTalent: { en: 'Hire talent →', zh: '寻找人才 →' },
+  jobsEyebrow: { en: 'SELECTED OPPORTUNITIES', zh: '精选机会' },
+  jobsTitle: { en: 'Work with the world, from Yiwu.', zh: '身在义乌，与世界共事。' },
+  emptyTitle: { en: 'No roles found', zh: '暂无匹配职位' },
+  emptyBody: {
+    en: 'Try another keyword or clear your filters.',
+    zh: '请尝试其他关键词或清除筛选条件。',
+  },
+  clearFilters: { en: 'Clear filters', zh: '清除筛选' },
+  servicesEyebrow: { en: 'FOR EMPLOYERS', zh: '为雇主服务' },
+  servicesTitle: {
+    en: 'Build the team that takes you further.',
+    zh: '组建带你走得更远的团队。',
+  },
+  servicesBody: {
+    en: 'From a single critical hire to an international growth team, we help Yiwu businesses find people who understand both markets and momentum.',
+    zh: '从关键岗位到国际增长团队，我们帮助义乌企业找到既懂市场、又能高效行动的人才。',
+  },
+  startHiring: { en: 'Start hiring', zh: '开始招聘' },
+  yiwuEyebrow: { en: 'WHY YIWU', zh: '为什么选义乌' },
+  yiwuTitle: {
+    en: 'A small city with a world-sized address book.',
+    zh: '一座小城，连接世界的生意。',
+  },
+  storyQuote: {
+    en: '“In Yiwu, global business is not a strategy deck. It is what happens before lunch.”',
+    zh: '“在义乌，全球生意不是幻灯片里的战略，而是午饭前就在发生的日常。”',
+  },
+  storyByline: {
+    en: 'A city built for people who make things move',
+    zh: '一座为行动者而生的城市',
+  },
+  closingTitle: { en: 'Your next chapter could start here.', zh: '你的下一章，可以从这里开始。' },
+  browseJobs: { en: 'Browse jobs', zh: '浏览职位' },
+  talkToUs: { en: 'Talk to us →', zh: '联系我们 →' },
+  jobDetailsTitle: { en: 'Job details', zh: '职位详情' },
+  applyTitle: { en: 'Apply for this role', zh: '申请该职位' },
+  nameLabel: { en: 'Name', zh: '姓名' },
+  contactLabel: { en: 'Email or contact', zh: '邮箱或联系方式' },
+  locationLabel: { en: 'Current location', zh: '当前所在地' },
+  profileLabel: { en: 'Profile or portfolio link', zh: '个人主页或作品集链接' },
+  submitApplication: { en: 'Submit application', zh: '提交申请' },
+  employerTitle: { en: 'Tell us who you need.', zh: '告诉我们你需要什么人才。' },
+  companyLabel: { en: 'Company', zh: '公司' },
+  contactPersonLabel: { en: 'Contact person', zh: '联系人' },
+  roleLabel: { en: 'Role to hire', zh: '招聘岗位' },
+  headcountLabel: { en: 'Headcount', zh: '招聘人数' },
+  briefLabel: { en: 'What does success look like?', zh: '你期待该岗位实现什么成果？' },
+  submitBrief: { en: 'Send hiring brief', zh: '发送招聘需求' },
+  allCategory: { en: 'All', zh: '全部' },
+  resultSingular: { en: '1 role', zh: '1 个职位' },
+  resultPlural: { en: '{count} roles', zh: '{count} 个职位' },
+  salaryLabel: { en: 'Salary', zh: '薪资' },
+  responsibilitiesLabel: { en: 'Responsibilities', zh: '工作职责' },
+  requirementsLabel: { en: 'Requirements', zh: '任职要求' },
+  applyAction: { en: 'Apply now', zh: '立即申请' },
+  requiredMessage: { en: 'Please complete all required fields.', zh: '请填写所有必填项。' },
+  invalidUrlMessage: { en: 'Please enter a valid profile link.', zh: '请输入有效的个人链接。' },
+  formError: { en: 'Something went wrong. Please try again.', zh: '出现问题，请重试。' },
+  applicationSuccess: { en: 'Thanks. Your application has been received.', zh: '感谢申请，我们已收到你的信息。' },
+  employerSuccess: { en: 'Thanks. Your hiring brief has been received.', zh: '感谢提交，我们已收到你的招聘需求。' },
+  closeDialogLabel: { en: 'Close', zh: '关闭' },
+};
+
+export const categories = [
+  { id: 'all', label: { en: 'All', zh: '全部' } },
+  { id: 'trade', label: { en: 'International trade', zh: '国际贸易' } },
+  { id: 'ecommerce', label: { en: 'Cross-border ecommerce', zh: '跨境电商' } },
+  { id: 'social', label: { en: 'Social content', zh: '社媒内容' } },
+  { id: 'sourcing', label: { en: 'Sourcing', zh: '采购寻源' } },
+  { id: 'supply-chain', label: { en: 'Supply chain', zh: '供应链' } },
+  { id: 'language', label: { en: 'Language', zh: '语言服务' } },
+];
+
+// Demo data only: every company and role below is a fictional record, not a real partnership or live vacancy.
+export const jobs = [
+  {
+    id: 'international-sales-manager',
+    category: 'trade',
+    en: {
+      title: 'International Sales Manager', company: 'Atlas Lantern Trading', location: 'Yiwu, Zhejiang', salary: 'CNY 18k–28k / month', tags: ['English', 'B2B', 'Export'],
+      summary: 'Develop distributor relationships and turn product opportunities into durable international accounts.',
+      responsibilities: ['Build and manage an overseas sales pipeline.', 'Coordinate quotations, samples, and order handoffs.'],
+      requirements: ['Professional English and clear commercial judgment.', 'Experience in export sales or international account management.'],
+    },
+    zh: {
+      title: '国际销售经理', company: '星灯贸易', location: '浙江义乌', salary: '月薪 1.8万–2.8万元', tags: ['英语', 'B2B', '出口'],
+      summary: '拓展海外经销商关系，将产品机会转化为稳定的国际客户。',
+      responsibilities: ['建立并管理海外销售管道。', '协调报价、样品和订单交接。'],
+      requirements: ['具备职业英语能力和清晰的商业判断力。', '有出口销售或国际客户管理经验。'],
+    },
+  },
+  {
+    id: 'cross-border-ecommerce-operator',
+    category: 'ecommerce',
+    en: {
+      title: 'Cross-border Ecommerce Operator', company: 'Northstar Market Works', location: 'Yiwu, Zhejiang', salary: 'CNY 14k–22k / month', tags: ['Marketplace', 'Listings', 'Analytics'],
+      summary: 'Run marketplace operations for a focused portfolio of products sold to international customers.',
+      responsibilities: ['Improve listings, promotions, and inventory plans.', 'Track performance and turn insights into weekly experiments.'],
+      requirements: ['Hands-on marketplace operations experience.', 'Comfort with spreadsheets, metrics, and English listings.'],
+    },
+    zh: {
+      title: '跨境电商运营', company: '北辰市场工场', location: '浙江义乌', salary: '月薪 1.4万–2.2万元', tags: ['平台运营', '商品页', '数据分析'],
+      summary: '负责面向国际消费者的精选产品组合及平台运营。',
+      responsibilities: ['优化商品页、促销和库存计划。', '跟踪表现，将数据洞察转化为每周实验。'],
+      requirements: ['有跨境电商平台实操经验。', '熟悉表格、数据指标和英文商品页。'],
+    },
+  },
+  {
+    id: 'tiktok-content-producer',
+    category: 'social',
+    en: {
+      title: 'TikTok Content Producer', company: 'Lantern Social Lab', location: 'Yiwu, Zhejiang', salary: 'CNY 13k–20k / month', tags: ['TikTok', 'Video', 'Content'],
+      summary: 'Create short-form stories that make Yiwu products understandable and memorable for global audiences.',
+      responsibilities: ['Plan, shoot, and edit a consistent content calendar.', 'Test formats with creators and review audience signals.'],
+      requirements: ['A portfolio of short-form video work.', 'Strong visual instincts and working English.'],
+    },
+    zh: {
+      title: 'TikTok 内容策划', company: '灯笼社媒工作室', location: '浙江义乌', salary: '月薪 1.3万–2万元', tags: ['TikTok', '短视频', '内容'],
+      summary: '用短视频讲述产品故事，让全球受众更容易理解并记住义乌商品。',
+      responsibilities: ['策划、拍摄和剪辑稳定更新的内容日历。', '与创作者测试内容形式并分析受众反馈。'],
+      requirements: ['有短视频作品集。', '具备良好视觉感知和工作英语能力。'],
+    },
+  },
+  {
+    id: 'international-sourcing-buyer',
+    category: 'sourcing',
+    en: {
+      title: 'International Sourcing Buyer', company: 'Common Thread Sourcing', location: 'Yiwu, Zhejiang', salary: 'CNY 15k–24k / month', tags: ['Sourcing', 'Negotiation', 'Quality'],
+      summary: 'Find dependable suppliers and guide international buyers from product brief through shipment readiness.',
+      responsibilities: ['Source, compare, and audit suitable suppliers.', 'Manage samples, pricing, quality checks, and buyer updates.'],
+      requirements: ['Supplier negotiation and product evaluation experience.', 'Clear communication across cultures and time zones.'],
+    },
+    zh: {
+      title: '国际采购与寻源专员', company: '同线采购', location: '浙江义乌', salary: '月薪 1.5万–2.4万元', tags: ['寻源', '谈判', '质量'],
+      summary: '寻找可靠供应商，协助国际买家从产品需求走到备货出运。',
+      responsibilities: ['寻找、比较并审核合适的供应商。', '管理样品、价格、质检和买家沟通。'],
+      requirements: ['有供应商谈判和产品评估经验。', '能够进行跨文化、跨时区的清晰沟通。'],
+    },
+  },
+  {
+    id: 'supply-chain-coordinator',
+    category: 'supply-chain',
+    en: {
+      title: 'Supply Chain & Logistics Coordinator', company: 'Blue Route Collective', location: 'Yiwu, Zhejiang', salary: 'CNY 12k–19k / month', tags: ['Logistics', 'Freight', 'Planning'],
+      summary: 'Keep export orders visible and moving from supplier collection through freight handoff.',
+      responsibilities: ['Coordinate consolidation, documents, and shipping milestones.', 'Flag risks early and maintain accurate order status.'],
+      requirements: ['Experience with export logistics or order coordination.', 'Organized, responsive, and comfortable with English documents.'],
+    },
+    zh: {
+      title: '供应链与物流协调员', company: '蓝路协作社', location: '浙江义乌', salary: '月薪 1.2万–1.9万元', tags: ['物流', '货运', '计划'],
+      summary: '从供应商集货到货运交接，保持出口订单全程可见并顺利流转。',
+      responsibilities: ['协调集货、单证和出运节点。', '及时标记风险并维护准确的订单状态。'],
+      requirements: ['有出口物流或订单协调经验。', '做事有条理、响应及时，能处理英文单证。'],
+    },
+  },
+  {
+    id: 'localization-specialist',
+    category: 'language',
+    en: {
+      title: 'English Localization Specialist', company: 'Bridgeword Studio', location: 'Yiwu / Hybrid', salary: 'CNY 12k–18k / month', tags: ['English', 'Localization', 'Copywriting'],
+      summary: 'Adapt product and brand language so it feels clear, credible, and natural in international markets.',
+      responsibilities: ['Localize listings, packaging, and campaign copy.', 'Create terminology guidance and review translated assets.'],
+      requirements: ['Excellent written Chinese and English.', 'Editing or localization experience with commercial content.'],
+    },
+    zh: {
+      title: '英语本地化专员', company: '桥语工作室', location: '义乌 / 混合办公', salary: '月薪 1.2万–1.8万元', tags: ['英语', '本地化', '文案'],
+      summary: '调整产品和品牌表达，使其在国际市场中清晰、可信且自然。',
+      responsibilities: ['本地化商品页、包装和营销文案。', '建立术语规范并审校翻译素材。'],
+      requirements: ['中英文书面表达俱佳。', '有商业内容编辑或本地化经验。'],
+    },
+  },
+  {
+    id: 'global-growth-marketer',
+    category: 'ecommerce',
+    en: {
+      title: 'Global Growth Marketer', company: 'Open Meridian Goods', location: 'Yiwu / Hybrid', salary: 'CNY 16k–26k / month', tags: ['Growth', 'Paid Media', 'Experimentation'],
+      summary: 'Build measurable acquisition programs for an emerging consumer brand entering new markets.',
+      responsibilities: ['Plan channel tests and landing-page experiments.', 'Connect campaign performance with customer and revenue signals.'],
+      requirements: ['Experience running international growth campaigns.', 'Analytical thinking and strong English communication.'],
+    },
+    zh: {
+      title: '全球增长营销经理', company: '开放子午线商品', location: '义乌 / 混合办公', salary: '月薪 1.6万–2.6万元', tags: ['增长', '付费投放', '实验'],
+      summary: '为进入新市场的新兴消费品牌搭建可衡量的获客体系。',
+      responsibilities: ['策划渠道测试和落地页实验。', '将活动表现与客户及收入信号关联。'],
+      requirements: ['有国际市场增长活动经验。', '具备分析思维和良好英语沟通能力。'],
+    },
+  },
+  {
+    id: 'overseas-partnerships-lead',
+    category: 'trade',
+    en: {
+      title: 'Overseas Partnerships Lead', company: 'Mosaic Export House', location: 'Yiwu, Zhejiang', salary: 'CNY 20k–32k / month', tags: ['Partnerships', 'Market Entry', 'Strategy'],
+      summary: 'Create practical market-entry partnerships for Yiwu-made product lines in selected regions.',
+      responsibilities: ['Identify and qualify channel and brand partners.', 'Shape joint plans, commercial terms, and launch reviews.'],
+      requirements: ['International business development experience.', 'Confident stakeholder management and negotiation skills.'],
+    },
+    zh: {
+      title: '海外合作负责人', company: '马赛克出口公社', location: '浙江义乌', salary: '月薪 2万–3.2万元', tags: ['合作伙伴', '市场进入', '策略'],
+      summary: '为义乌制造的产品线在目标区域建立务实的市场进入合作。',
+      responsibilities: ['识别并评估渠道与品牌合作伙伴。', '制定联合计划、商业条款和上市复盘。'],
+      requirements: ['有国际商务拓展经验。', '具备成熟的利益相关方管理和谈判能力。'],
+    },
+  },
+];
+
+export const services = [
+  {
+    id: 'job-posting',
+    en: { title: 'Job posting', body: 'Present a role to bilingual candidates with a clear, focused listing.' },
+    zh: { title: '职位发布', body: '用清晰聚焦的职位信息，触达双语候选人。' },
+  },
+  {
+    id: 'talent-recommendation',
+    en: { title: 'Talent recommendation', body: 'Receive a considered shortlist aligned with the role and working context.' },
+    zh: { title: '人才推荐', body: '获得与岗位及实际工作场景匹配的精选候选名单。' },
+  },
+  {
+    id: 'international-search',
+    en: { title: 'International search', body: 'Run a focused search for specialist or market-specific talent beyond the usual network.' },
+    zh: { title: '国际人才寻访', body: '突破常规人才网络，定向寻访专业或特定市场人才。' },
+  },
+];
+
+export const yiwuPoints = [
+  {
+    id: 'market-access',
+    en: { title: 'Close to the market', body: 'Meet suppliers, compare products, and turn feedback into action in the same working rhythm.' },
+    zh: { title: '贴近市场', body: '在同一工作节奏里见供应商、比产品，并将反馈迅速转化为行动。' },
+  },
+  {
+    id: 'global-connections',
+    en: { title: 'Built for global exchange', body: 'Daily work brings together products, buyers, languages, and routes serving many markets.' },
+    zh: { title: '为全球交流而生', body: '日常工作连接产品、买家、语言和通往不同市场的路径。' },
+  },
+  {
+    id: 'practical-momentum',
+    en: { title: 'Practical momentum', body: 'Yiwu rewards people who learn quickly, communicate clearly, and keep useful work moving.' },
+    zh: { title: '务实高效', body: '义乌适合快速学习、清晰沟通，并能持续推动实事的人。' },
+  },
+];
