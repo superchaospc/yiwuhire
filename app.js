@@ -128,6 +128,7 @@ function renderJobs() {
     card.dataset.jobId = job.id;
     card.setAttribute('aria-label', `${details.title}, ${details.company}`);
 
+    addTextElement(card, 'span', copyFor(copy, state.language, 'demoRoleLabel'), 'demo-role-label');
     addTextElement(card, 'h3', details.title);
     const meta = document.createElement('div');
     meta.className = 'job-meta';
@@ -183,6 +184,7 @@ function renderJobDialog() {
   if (!job) return;
   const details = localized(job);
   elements.jobDetail.replaceChildren();
+  addTextElement(elements.jobDetail, 'p', copyFor(copy, state.language, 'demoRoleLabel'), 'demo-role-label');
   addTextElement(elements.jobDetail, 'h3', details.title);
   const meta = document.createElement('p');
   meta.className = 'job-meta';
@@ -347,12 +349,12 @@ function handleSubmission(form, storageKey, successKey, enrich = (payload) => pa
     ...Object.fromEntries(new FormData(form)),
     submittedAt: new Date().toISOString(),
   });
-  saveSubmission(getStorage(), storageKey, payload);
+  const saved = saveSubmission(getStorage(), storageKey, payload);
   form.reset();
   if (form === elements.applyForm && state.selectedJobId) {
     form.elements.jobId.value = state.selectedJobId;
   }
-  setFormStatus(form, successKey, 'success');
+  setFormStatus(form, `${successKey}${saved ? 'Saved' : 'Unsaved'}`, 'success');
   const timer = window.setTimeout(() => {
     submitButton.disabled = false;
     formTimers.delete(form);
@@ -385,6 +387,16 @@ document.addEventListener('click', (event) => {
   const action = event.target.closest('[data-action]')?.dataset.action;
   if (action === 'toggle-language') setLanguage(state.language === 'en' ? 'zh' : 'en');
   if (action === 'clear-filters') resetFilters();
+  if (action === 'clear-local-data') {
+    try {
+      const storage = getStorage();
+      storage?.removeItem(APPLICATIONS_KEY);
+      storage?.removeItem(EMPLOYER_BRIEFS_KEY);
+    } catch {
+      // Local storage is optional for this demo.
+    }
+    document.querySelector('#data-clear-status').textContent = copyFor(copy, state.language, 'localDataCleared');
+  }
   if (action === 'open-employer') {
     resetFormState(elements.employerForm);
     openDialog(elements.employerDialog, event.target.closest('[data-action]'));

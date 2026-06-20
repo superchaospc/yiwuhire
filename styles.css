@@ -460,6 +460,24 @@ main > section {
   letter-spacing: 0.04em;
 }
 
+.jobs-demo-notice,
+.demo-privacy-notice {
+  padding: 0.85rem 1rem;
+  border-left: 4px solid var(--vermilion);
+  background: var(--paper-light);
+  font-size: 0.86rem;
+}
+
+.demo-role-label {
+  align-self: flex-start;
+  margin-bottom: 0.75rem;
+  color: var(--vermilion-deep);
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .job-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -687,14 +705,14 @@ main > section {
   content: "";
 }
 
-.story-section blockquote {
+.story-section .manifesto {
   position: relative;
   z-index: 1;
   max-width: 66rem;
   margin-bottom: 0;
 }
 
-.story-section blockquote p {
+.story-section .manifesto p:first-child {
   margin-bottom: 2rem;
   font-family: var(--serif);
   font-size: clamp(2.8rem, 6.2vw, 6.2rem);
@@ -703,7 +721,7 @@ main > section {
   line-height: 0.97;
 }
 
-.story-section blockquote footer {
+.story-section .manifesto p:last-child {
   font-size: 0.75rem;
   font-weight: 900;
   letter-spacing: 0.14em;
@@ -747,6 +765,17 @@ main > section {
 
 .site-footer p {
   margin: 0;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem 1rem;
+}
+
+.footer-links .text-button {
+  font-size: inherit;
 }
 
 dialog {
