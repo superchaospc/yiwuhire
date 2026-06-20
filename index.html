@@ -12,7 +12,7 @@
   <meta property="og:description" content="Where Yiwu Meets Global Talent.">
   <meta property="og:url" content="https://yiwuhire.com/">
   <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="YiwuHire — Hire Global. Start in Yiwu.">
   <meta name="twitter:description" content="Where Yiwu Meets Global Talent.">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -57,7 +57,7 @@
         <p class="eyebrow" data-copy="jobsEyebrow">SELECTED OPPORTUNITIES</p>
         <h2 id="jobs-title" data-copy="jobsTitle">Work with the world, from Yiwu.</h2>
       </div>
-      <div id="category-filters" class="filters" aria-label="Job categories"></div>
+      <div id="category-filters" class="filters" role="group" aria-label="Job categories"></div>
       <p id="result-summary" class="result-summary" aria-live="polite"></p>
       <div id="job-grid" class="job-grid"></div>
       <div id="empty-state" class="empty-state" hidden>
@@ -114,7 +114,7 @@
 
   <dialog id="apply-dialog" aria-labelledby="apply-title">
     <button class="dialog-close" type="button" data-close-dialog aria-label="Close">×</button>
-    <form id="apply-form" novalidate>
+    <form id="apply-form" method="dialog" novalidate>
       <h2 id="apply-title" data-copy="applyTitle">Apply for this role</h2>
       <input type="hidden" name="jobId">
       <label><span data-copy="nameLabel">Name</span><input name="name" autocomplete="name" required></label>
@@ -128,7 +128,7 @@
 
   <dialog id="employer-dialog" aria-labelledby="employer-title">
     <button class="dialog-close" type="button" data-close-dialog aria-label="Close">×</button>
-    <form id="employer-form" novalidate>
+    <form id="employer-form" method="dialog" novalidate>
       <h2 id="employer-title" data-copy="employerTitle">Tell us who you need.</h2>
       <label><span data-copy="companyLabel">Company</span><input name="company" autocomplete="organization" required></label>
       <label><span data-copy="contactPersonLabel">Contact person</span><input name="contactPerson" autocomplete="name" required></label>
