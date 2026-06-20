@@ -294,6 +294,20 @@ function setLanguage(language) {
   renderAll();
 }
 
+function clearStorageKey(storage, key) {
+  if (!storage) return false;
+  try {
+    storage.removeItem(key);
+  } catch {
+    return false;
+  }
+  try {
+    return storage.getItem(key) === null;
+  } catch {
+    return true;
+  }
+}
+
 function clearValidationState(form) {
   [...form.elements].forEach((control) => {
     control.removeAttribute?.('aria-invalid');
@@ -388,14 +402,13 @@ document.addEventListener('click', (event) => {
   if (action === 'toggle-language') setLanguage(state.language === 'en' ? 'zh' : 'en');
   if (action === 'clear-filters') resetFilters();
   if (action === 'clear-local-data') {
-    try {
-      const storage = getStorage();
-      storage?.removeItem(APPLICATIONS_KEY);
-      storage?.removeItem(EMPLOYER_BRIEFS_KEY);
-    } catch {
-      // Local storage is optional for this demo.
-    }
-    document.querySelector('#data-clear-status').textContent = copyFor(copy, state.language, 'localDataCleared');
+    const storage = getStorage();
+    const cleared = [APPLICATIONS_KEY, EMPLOYER_BRIEFS_KEY]
+      .map((key) => clearStorageKey(storage, key));
+    const success = cleared.every(Boolean);
+    const status = document.querySelector('#data-clear-status');
+    status.textContent = copyFor(copy, state.language, success ? 'clearSuccess' : 'clearFailure');
+    status.setAttribute('role', success ? 'status' : 'alert');
   }
   if (action === 'open-employer') {
     resetFormState(elements.employerForm);

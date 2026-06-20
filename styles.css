@@ -1135,7 +1135,7 @@ dialog textarea:user-invalid {
     padding-inline: var(--gutter);
   }
 
-  .story-section blockquote p {
+  .story-section .manifesto p:first-child {
     font-size: clamp(2.5rem, 12vw, 4.2rem);
   }
 
