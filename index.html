@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>YiwuHire — Global Talent for Yiwu</title>
+  <meta name="description" content="Discover international trade, cross-border ecommerce and global growth jobs in Yiwu, or hire talent for your global business.">
+  <link rel="canonical" href="https://yiwuhire.com/">
+  <link rel="alternate" hreflang="en" href="https://yiwuhire.com/?lang=en">
+  <link rel="alternate" hreflang="zh-CN" href="https://yiwuhire.com/?lang=zh">
+  <meta property="og:title" content="YiwuHire — Hire Global. Start in Yiwu.">
+  <meta property="og:description" content="Where Yiwu Meets Global Talent.">
+  <meta property="og:url" content="https://yiwuhire.com/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="YiwuHire — Hire Global. Start in Yiwu.">
+  <meta name="twitter:description" content="Where Yiwu Meets Global Talent.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="YiwuHire home">YIWU<span aria-hidden="true">/</span>HIRE</a>
+      <div class="nav-links">
+        <a href="#jobs" data-copy="navJobs">Jobs</a>
+        <a href="#services" data-copy="navServices">Talent services</a>
+        <a href="#yiwu" data-copy="navYiwu">Why Yiwu</a>
+      </div>
+      <div class="nav-actions">
+        <button type="button" class="language-button" data-action="toggle-language" aria-label="Switch language to Chinese">中文</button>
+        <button type="button" class="button button-small" data-action="open-employer" data-copy="postJob">Post a job</button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <p class="eyebrow" data-copy="heroEyebrow">YIWU ↔ THE WORLD</p>
+      <h1 id="hero-title"><span data-copy="heroLineOne">Hire Global.</span> <em data-copy="heroLineTwo">Start in Yiwu.</em></h1>
+      <p data-copy="heroBody">Global talent for the businesses taking Yiwu to the world.</p>
+      <form id="hero-search" role="search">
+        <label class="sr-only" for="search" data-copy="searchLabel">Search jobs</label>
+        <input id="search" name="search" type="search" data-placeholder="searchPlaceholder" placeholder="Role, skill, or keyword">
+        <button class="button" type="submit" data-copy="searchButton">Search jobs</button>
+      </form>
+      <div class="hero-actions">
+        <a class="button" href="#jobs" data-copy="findWork">Find work</a>
+        <button class="text-button" type="button" data-action="open-employer" data-copy="hireTalent">Hire talent →</button>
+      </div>
+    </section>
+
+    <section class="jobs-section" id="jobs" aria-labelledby="jobs-title">
+      <div class="section-heading">
+        <p class="eyebrow" data-copy="jobsEyebrow">SELECTED OPPORTUNITIES</p>
+        <h2 id="jobs-title" data-copy="jobsTitle">Work with the world, from Yiwu.</h2>
+      </div>
+      <div id="category-filters" class="filters" aria-label="Job categories"></div>
+      <p id="result-summary" class="result-summary" aria-live="polite"></p>
+      <div id="job-grid" class="job-grid"></div>
+      <div id="empty-state" class="empty-state" hidden>
+        <h3 data-copy="emptyTitle">No roles found</h3>
+        <p data-copy="emptyBody">Try another keyword or clear your filters.</p>
+        <button class="text-button" type="button" data-action="clear-filters" data-copy="clearFilters">Clear filters</button>
+      </div>
+    </section>
+
+    <section class="services-section" id="services" aria-labelledby="services-title">
+      <div>
+        <p class="eyebrow" data-copy="servicesEyebrow">FOR EMPLOYERS</p>
+        <h2 id="services-title" data-copy="servicesTitle">Build the team that takes you further.</h2>
+        <p data-copy="servicesBody">From a single critical hire to an international growth team, we help Yiwu businesses find people who understand both markets and momentum.</p>
+        <button class="button" type="button" data-action="open-employer" data-copy="startHiring">Start hiring</button>
+      </div>
+      <div id="service-cards" class="service-grid" aria-label="Employer services"></div>
+    </section>
+
+    <section class="yiwu-section" id="yiwu" aria-labelledby="yiwu-title">
+      <p class="eyebrow" data-copy="yiwuEyebrow">WHY YIWU</p>
+      <h2 id="yiwu-title" data-copy="yiwuTitle">A small city with a world-sized address book.</h2>
+      <div id="yiwu-points" class="yiwu-grid"></div>
+    </section>
+
+    <section class="story-section" aria-label="Yiwu story">
+      <blockquote>
+        <p data-copy="storyQuote">“In Yiwu, global business is not a strategy deck. It is what happens before lunch.”</p>
+        <footer data-copy="storyByline">A city built for people who make things move</footer>
+      </blockquote>
+    </section>
+
+    <section class="closing-section" aria-labelledby="closing-title">
+      <p class="eyebrow">YIWU / GLOBAL</p>
+      <h2 id="closing-title" data-copy="closingTitle">Your next chapter could start here.</h2>
+      <div>
+        <a class="button" href="#jobs" data-copy="browseJobs">Browse jobs</a>
+        <button class="text-button" type="button" data-action="open-employer" data-copy="talkToUs">Talk to us →</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand" href="#top" aria-label="YiwuHire home">YIWU<span aria-hidden="true">/</span>HIRE</a>
+    <p>Where Yiwu Meets Global Talent.</p>
+    <p>© 2026 YiwuHire</p>
+  </footer>
+
+  <dialog id="job-dialog" aria-labelledby="job-dialog-title">
+    <button class="dialog-close" type="button" data-close-dialog aria-label="Close">×</button>
+    <h2 id="job-dialog-title" data-copy="jobDetailsTitle">Job details</h2>
+    <div id="job-detail"></div>
+  </dialog>
+
+  <dialog id="apply-dialog" aria-labelledby="apply-title">
+    <button class="dialog-close" type="button" data-close-dialog aria-label="Close">×</button>
+    <form id="apply-form" novalidate>
+      <h2 id="apply-title" data-copy="applyTitle">Apply for this role</h2>
+      <input type="hidden" name="jobId">
+      <label><span data-copy="nameLabel">Name</span><input name="name" autocomplete="name" required></label>
+      <label><span data-copy="contactLabel">Email or contact</span><input name="contact" autocomplete="email" required></label>
+      <label><span data-copy="locationLabel">Current location</span><input name="location" autocomplete="country-name" required></label>
+      <label><span data-copy="profileLabel">Profile or portfolio link</span><input name="profile" type="url"></label>
+      <p class="form-status" aria-live="polite"></p>
+      <button class="button" type="submit" data-copy="submitApplication">Submit application</button>
+    </form>
+  </dialog>
+
+  <dialog id="employer-dialog" aria-labelledby="employer-title">
+    <button class="dialog-close" type="button" data-close-dialog aria-label="Close">×</button>
+    <form id="employer-form" novalidate>
+      <h2 id="employer-title" data-copy="employerTitle">Tell us who you need.</h2>
+      <label><span data-copy="companyLabel">Company</span><input name="company" autocomplete="organization" required></label>
+      <label><span data-copy="contactPersonLabel">Contact person</span><input name="contactPerson" autocomplete="name" required></label>
+      <label><span data-copy="contactLabel">Email or contact</span><input name="contact" required></label>
+      <label><span data-copy="roleLabel">Role to hire</span><input name="role" required></label>
+      <label><span data-copy="headcountLabel">Headcount</span><input name="headcount" type="number" min="1" value="1" required></label>
+      <label><span data-copy="briefLabel">What does success look like?</span><textarea name="brief" rows="4" required></textarea></label>
+      <p class="form-status" aria-live="polite"></p>
+      <button class="button" type="submit" data-copy="submitBrief">Send hiring brief</button>
+    </form>
+  </dialog>
+
+  <noscript>
+    <section class="noscript">
+      <h2>YiwuHire</h2>
+      <p>Explore international trade, cross-border ecommerce, social media, sourcing, supply chain and translation opportunities in Yiwu. Enable JavaScript to search and apply.</p>
+    </section>
+  </noscript>
+</body>
+</html>
