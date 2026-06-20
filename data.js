@@ -73,8 +73,8 @@ export const copy = {
   requiredMessage: { en: 'Please complete all required fields.', zh: '请填写所有必填项。' },
   invalidUrlMessage: { en: 'Please enter a valid profile link.', zh: '请输入有效的个人链接。' },
   formError: { en: 'Something went wrong. Please try again.', zh: '出现问题，请重试。' },
-  applicationSuccess: { en: 'Thanks. Your application has been received.', zh: '感谢申请，我们已收到你的信息。' },
-  employerSuccess: { en: 'Thanks. Your hiring brief has been received.', zh: '感谢提交，我们已收到你的招聘需求。' },
+  applicationSuccess: { en: 'Thanks. Your application was received in this demo.', zh: '感谢申请，本演示已收到你的信息。' },
+  employerSuccess: { en: 'Thanks. Your hiring brief was received in this demo.', zh: '感谢提交，本演示已收到你的招聘需求。' },
   closeDialogLabel: { en: 'Close', zh: '关闭' },
 };
 
