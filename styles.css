@@ -398,10 +398,6 @@ main > section {
   margin: 2rem 0 0 clamp(0rem, 10vw, 9rem);
 }
 
-.hero-actions > .button {
-  display: none;
-}
-
 .jobs-section,
 .yiwu-section,
 .closing-section {
