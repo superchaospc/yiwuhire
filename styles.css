@@ -318,6 +318,7 @@ main > section h2 {
 }
 
 .hero h1 em {
+  display: block;
   font-style: normal;
   color: var(--text-secondary);
 }
@@ -778,6 +779,47 @@ dialog h2 {
 .noscript h2 {
   font-size: 28px;
   font-weight: 600;
+}
+
+/* ---------- Chinese (CJK) typography ---------- */
+/* Latin negative tracking and tight leading look cramped in Chinese; the
+   app sets <html lang="zh-CN"> when Chinese is active, so relax both here. */
+html[lang="zh-CN"] body,
+html[lang="zh-CN"] .brand,
+html[lang="zh-CN"] .nav-links a,
+html[lang="zh-CN"] .button,
+html[lang="zh-CN"] .text-button,
+html[lang="zh-CN"] h1,
+html[lang="zh-CN"] h2,
+html[lang="zh-CN"] h3,
+html[lang="zh-CN"] p,
+html[lang="zh-CN"] input,
+html[lang="zh-CN"] textarea,
+html[lang="zh-CN"] .fit-list li {
+  letter-spacing: 0;
+}
+
+html[lang="zh-CN"] .hero h1 {
+  line-height: 1.2;
+}
+
+html[lang="zh-CN"] main > section h2,
+html[lang="zh-CN"] dialog h2 {
+  line-height: 1.32;
+}
+
+html[lang="zh-CN"] .story-section .manifesto p:first-child {
+  line-height: 1.45;
+}
+
+html[lang="zh-CN"] .hero > p:not(.eyebrow),
+html[lang="zh-CN"] .about-lede,
+html[lang="zh-CN"] .about-note,
+html[lang="zh-CN"] .services-section > div:first-child > p:not(.eyebrow),
+html[lang="zh-CN"] .service-card p,
+html[lang="zh-CN"] .fit-list li,
+html[lang="zh-CN"] .yiwu-point p {
+  line-height: 1.7;
 }
 
 /* ---------- Responsive ---------- */
