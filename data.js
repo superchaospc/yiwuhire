@@ -1,277 +1,255 @@
 export const copy = {
-  pageTitle: { en: 'YiwuHire — Global Talent for Yiwu', zh: 'YiwuHire — 义乌全球人才招聘' },
+  pageTitle: {
+    en: 'Yiwu Global Trade Creator Partner — turn your language into real orders',
+    zh: '义乌全球贸易合伙人 — 把你的语言变成真实订单',
+  },
   pageDescription: {
-    en: 'Discover international trade, cross-border ecommerce and global growth jobs in Yiwu, or hire talent for your global business.',
-    zh: '发现义乌的国际贸易、跨境电商和全球增长职位，或为你的全球业务招聘人才。',
+    en: 'A partner program for language content creators: use your English and content skills to bring overseas buyers to Yiwu and earn from real trade orders. Not a desk job.',
+    zh: '面向语言类内容创作者的合伙人计划：用你的英语和内容能力，帮海外客户读懂义乌，带来真实询盘与订单，按结果分成。非坐班。',
   },
   skipLink: { en: 'Skip to content', zh: '跳到主要内容' },
   primaryNavigationLabel: { en: 'Primary navigation', zh: '主导航' },
   homeLabel: { en: 'YiwuHire home', zh: 'YiwuHire 首页' },
-  languageSwitchLabel: { en: 'Switch language to Chinese', zh: '切换为英文' },
-  categoryGroupLabel: { en: 'Job categories', zh: '职位类别' },
-  employerServicesLabel: { en: 'Employer services', zh: '雇主服务' },
-  storySectionLabel: { en: 'YiwuHire manifesto', zh: 'YiwuHire 品牌宣言' },
-  footerSlogan: { en: 'Where Yiwu Meets Global Talent.', zh: '让义乌连接全球人才。' },
+  languageSwitchLabel: { en: 'Switch language to Chinese', zh: '切换语言' },
+  howStepsLabel: { en: 'How the partnership works', zh: '合伙人流程' },
+  incomePointsLabel: { en: 'How income is shared', zh: '收入构成' },
+  storySectionLabel: { en: 'Yiwu partner manifesto', zh: '合伙人计划宣言' },
+  footerSlogan: {
+    en: 'Connecting Yiwu and the world — in your language.',
+    zh: '用你的语言，连接义乌与世界。',
+  },
   footerNavigationLabel: { en: 'Footer navigation', zh: '页脚导航' },
   languageEntry: { en: '中文', zh: 'English' },
   clearLocalData: { en: 'Clear demo data', zh: '清除演示数据' },
   clearSuccess: { en: 'Local demo data cleared.', zh: '本地演示数据已清除。' },
-  clearFailure: { en: 'Demo data could not be fully cleared. Check your browser’s site-data settings.', zh: '演示数据未能全部清除，请检查浏览器的网站数据设置。' },
-  jobsDemoNotice: { en: 'Demo notice: all sample roles and companies are fictional—not live vacancies or partnerships. Demo applications are not sent.', zh: '演示说明：所有示例职位和公司均为虚构，并非真实招聘或合作关系；演示申请不会被发送。' },
-  demoRoleLabel: { en: 'Demo role', zh: '演示职位' },
-  formDemoNotice: { en: 'Interactive demo only. Data stays in this browser and is not sent to YiwuHire. Do not enter sensitive real information.', zh: '仅供交互演示。数据仅保留在此浏览器中，不会发送给 YiwuHire。请勿输入真实敏感信息。' },
-  navJobs: { en: 'Jobs', zh: '职位' },
-  navServices: { en: 'Talent services', zh: '人才服务' },
-  navYiwu: { en: 'Why Yiwu', zh: '为什么选义乌' },
-  postJob: { en: 'Post a job', zh: '发布职位' },
-  heroEyebrow: { en: 'YIWU ↔ THE WORLD', zh: '义乌 ↔ 世界' },
-  heroLineOne: { en: 'Hire Global.', zh: '连接全球人才。' },
-  heroLineTwo: { en: 'Start in Yiwu.', zh: '从义乌出发。' },
+  clearFailure: {
+    en: 'Demo data could not be fully cleared. Check your browser’s site-data settings.',
+    zh: '演示数据未能全部清除，请检查浏览器的网站数据设置。',
+  },
+  formDemoNotice: {
+    en: 'Concept demo. Your input stays in this browser and is not sent. Please don’t enter sensitive information.',
+    zh: '概念演示。你填写的内容仅暂存在本浏览器，不会被发送。请勿填写敏感信息。',
+  },
+
+  navAbout: { en: 'The program', zh: '计划介绍' },
+  navHow: { en: 'What you do', zh: '你要做什么' },
+  navIncome: { en: 'How you earn', zh: '收入怎么算' },
+  navFit: { en: 'Who it’s for', zh: '适合谁' },
+  navYiwu: { en: 'Why Yiwu', zh: '为什么义乌' },
+  applyNav: { en: 'Apply', zh: '申请加入' },
+
+  heroEyebrow: { en: 'YIWU × LANGUAGE CREATORS', zh: '义乌 × 语言内容创作者' },
+  heroLineOne: { en: 'Turn your language', zh: '把你的语言能力，' },
+  heroLineTwo: { en: 'into real global orders.', zh: '变成真实的全球订单。' },
   heroBody: {
-    en: 'Global talent for the businesses taking Yiwu to the world.',
-    zh: '为从义乌走向世界的企业连接全球人才。',
+    en: 'We run an export supply chain in Yiwu. We’re recruiting language content creators to use their English (or other languages) and content skills to help overseas buyers understand Yiwu — and bring in real inquiries and orders. Not a desk job. You’re paid on results.',
+    zh: '我们在义乌做外贸供应链。现在招募语言类内容创作者，用你的英文（或其他语言）表达和内容能力，帮海外客户读懂义乌，带来真实询盘与订单。非坐班，按结果分成。',
   },
-  searchLabel: { en: 'Search jobs', zh: '搜索职位' },
-  searchPlaceholder: { en: 'Role, skill, or keyword', zh: '职位、技能或关键词' },
-  searchButton: { en: 'Search jobs', zh: '搜索职位' },
-  findWork: { en: 'Find work', zh: '寻找工作' },
-  hireTalent: { en: 'Hire talent →', zh: '寻找人才 →' },
-  jobsEyebrow: { en: 'SELECTED OPPORTUNITIES', zh: '精选机会' },
-  jobsTitle: { en: 'Work with the world, from Yiwu.', zh: '身在义乌，与世界共事。' },
-  emptyTitle: { en: 'No roles found', zh: '暂无匹配职位' },
-  emptyBody: {
-    en: 'Try another keyword or clear your filters.',
-    zh: '请尝试其他关键词或清除筛选条件。',
+  heroApply: { en: 'Apply to partner', zh: '申请成为合伙人' },
+  heroLearn: { en: 'See how it works →', zh: '了解这个计划 →' },
+
+  aboutEyebrow: { en: 'THE PROGRAM', zh: '这是什么' },
+  aboutTitle: {
+    en: 'The Yiwu Global Trade Creator Partner program.',
+    zh: '义乌全球贸易合伙人计划。',
   },
-  clearFilters: { en: 'Clear filters', zh: '清除筛选' },
-  servicesEyebrow: { en: 'FOR EMPLOYERS', zh: '为雇主服务' },
-  servicesTitle: {
-    en: 'Build the team that takes you further.',
-    zh: '组建带你走得更远的团队。',
+  aboutBody: {
+    en: 'You don’t need to become a traditional sales rep first. You use your language and content skills to help overseas buyers understand Yiwu’s supply chain. We provide the products, quotes, supply chain, and the back end that closes deals. You own the content and the customer. Real inquiries, real orders, real shares.',
+    zh: '你不需要先成为传统外贸业务员。你只需要用语言表达和内容能力，让海外客户了解义乌的供应链。产品、报价、供应链和成交后端由我们提供；你负责内容表达和客户开发。真实询盘、真实订单、真实分成。',
   },
-  servicesBody: {
-    en: 'From a single critical hire to an international growth team, we help Yiwu businesses find people who understand both markets and momentum.',
-    zh: '从关键岗位到国际增长团队，我们帮助义乌企业找到既懂市场、又能高效行动的人才。',
+  aboutNote: {
+    en: 'This is a partnership, not a desk job — you create freely and share in the results you bring in.',
+    zh: '这是一种合作关系，不是坐班岗位——你自由创作，按你带来的结果获得分成。',
   },
-  startHiring: { en: 'Start hiring', zh: '开始招聘' },
-  yiwuEyebrow: { en: 'WHY YIWU', zh: '为什么选义乌' },
+
+  howEyebrow: { en: 'WHAT YOU DO', zh: '你要做什么' },
+  howTitle: { en: 'Three steps from content to orders.', zh: '三步，把内容变成订单。' },
+
+  incomeEyebrow: { en: 'HOW YOU EARN', zh: '收入怎么算' },
+  incomeTitle: {
+    en: 'Paid on real results. The stronger you are, the more you make.',
+    zh: '按真实结果分成，能力越强，拿得越多。',
+  },
+  incomeBody: {
+    en: 'Income comes from qualified overseas inquiries, closed orders, and the long-term repeat business of customers you bring in. You share in real order results — this is not a fixed base salary. The exact split is agreed one-to-one after an initial conversation, based on the product category and how we work together.',
+    zh: '收入来自有效海外询盘、成交订单，以及你开发客户的长期复购。我们按真实订单结果给你分成，不是固定底薪。具体分成比例在初步沟通后，根据品类和合作方式一对一确定。',
+  },
+
+  fitEyebrow: { en: 'WHO IT’S FOR', zh: '适合谁' },
+  fitTitle: {
+    en: 'We want creators who can sell — not just speak.',
+    zh: '我们找的是会语言的销售型创作者。',
+  },
+  fitForTitle: { en: 'A good fit', zh: '适合' },
+  fitFor1: {
+    en: 'You express yourself well in English or another language, and already make language content.',
+    zh: '英语或其他语言表达好，已经在做语言类内容。',
+  },
+  fitFor2: {
+    en: 'You’re willing to face strangers — voice, video, WhatsApp — directly with overseas buyers.',
+    zh: '敢用语音、视频、WhatsApp 直接面对陌生海外客户。',
+  },
+  fitFor3: {
+    en: 'You’ll actually walk the Yiwu market, not just film “aesthetic English” in a café.',
+    zh: '愿意走进义乌市场，而不只是在咖啡馆拍“精致英语”。',
+  },
+  fitFor4: {
+    en: 'You want to turn content skill into real commercial ability.',
+    zh: '想把内容能力变成真实的商业能力。',
+  },
+  fitAgainstTitle: { en: 'Not a fit', zh: '不适合' },
+  fitAgainst1: {
+    en: 'You only want a stable base salary and certainty.',
+    zh: '只想要稳定底薪和确定性。',
+  },
+  fitAgainst2: {
+    en: 'You don’t want to face customers or do sales.',
+    zh: '不愿意面对客户，也不愿意做销售。',
+  },
+  fitAgainst3: {
+    en: 'Buyers go quiet, push on price, and ask again and again — a thin skin will wear you out.',
+    zh: '外贸客户会消失、压价、反复问——玻璃心会很累。',
+  },
+
+  yiwuEyebrow: { en: 'WHY YIWU', zh: '为什么义乌' },
   yiwuTitle: {
-    en: 'A small city with a world-sized address book.',
-    zh: '一座小城，连接世界的生意。',
+    en: 'A small city holding the world’s trade.',
+    zh: '一座小城，装着全世界的生意。',
   },
+
   storyQuote: {
-    en: '“In Yiwu, global business is not a strategy deck. It is what happens before lunch.”',
-    zh: '“在义乌，全球生意不是幻灯片里的战略，而是午饭前就在发生的日常。”',
+    en: '“In Yiwu, global business is not a slide in a strategy deck. It is what happens before lunch.”',
+    zh: '“在义乌，全球生意不是 PPT 里的战略，而是午饭前就在发生的日常。”',
   },
-  storyByline: { en: 'A YiwuHire brand observation', zh: 'YiwuHire 品牌观察' },
-  closingTitle: { en: 'Your next chapter could start here.', zh: '你的下一章，可以从这里开始。' },
-  browseJobs: { en: 'Browse jobs', zh: '浏览职位' },
-  talkToUs: { en: 'Talk to us →', zh: '联系我们 →' },
-  jobDetailsTitle: { en: 'Job details', zh: '职位详情' },
-  applyTitle: { en: 'Apply for this role', zh: '申请该职位' },
+  storyByline: { en: 'Yiwu Global Trade Creator Partner program', zh: '义乌全球贸易合伙人计划' },
+
+  closingEyebrow: { en: 'YIWU / GLOBAL', zh: '义乌 / 全球' },
+  closingTitle: {
+    en: 'Your language is worth a real order.',
+    zh: '你的语言，值一笔真实的订单。',
+  },
+  closingApply: { en: 'Apply to partner', zh: '申请成为合伙人' },
+
+  applyTitle: {
+    en: 'Apply to become a Yiwu Global Trade Creator Partner',
+    zh: '申请成为义乌全球贸易合伙人',
+  },
+  contactTitle: { en: 'Prefer to talk now? Reach us:', zh: '想直接聊？联系我们：' },
+  contactWeChat: { en: 'WeChat: yiwu-partner', zh: '微信：yiwu-partner' },
+  contactWhatsApp: { en: 'WhatsApp: +86 188 0000 0000', zh: 'WhatsApp：+86 188 0000 0000' },
+  contactEmail: { en: 'Email: partner@yiwuhire.com', zh: '邮箱：partner@yiwuhire.com' },
+  contactPlaceholderNote: {
+    en: '(Placeholder contacts — to be replaced before launch.)',
+    zh: '（占位联系方式，上线前替换。）',
+  },
   nameLabel: { en: 'Name', zh: '姓名' },
-  contactLabel: { en: 'Email or contact', zh: '邮箱或联系方式' },
-  locationLabel: { en: 'Current location', zh: '当前所在地' },
-  profileLabel: { en: 'Profile or portfolio link', zh: '个人主页或作品集链接' },
+  contactLabel: { en: 'Email or WeChat', zh: '邮箱或微信' },
+  socialLabel: { en: 'Your Xiaohongshu / social profile link', zh: '你的小红书/社媒主页链接' },
+  focusLabel: { en: 'Your languages & content focus', zh: '你的语言与内容方向' },
   submitApplication: { en: 'Submit application', zh: '提交申请' },
-  employerTitle: { en: 'Tell us who you need.', zh: '告诉我们你需要什么人才。' },
-  companyLabel: { en: 'Company', zh: '公司' },
-  contactPersonLabel: { en: 'Contact person', zh: '联系人' },
-  roleLabel: { en: 'Role to hire', zh: '招聘岗位' },
-  headcountLabel: { en: 'Headcount', zh: '招聘人数' },
-  briefLabel: { en: 'What does success look like?', zh: '你期待该岗位实现什么成果？' },
-  submitBrief: { en: 'Send hiring brief', zh: '发送招聘需求' },
-  allCategory: { en: 'All', zh: '全部' },
-  resultSingular: { en: '1 role', zh: '1 个职位' },
-  resultPlural: { en: '{count} roles', zh: '{count} 个职位' },
-  salaryLabel: { en: 'Salary', zh: '薪资' },
-  responsibilitiesLabel: { en: 'Responsibilities', zh: '工作职责' },
-  requirementsLabel: { en: 'Requirements', zh: '任职要求' },
-  applyAction: { en: 'Apply now', zh: '立即申请' },
-  requiredMessage: { en: 'Please complete all required fields.', zh: '请填写所有必填项。' },
-  invalidUrlMessage: { en: 'Please enter a valid profile link.', zh: '请输入有效的个人链接。' },
-  formError: { en: 'Something went wrong. Please try again.', zh: '出现问题，请重试。' },
-  applicationSuccessSaved: { en: 'Demo saved on this device only; it was not sent.', zh: '演示数据仅保存在此设备，未发送任何信息。' },
-  applicationSuccessUnsaved: { en: 'Demo action completed but could not be saved; nothing was sent.', zh: '演示操作已完成，但无法保存到此设备；没有任何信息被发送。' },
-  employerSuccessSaved: { en: 'Demo brief saved on this device only; it was not sent.', zh: '演示需求仅保存在此设备，未发送任何信息。' },
-  employerSuccessUnsaved: { en: 'Demo action completed but could not be saved; nothing was sent.', zh: '演示操作已完成，但无法保存到此设备；没有任何信息被发送。' },
   closeDialogLabel: { en: 'Close', zh: '关闭' },
+
+  requiredMessage: { en: 'Please complete all required fields.', zh: '请填写所有必填项。' },
+  invalidUrlMessage: { en: 'Please enter a valid profile link.', zh: '请输入有效的主页链接。' },
+  formError: { en: 'Something went wrong. Please try again.', zh: '出现问题，请重试。' },
+  applicationSuccessSaved: {
+    en: 'Demo saved on this device only; nothing was sent.',
+    zh: '演示数据仅保存在此设备，未发送任何信息。',
+  },
+  applicationSuccessUnsaved: {
+    en: 'Demo action completed but could not be saved; nothing was sent.',
+    zh: '演示操作已完成，但无法保存到此设备；没有任何信息被发送。',
+  },
 };
 
-export const categories = [
-  { id: 'all', label: { en: 'All', zh: '全部' } },
-  { id: 'trade', label: { en: 'International trade', zh: '国际贸易' } },
-  { id: 'ecommerce', label: { en: 'Cross-border ecommerce', zh: '跨境电商' } },
-  { id: 'social', label: { en: 'Social content', zh: '社媒内容' } },
-  { id: 'sourcing', label: { en: 'Sourcing', zh: '采购寻源' } },
-  { id: 'supply-chain', label: { en: 'Supply chain', zh: '供应链' } },
-  { id: 'language', label: { en: 'Language', zh: '语言服务' } },
-];
-
-// Demo data only: every company and role below is a fictional record, not a real partnership or live vacancy.
-export const jobs = [
+// The three steps of the partnership, rendered as cards.
+export const steps = [
   {
-    id: 'international-sales-manager',
-    category: 'trade',
+    id: 'show-yiwu',
     en: {
-      title: 'International Sales Manager', company: 'Atlas Lantern Trading', location: 'Yiwu, Zhejiang', salary: 'CNY 18k–28k / month', tags: ['English', 'B2B', 'Export'],
-      summary: 'Develop distributor relationships and turn product opportunities into durable international accounts.',
-      responsibilities: ['Build and manage an overseas sales pipeline.', 'Coordinate quotations, samples, and order handoffs.'],
-      requirements: ['Professional English and clear commercial judgment.', 'Experience in export sales or international account management.'],
+      title: 'Show Yiwu in your language',
+      body: 'Film English (or other-language) content that introduces the Yiwu market, products, and China’s supply chain — and post it to Xiaohongshu, TikTok, Instagram, or YouTube.',
     },
     zh: {
-      title: '国际销售经理', company: '星灯贸易', location: '浙江义乌', salary: '月薪 1.8万–2.8万元', tags: ['英语', 'B2B', '出口'],
-      summary: '拓展海外经销商关系，将产品机会转化为稳定的国际客户。',
-      responsibilities: ['建立并管理海外销售管道。', '协调报价、样品和订单交接。'],
-      requirements: ['具备职业英语能力和清晰的商业判断力。', '有出口销售或国际客户管理经验。'],
+      title: '用语言讲义乌',
+      body: '拍英文或其他外语内容，介绍义乌市场、产品和中国供应链，发到小红书 / TikTok / Instagram / YouTube。',
     },
   },
   {
-    id: 'cross-border-ecommerce-operator',
-    category: 'ecommerce',
+    id: 'bring-buyers',
     en: {
-      title: 'Cross-border Ecommerce Operator', company: 'Northstar Market Works', location: 'Yiwu, Zhejiang', salary: 'CNY 14k–22k / month', tags: ['Marketplace', 'Listings', 'Analytics'],
-      summary: 'Run marketplace operations for a focused portfolio of products sold to international customers.',
-      responsibilities: ['Improve listings, promotions, and inventory plans.', 'Track performance and turn insights into weekly experiments.'],
-      requirements: ['Hands-on marketplace operations experience.', 'Comfort with spreadsheets, metrics, and English listings.'],
+      title: 'Bring in overseas buyers',
+      body: 'Guide the overseas audience watching your content to WhatsApp, email, or the website, and turn their interest into real purchase inquiries.',
     },
     zh: {
-      title: '跨境电商运营', company: '北辰市场工场', location: '浙江义乌', salary: '月薪 1.4万–2.2万元', tags: ['平台运营', '商品页', '数据分析'],
-      summary: '负责面向国际消费者的精选产品组合及平台运营。',
-      responsibilities: ['优化商品页、促销和库存计划。', '跟踪表现，将数据洞察转化为每周实验。'],
-      requirements: ['有跨境电商平台实操经验。', '熟悉表格、数据指标和英文商品页。'],
+      title: '引来海外客户',
+      body: '把看内容的海外观众，引导到 WhatsApp / 邮箱 / 网站，产生真实采购询盘。',
     },
   },
   {
-    id: 'tiktok-content-producer',
-    category: 'social',
+    id: 'earn-from-deals',
     en: {
-      title: 'TikTok Content Producer', company: 'Lantern Social Lab', location: 'Yiwu, Zhejiang', salary: 'CNY 13k–20k / month', tags: ['TikTok', 'Video', 'Content'],
-      summary: 'Create short-form stories that make Yiwu products understandable and memorable for global audiences.',
-      responsibilities: ['Plan, shoot, and edit a consistent content calendar.', 'Test formats with creators and review audience signals.'],
-      requirements: ['A portfolio of short-form video work.', 'Strong visual instincts and working English.'],
+      title: 'Earn from real deals',
+      body: 'We handle quotes, samples, and shipping with the supply chain. When an order closes, you share in the real result.',
     },
     zh: {
-      title: 'TikTok 内容策划', company: '灯笼社媒工作室', location: '浙江义乌', salary: '月薪 1.3万–2万元', tags: ['TikTok', '短视频', '内容'],
-      summary: '用短视频讲述产品故事，让全球受众更容易理解并记住义乌商品。',
-      responsibilities: ['策划、拍摄和剪辑稳定更新的内容日历。', '与创作者测试内容形式并分析受众反馈。'],
-      requirements: ['有短视频作品集。', '具备良好视觉感知和工作英语能力。'],
-    },
-  },
-  {
-    id: 'international-sourcing-buyer',
-    category: 'sourcing',
-    en: {
-      title: 'International Sourcing Buyer', company: 'Common Thread Sourcing', location: 'Yiwu, Zhejiang', salary: 'CNY 15k–24k / month', tags: ['Sourcing', 'Negotiation', 'Quality'],
-      summary: 'Find dependable suppliers and guide international buyers from product brief through shipment readiness.',
-      responsibilities: ['Source, compare, and audit suitable suppliers.', 'Manage samples, pricing, quality checks, and buyer updates.'],
-      requirements: ['Supplier negotiation and product evaluation experience.', 'Clear communication across cultures and time zones.'],
-    },
-    zh: {
-      title: '国际采购与寻源专员', company: '同线采购', location: '浙江义乌', salary: '月薪 1.5万–2.4万元', tags: ['寻源', '谈判', '质量'],
-      summary: '寻找可靠供应商，协助国际买家从产品需求走到备货出运。',
-      responsibilities: ['寻找、比较并审核合适的供应商。', '管理样品、价格、质检和买家沟通。'],
-      requirements: ['有供应商谈判和产品评估经验。', '能够进行跨文化、跨时区的清晰沟通。'],
-    },
-  },
-  {
-    id: 'supply-chain-coordinator',
-    category: 'supply-chain',
-    en: {
-      title: 'Supply Chain & Logistics Coordinator', company: 'Blue Route Collective', location: 'Yiwu, Zhejiang', salary: 'CNY 12k–19k / month', tags: ['Logistics', 'Freight', 'Planning'],
-      summary: 'Keep export orders visible and moving from supplier collection through freight handoff.',
-      responsibilities: ['Coordinate consolidation, documents, and shipping milestones.', 'Flag risks early and maintain accurate order status.'],
-      requirements: ['Experience with export logistics or order coordination.', 'Organized, responsive, and comfortable with English documents.'],
-    },
-    zh: {
-      title: '供应链与物流协调员', company: '蓝路协作社', location: '浙江义乌', salary: '月薪 1.2万–1.9万元', tags: ['物流', '货运', '计划'],
-      summary: '从供应商集货到货运交接，保持出口订单全程可见并顺利流转。',
-      responsibilities: ['协调集货、单证和出运节点。', '及时标记风险并维护准确的订单状态。'],
-      requirements: ['有出口物流或订单协调经验。', '做事有条理、响应及时，能处理英文单证。'],
-    },
-  },
-  {
-    id: 'localization-specialist',
-    category: 'language',
-    en: {
-      title: 'English Localization Specialist', company: 'Bridgeword Studio', location: 'Yiwu / Hybrid', salary: 'CNY 12k–18k / month', tags: ['English', 'Localization', 'Copywriting'],
-      summary: 'Adapt product and brand language so it feels clear, credible, and natural in international markets.',
-      responsibilities: ['Localize listings, packaging, and campaign copy.', 'Create terminology guidance and review translated assets.'],
-      requirements: ['Excellent written Chinese and English.', 'Editing or localization experience with commercial content.'],
-    },
-    zh: {
-      title: '英语本地化专员', company: '桥语工作室', location: '义乌 / 混合办公', salary: '月薪 1.2万–1.8万元', tags: ['英语', '本地化', '文案'],
-      summary: '调整产品和品牌表达，使其在国际市场中清晰、可信且自然。',
-      responsibilities: ['本地化商品页、包装和营销文案。', '建立术语规范并审校翻译素材。'],
-      requirements: ['中英文书面表达俱佳。', '有商业内容编辑或本地化经验。'],
-    },
-  },
-  {
-    id: 'global-growth-marketer',
-    category: 'ecommerce',
-    en: {
-      title: 'Global Growth Marketer', company: 'Open Meridian Goods', location: 'Yiwu / Hybrid', salary: 'CNY 16k–26k / month', tags: ['Growth', 'Paid Media', 'Experimentation'],
-      summary: 'Build measurable acquisition programs for an emerging consumer brand entering new markets.',
-      responsibilities: ['Plan channel tests and landing-page experiments.', 'Connect campaign performance with customer and revenue signals.'],
-      requirements: ['Experience running international growth campaigns.', 'Analytical thinking and strong English communication.'],
-    },
-    zh: {
-      title: '全球增长营销经理', company: '开放子午线商品', location: '义乌 / 混合办公', salary: '月薪 1.6万–2.6万元', tags: ['增长', '付费投放', '实验'],
-      summary: '为进入新市场的新兴消费品牌搭建可衡量的获客体系。',
-      responsibilities: ['策划渠道测试和落地页实验。', '将活动表现与客户及收入信号关联。'],
-      requirements: ['有国际市场增长活动经验。', '具备分析思维和良好英语沟通能力。'],
-    },
-  },
-  {
-    id: 'overseas-partnerships-lead',
-    category: 'trade',
-    en: {
-      title: 'Overseas Partnerships Lead', company: 'Mosaic Export House', location: 'Yiwu, Zhejiang', salary: 'CNY 20k–32k / month', tags: ['Partnerships', 'Market Entry', 'Strategy'],
-      summary: 'Create practical market-entry partnerships for Yiwu-made product lines in selected regions.',
-      responsibilities: ['Identify and qualify channel and brand partners.', 'Shape joint plans, commercial terms, and launch reviews.'],
-      requirements: ['International business development experience.', 'Confident stakeholder management and negotiation skills.'],
-    },
-    zh: {
-      title: '海外合作负责人', company: '马赛克出口公社', location: '浙江义乌', salary: '月薪 2万–3.2万元', tags: ['合作伙伴', '市场进入', '策略'],
-      summary: '为义乌制造的产品线在目标区域建立务实的市场进入合作。',
-      responsibilities: ['识别并评估渠道与品牌合作伙伴。', '制定联合计划、商业条款和上市复盘。'],
-      requirements: ['有国际商务拓展经验。', '具备成熟的利益相关方管理和谈判能力。'],
+      title: '成交拿分成',
+      body: '我们对接供应链完成报价、样品和发货；订单成交后，你按真实结果获得分成。',
     },
   },
 ];
 
-export const services = [
+// What income is built from — described, never priced.
+export const incomePoints = [
   {
-    id: 'job-posting',
-    en: { title: 'Job posting', body: 'Present a role to bilingual candidates with a clear, focused listing.' },
-    zh: { title: '职位发布', body: '用清晰聚焦的职位信息，触达双语候选人。' },
+    id: 'inquiries',
+    en: { title: 'Qualified inquiries', body: 'The real overseas purchase intent you bring in.' },
+    zh: { title: '有效询盘', body: '你带来的真实海外采购意向。' },
   },
   {
-    id: 'talent-recommendation',
-    en: { title: 'Talent recommendation', body: 'Receive a considered shortlist aligned with the role and working context.' },
-    zh: { title: '人才推荐', body: '获得与岗位及实际工作场景匹配的精选候选名单。' },
+    id: 'orders',
+    en: { title: 'Closed orders', body: 'A share once sample orders and bulk orders close.' },
+    zh: { title: '成交订单', body: '样品单与大货订单成交后的分成。' },
   },
   {
-    id: 'international-search',
-    en: { title: 'International search', body: 'Run a focused search for specialist or market-specific talent beyond the usual network.' },
-    zh: { title: '国际人才寻访', body: '突破常规人才网络，定向寻访专业或特定市场人才。' },
+    id: 'repeat',
+    en: { title: 'Repeat buyers', body: 'Customers you develop keep ordering — and you keep benefiting.' },
+    zh: { title: '长期复购', body: '你开发的客户持续下单，你持续受益。' },
   },
 ];
 
 export const yiwuPoints = [
   {
-    id: 'market-access',
-    en: { title: 'Close to the market', body: 'Meet suppliers, compare products, and turn feedback into action in the same working rhythm.' },
-    zh: { title: '贴近市场', body: '在同一工作节奏里见供应商、比产品，并将反馈迅速转化为行动。' },
+    id: 'goods-here',
+    en: {
+      title: 'The goods are right here',
+      body: 'The world’s largest small-commodities market — every product you film has a supplier downstairs.',
+    },
+    zh: {
+      title: '货就在身边',
+      body: '全球最大的小商品市场，你拍的每一件产品，楼下就能找到供应商。',
+    },
   },
   {
-    id: 'global-connections',
-    en: { title: 'Built for global exchange', body: 'Daily work brings together products, buyers, languages, and routes serving many markets.' },
-    zh: { title: '为全球交流而生', body: '日常工作连接产品、买家、语言和通往不同市场的路径。' },
+    id: 'built-for-world',
+    en: {
+      title: 'Built for the world',
+      body: 'Yiwu deals with different countries, languages, and buyers every day — your language skill fits right in.',
+    },
+    zh: {
+      title: '天生面向全球',
+      body: '义乌每天都在和不同国家、语言、买家打交道，你的语言能力正好用得上。',
+    },
   },
   {
-    id: 'practical-momentum',
-    en: { title: 'Practical momentum', body: 'Yiwu rewards people who learn quickly, communicate clearly, and keep useful work moving.' },
-    zh: { title: '务实高效', body: '义乌适合快速学习、清晰沟通，并能持续推动实事的人。' },
+    id: 'fast-feedback',
+    en: {
+      title: 'Fast feedback',
+      body: 'One piece of content, one inquiry, one order — feedback comes quickly and effort shows.',
+    },
+    zh: {
+      title: '结果来得快',
+      body: '一条内容、一个询盘、一笔订单，反馈很快，努力看得见。',
+    },
   },
 ];

@@ -1,9 +1,8 @@
-import { categories, copy, jobs, services, yiwuPoints } from './data.js';
-import { copyFor, filterJobs, saveSubmission } from './core.js';
+import { copy, incomePoints, steps, yiwuPoints } from './data.js';
+import { copyFor, saveSubmission } from './core.js';
 
 const LANGUAGE_KEY = 'yiwuhire-language';
-const APPLICATIONS_KEY = 'yiwuhire-applications';
-const EMPLOYER_BRIEFS_KEY = 'yiwuhire-employer-briefs';
+const APPLICATIONS_KEY = 'yiwuhire-partner-applications';
 const supportedLanguages = new Set(['en', 'zh']);
 
 function getStorage() {
@@ -33,30 +32,17 @@ function initialLanguage() {
 
 const state = {
   language: initialLanguage(),
-  query: '',
-  category: 'all',
-  selectedJobId: null,
 };
 
 const elements = {
   applyDialog: document.querySelector('#apply-dialog'),
   applyForm: document.querySelector('#apply-form'),
-  categories: document.querySelector('#category-filters'),
-  emptyState: document.querySelector('#empty-state'),
-  employerDialog: document.querySelector('#employer-dialog'),
-  employerForm: document.querySelector('#employer-form'),
-  jobDetail: document.querySelector('#job-detail'),
-  jobDialog: document.querySelector('#job-dialog'),
-  jobGrid: document.querySelector('#job-grid'),
-  resultSummary: document.querySelector('#result-summary'),
-  search: document.querySelector('#search'),
-  searchForm: document.querySelector('#hero-search'),
-  services: document.querySelector('#service-cards'),
+  stepCards: document.querySelector('#step-cards'),
+  incomeCards: document.querySelector('#income-cards'),
   yiwuPoints: document.querySelector('#yiwu-points'),
 };
 
 const dialogTriggers = new WeakMap();
-const suppressedFocusRestore = new WeakSet();
 const formTimers = new WeakMap();
 
 function localized(value) {
@@ -90,7 +76,7 @@ function renderCopy() {
   });
 
   const languageButton = document.querySelector('[data-action="toggle-language"]');
-  languageButton.textContent = state.language === 'en' ? '中文' : 'English';
+  if (languageButton) languageButton.textContent = state.language === 'en' ? '中文' : 'English';
 
   if (copy.pageTitle) document.title = copyFor(copy, state.language, 'pageTitle');
   const description = document.querySelector('meta[name="description"]');
@@ -99,74 +85,21 @@ function renderCopy() {
   }
 }
 
-function renderCategories() {
-  elements.categories.replaceChildren();
-  categories.forEach((category) => {
-    const button = document.createElement('button');
-    button.type = 'button';
-    button.className = 'filter-pill';
-    button.dataset.category = category.id;
-    button.setAttribute('aria-pressed', String(state.category === category.id));
-    button.textContent = localized(category.label);
-    elements.categories.append(button);
-  });
-}
-
-function appendTags(parent, tags) {
-  const list = document.createElement('ul');
-  list.className = 'job-tags';
-  tags.forEach((tag) => addTextElement(list, 'li', tag));
-  parent.append(list);
-}
-
-function renderJobs() {
-  const matchingJobs = filterJobs(jobs, state.query, state.category, state.language);
-  elements.jobGrid.replaceChildren();
-
-  matchingJobs.forEach((job) => {
-    const details = localized(job);
-    const card = document.createElement('button');
-    card.type = 'button';
-    card.className = 'job-card';
-    card.dataset.jobId = job.id;
-    card.setAttribute('aria-label', `${details.title}, ${details.company}`);
-
-    addTextElement(card, 'span', copyFor(copy, state.language, 'demoRoleLabel'), 'demo-role-label');
-    addTextElement(card, 'h3', details.title);
-    const meta = document.createElement('div');
-    meta.className = 'job-meta';
-    addTextElement(meta, 'span', details.company);
-    addTextElement(meta, 'span', details.location);
-    addTextElement(meta, 'span', details.salary);
-    card.append(meta);
-    addTextElement(card, 'p', details.summary);
-    appendTags(card, details.tags);
-    const actions = document.createElement('span');
-    actions.className = 'job-card-actions';
-    actions.textContent = state.language === 'zh' ? '查看详情 →' : 'View details →';
-    card.append(actions);
-    elements.jobGrid.append(card);
-  });
-
-  const resultKey = matchingJobs.length === 1 ? 'resultSingular' : 'resultPlural';
-  elements.resultSummary.textContent = copyFor(copy, state.language, resultKey)
-    .replace('{count}', String(matchingJobs.length));
-  elements.emptyState.hidden = matchingJobs.length > 0;
-}
-
-function renderServices() {
-  elements.services.replaceChildren();
-  services.forEach((service) => {
-    const content = localized(service);
+function renderCards(container, items) {
+  if (!container) return;
+  container.replaceChildren();
+  items.forEach((item) => {
+    const content = localized(item);
     const card = document.createElement('article');
     card.className = 'service-card';
     addTextElement(card, 'h3', content.title);
     addTextElement(card, 'p', content.body);
-    elements.services.append(card);
+    container.append(card);
   });
 }
 
 function renderYiwuPoints() {
+  if (!elements.yiwuPoints) return;
   elements.yiwuPoints.replaceChildren();
   yiwuPoints.forEach((point) => {
     const content = localized(point);
@@ -178,106 +111,26 @@ function renderYiwuPoints() {
   });
 }
 
-function selectedJob() {
-  return jobs.find((job) => job.id === state.selectedJobId);
-}
-
-function renderJobDialog() {
-  const job = selectedJob();
-  if (!job) return;
-  const details = localized(job);
-  elements.jobDetail.replaceChildren();
-  addTextElement(elements.jobDetail, 'p', copyFor(copy, state.language, 'demoRoleLabel'), 'demo-role-label');
-  addTextElement(elements.jobDetail, 'h3', details.title);
-  const meta = document.createElement('p');
-  meta.className = 'job-meta';
-  addTextElement(meta, 'span', details.company);
-  addTextElement(meta, 'span', details.location);
-  elements.jobDetail.append(meta);
-  addTextElement(elements.jobDetail, 'p', `${copyFor(copy, state.language, 'salaryLabel')}: ${details.salary}`);
-  appendTags(elements.jobDetail, details.tags);
-  addTextElement(elements.jobDetail, 'p', details.summary);
-
-  for (const [labelKey, items] of [
-    ['responsibilitiesLabel', details.responsibilities],
-    ['requirementsLabel', details.requirements],
-  ]) {
-    addTextElement(elements.jobDetail, 'h4', copyFor(copy, state.language, labelKey));
-    const list = document.createElement('ul');
-    items.forEach((item) => addTextElement(list, 'li', item));
-    elements.jobDetail.append(list);
-  }
-
-  const apply = document.createElement('button');
-  apply.type = 'button';
-  apply.className = 'button';
-  apply.dataset.action = 'apply';
-  apply.textContent = copyFor(copy, state.language, 'applyAction');
-  elements.jobDetail.append(apply);
-}
-
-function renderApplyHeading() {
-  const job = selectedJob();
-  const heading = document.querySelector('#apply-title');
-  if (!job || !heading) return;
-  const title = localized(job).title;
-  heading.textContent = state.language === 'zh' ? `申请：${title}` : `Apply for ${title}`;
-  elements.applyForm.elements.jobId.value = job.id;
-}
-
-function renderOpenDialog() {
-  if (elements.jobDialog.open) renderJobDialog();
-  if (elements.applyDialog.open) renderApplyHeading();
-}
-
 function renderAll() {
   renderCopy();
-  renderCategories();
-  renderJobs();
-  renderServices();
+  renderCards(elements.stepCards, steps);
+  renderCards(elements.incomeCards, incomePoints);
   renderYiwuPoints();
-  renderOpenDialog();
 }
 
 function updateDialogBodyState() {
   document.body.classList.toggle('dialog-open', Boolean(document.querySelector('dialog[open]')));
 }
 
-function closeOtherDialogs(dialog) {
-  document.querySelectorAll('dialog[open]').forEach((openDialog) => {
-    if (openDialog !== dialog) {
-      suppressedFocusRestore.add(openDialog);
-      openDialog.close();
-    }
-  });
-}
-
 function openDialog(dialog, trigger) {
-  closeOtherDialogs(dialog);
   dialogTriggers.set(dialog, trigger instanceof HTMLElement ? trigger : document.activeElement);
   dialog.showModal();
   updateDialogBodyState();
 }
 
-function openJob(jobId, trigger) {
-  state.selectedJobId = jobId;
-  renderJobDialog();
-  openDialog(elements.jobDialog, trigger);
-}
-
 function openApplication(trigger) {
-  if (!selectedJob()) return;
   resetFormState(elements.applyForm);
-  renderApplyHeading();
-  openDialog(elements.applyDialog, dialogTriggers.get(elements.jobDialog) ?? trigger);
-}
-
-function resetFilters() {
-  state.query = '';
-  state.category = 'all';
-  elements.search.value = '';
-  renderCategories();
-  renderJobs();
+  openDialog(elements.applyDialog, trigger);
 }
 
 function setLanguage(language) {
@@ -349,7 +202,7 @@ function setFormStatus(form, messageKey, stateName, control = null) {
   }
 }
 
-function handleSubmission(form, storageKey, successKey, enrich = (payload) => payload) {
+function handleSubmission(form, storageKey, successKey) {
   const submitButton = form.querySelector('[type="submit"]');
   if (submitButton.disabled) return;
   clearValidationState(form);
@@ -362,15 +215,12 @@ function handleSubmission(form, storageKey, successKey, enrich = (payload) => pa
   }
 
   submitButton.disabled = true;
-  const payload = enrich({
+  const payload = {
     ...Object.fromEntries(new FormData(form)),
     submittedAt: new Date().toISOString(),
-  });
+  };
   const saved = saveSubmission(getStorage(), storageKey, payload);
   form.reset();
-  if (form === elements.applyForm && state.selectedJobId) {
-    form.elements.jobId.value = state.selectedJobId;
-  }
   setFormStatus(form, `${successKey}${saved ? 'Saved' : 'Unsaved'}`, 'success');
   const timer = window.setTimeout(() => {
     submitButton.disabled = false;
@@ -379,50 +229,21 @@ function handleSubmission(form, storageKey, successKey, enrich = (payload) => pa
   formTimers.set(form, timer);
 }
 
-elements.searchForm.addEventListener('submit', (event) => {
-  event.preventDefault();
-  state.query = elements.search.value.trim();
-  renderJobs();
-  elements.jobGrid.closest('#jobs').scrollIntoView({ behavior: 'smooth', block: 'start' });
-});
-
 document.addEventListener('click', (event) => {
-  const categoryButton = event.target.closest('[data-category]');
-  if (categoryButton) {
-    state.category = categoryButton.dataset.category;
-    renderCategories();
-    renderJobs();
-    return;
-  }
-
-  const card = event.target.closest('[data-job-id]');
-  if (card) {
-    openJob(card.dataset.jobId, card);
-    return;
-  }
-
   const action = event.target.closest('[data-action]')?.dataset.action;
   if (action === 'toggle-language') setLanguage(state.language === 'en' ? 'zh' : 'en');
-  if (action === 'clear-filters') resetFilters();
+  if (action === 'open-apply') openApplication(event.target.closest('[data-action]'));
   if (action === 'clear-local-data') {
     const status = document.querySelector('#data-clear-status');
     status.textContent = '';
     delete status.dataset.copyKey;
     status.removeAttribute('role');
-    const storage = getStorage();
-    const cleared = [APPLICATIONS_KEY, EMPLOYER_BRIEFS_KEY]
-      .map((key) => clearStorageKey(storage, key));
-    const success = cleared.every(Boolean);
-    const copyKey = success ? 'clearSuccess' : 'clearFailure';
+    const cleared = clearStorageKey(getStorage(), APPLICATIONS_KEY);
+    const copyKey = cleared ? 'clearSuccess' : 'clearFailure';
     status.dataset.copyKey = copyKey;
     status.textContent = copyFor(copy, state.language, copyKey);
-    status.setAttribute('role', success ? 'status' : 'alert');
+    status.setAttribute('role', cleared ? 'status' : 'alert');
   }
-  if (action === 'open-employer') {
-    resetFormState(elements.employerForm);
-    openDialog(elements.employerDialog, event.target.closest('[data-action]'));
-  }
-  if (action === 'apply') openApplication(event.target.closest('[data-action]'));
 
   const closeButton = event.target.closest('[data-close-dialog]');
   if (closeButton) closeButton.closest('dialog').close();
@@ -440,29 +261,14 @@ document.querySelectorAll('dialog').forEach((dialog) => {
     updateDialogBodyState();
     const form = dialog.querySelector('form');
     if (form) resetFormState(form);
-    if (suppressedFocusRestore.delete(dialog)) return;
-    let trigger = dialogTriggers.get(dialog);
-    if (trigger && !trigger.isConnected && trigger.dataset.jobId) {
-      trigger = [...document.querySelectorAll('[data-job-id]')]
-        .find((candidate) => candidate.dataset.jobId === trigger.dataset.jobId);
-    }
+    const trigger = dialogTriggers.get(dialog);
     if (trigger?.isConnected) trigger.focus();
   });
 });
 
 elements.applyForm.addEventListener('submit', (event) => {
   event.preventDefault();
-  const job = selectedJob();
-  handleSubmission(elements.applyForm, APPLICATIONS_KEY, 'applicationSuccess', (payload) => ({
-    ...payload,
-    jobId: job?.id ?? payload.jobId,
-    jobTitle: job ? localized(job).title : '',
-  }));
-});
-
-elements.employerForm.addEventListener('submit', (event) => {
-  event.preventDefault();
-  handleSubmission(elements.employerForm, EMPLOYER_BRIEFS_KEY, 'employerSuccess');
+  handleSubmission(elements.applyForm, APPLICATIONS_KEY, 'applicationSuccess');
 });
 
 renderAll();

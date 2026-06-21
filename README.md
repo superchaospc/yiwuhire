@@ -1,8 +1,10 @@
 # YiwuHire
 
-双语外贸、出海与跨境人才招聘网站 MVP。
+招募页：**义乌全球贸易合伙人（Yiwu Global Trade Creator Partner）**。
 
-**Hire Global. Start in Yiwu.**
+面向语言类内容创作者（小红书英语博主、留学生、英语老师、自由职业者等）。用你的英文/外语表达和内容能力，帮海外客户读懂义乌，带来真实询盘与订单，按结果分成——非坐班。双语（中 / EN）单页。
+
+**Turn your language into real global orders.**
 
 ## 本地预览
 
@@ -16,4 +18,4 @@ python3 -m http.server 4173
 
 本仓库通过 GitHub Pages 部署到 [yiwuhire.com](https://yiwuhire.com/)。
 
-当前职位、企业与表单均为产品演示内容；表单数据只保存在访问者当前浏览器中，不会提交到服务器。
+当前为概念演示页：申请表单只保存在访问者当前浏览器中，不会提交到服务器。上线真实招募时，把申请入口替换为真实联系方式（微信 / WhatsApp / 邮箱 / 表单后端）即可。
