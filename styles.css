@@ -7,6 +7,9 @@
   --text-tertiary: #86868b;
   --accent: #0071e3;
   --accent-hover: #0077ed;
+  --accent-travel: #c2410c;
+  --accent-travel-hover: #d24a12;
+  --accent-travel-soft: rgba(194, 65, 12, 0.1);
   --link: #0066cc;
   --border: #d2d2d7;
   --border-light: #e8e8ed;
@@ -248,6 +251,14 @@ textarea:focus-visible {
   font-size: 14px;
 }
 
+.button-travel {
+  background: var(--accent-travel);
+}
+
+.button-travel:hover {
+  background: var(--accent-travel-hover);
+}
+
 .text-button {
   display: inline-flex;
   align-items: center;
@@ -340,6 +351,123 @@ main > section h2 {
   gap: 1.25rem 1.75rem;
 }
 
+/* Two track cards under the hero headline */
+.track-cards-hero {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  max-width: 46rem;
+  margin: 2.6rem auto 0;
+  text-align: left;
+}
+
+.track-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: clamp(1.5rem, 2.6vw, 2rem);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  background: var(--bg-alt);
+}
+
+.track-card-language {
+  border-top: 3px solid var(--accent);
+}
+
+.track-card-travel {
+  border-top: 3px solid var(--accent-travel);
+}
+
+.track-card-name {
+  margin: 0;
+  font-size: clamp(18px, 2vw, 21px);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.track-card-tag {
+  margin: 0 0 0.7rem;
+  color: var(--text-secondary);
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.track-card .button {
+  margin-top: auto;
+}
+
+/* ---------- Two-column comparison sections ---------- */
+.compare-section {
+  text-align: center;
+}
+
+.section-heading-center {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.section-heading-center .about-lede {
+  margin-top: 1.1rem;
+}
+
+.compare-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(20px, 3vw, 32px);
+  text-align: left;
+}
+
+.track-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.track-label {
+  margin: 0 0 1.2rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 2px solid var(--border-light);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.track-col-language .track-label {
+  color: var(--accent);
+  border-bottom-color: rgba(0, 113, 227, 0.25);
+}
+
+.track-col-travel .track-label {
+  color: var(--accent-travel);
+  border-bottom-color: rgba(194, 65, 12, 0.25);
+}
+
+.track-col-body {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: clamp(16px, 1.7vw, 18px);
+  line-height: 1.55;
+}
+
+.track-cards {
+  display: grid;
+  gap: 14px;
+}
+
+.track-col-travel .step-cards .service-card::before {
+  background: var(--accent-travel);
+}
+
+.fit-note {
+  max-width: 50rem;
+  margin: clamp(1.8rem, 3vw, 2.4rem) auto 0;
+  color: var(--text-tertiary);
+  font-size: 15px;
+  line-height: 1.5;
+  text-align: center;
+}
+
 /* ---------- About ---------- */
 .about-section {
   text-align: center;
@@ -364,6 +492,17 @@ main > section h2 {
   margin: 1.8rem auto 0;
   color: var(--text-tertiary);
   font-size: 15px;
+}
+
+.about-tagline {
+  max-width: 34rem;
+  margin: 1.3rem auto 0;
+  color: var(--text);
+  font-size: clamp(19px, 2.4vw, 26px);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
 }
 
 /* ---------- Card grids (steps / income) ---------- */
@@ -398,11 +537,11 @@ main > section h2 {
   background: var(--bg-alt);
 }
 
-#step-cards {
+.step-cards {
   counter-reset: step;
 }
 
-#step-cards .service-card::before {
+.step-cards .service-card::before {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -505,6 +644,11 @@ main > section h2 {
   content: "✕";
 }
 
+.track-col-travel .fit-list li::before {
+  background: var(--accent-travel-soft);
+  color: var(--accent-travel);
+}
+
 /* ---------- Why Yiwu ---------- */
 .yiwu-section {
   text-align: center;
@@ -573,6 +717,11 @@ main > section h2 {
 .closing-section > div {
   display: flex;
   justify-content: center;
+}
+
+.closing-actions {
+  flex-wrap: wrap;
+  gap: 1rem 1.25rem;
 }
 
 /* ---------- Footer ---------- */
@@ -812,13 +961,20 @@ html[lang="zh-CN"] .story-section .manifesto p:first-child {
   line-height: 1.45;
 }
 
+html[lang="zh-CN"] .about-tagline {
+  line-height: 1.5;
+}
+
 html[lang="zh-CN"] .hero > p:not(.eyebrow),
 html[lang="zh-CN"] .about-lede,
 html[lang="zh-CN"] .about-note,
 html[lang="zh-CN"] .services-section > div:first-child > p:not(.eyebrow),
 html[lang="zh-CN"] .service-card p,
 html[lang="zh-CN"] .fit-list li,
-html[lang="zh-CN"] .yiwu-point p {
+html[lang="zh-CN"] .yiwu-point p,
+html[lang="zh-CN"] .track-card-tag,
+html[lang="zh-CN"] .track-col-body,
+html[lang="zh-CN"] .fit-note {
   line-height: 1.7;
 }
 
@@ -836,7 +992,9 @@ html[lang="zh-CN"] .yiwu-point p {
 
   .service-grid,
   .fit-grid,
-  .yiwu-grid {
+  .yiwu-grid,
+  .compare-grid,
+  .track-cards-hero {
     grid-template-columns: 1fr;
   }
 
@@ -846,6 +1004,16 @@ html[lang="zh-CN"] .yiwu-point p {
   }
 
   .hero-actions > .button {
+    width: 100%;
+    max-width: 22rem;
+  }
+
+  .closing-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .closing-actions > .button {
     width: 100%;
     max-width: 22rem;
   }

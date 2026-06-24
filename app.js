@@ -1,9 +1,25 @@
-import { copy, incomePoints, steps, yiwuPoints } from './data.js';
+import {
+  copy,
+  languageSteps,
+  travelSteps,
+  languageIncome,
+  travelIncome,
+  languageFit,
+  travelFit,
+  yiwuPoints,
+} from './data.js';
 import { copyFor, saveSubmission } from './core.js';
 
 const LANGUAGE_KEY = 'yiwuhire-language';
 const APPLICATIONS_KEY = 'yiwuhire-partner-applications';
+const TRAVEL_APPLICATIONS_KEY = 'yiwuhire-travel-applications';
 const supportedLanguages = new Set(['en', 'zh']);
+
+// Which dialog/form/storage key each apply track maps to.
+const tracks = {
+  language: { dialogId: 'apply-dialog', formId: 'apply-form', storageKey: APPLICATIONS_KEY },
+  travel: { dialogId: 'apply-travel-dialog', formId: 'apply-travel-form', storageKey: TRAVEL_APPLICATIONS_KEY },
+};
 
 function getStorage() {
   try {
@@ -35,10 +51,12 @@ const state = {
 };
 
 const elements = {
-  applyDialog: document.querySelector('#apply-dialog'),
-  applyForm: document.querySelector('#apply-form'),
-  stepCards: document.querySelector('#step-cards'),
-  incomeCards: document.querySelector('#income-cards'),
+  langSteps: document.querySelector('#lang-steps'),
+  travelSteps: document.querySelector('#travel-steps'),
+  langIncome: document.querySelector('#lang-income'),
+  travelIncome: document.querySelector('#travel-income'),
+  langFit: document.querySelector('#lang-fit'),
+  travelFit: document.querySelector('#travel-fit'),
   yiwuPoints: document.querySelector('#yiwu-points'),
 };
 
@@ -98,6 +116,14 @@ function renderCards(container, items) {
   });
 }
 
+function renderFitList(container, items) {
+  if (!container) return;
+  container.replaceChildren();
+  items.forEach((item) => {
+    addTextElement(container, 'li', localized(item));
+  });
+}
+
 function renderYiwuPoints() {
   if (!elements.yiwuPoints) return;
   elements.yiwuPoints.replaceChildren();
@@ -113,8 +139,12 @@ function renderYiwuPoints() {
 
 function renderAll() {
   renderCopy();
-  renderCards(elements.stepCards, steps);
-  renderCards(elements.incomeCards, incomePoints);
+  renderCards(elements.langSteps, languageSteps);
+  renderCards(elements.travelSteps, travelSteps);
+  renderCards(elements.langIncome, languageIncome);
+  renderCards(elements.travelIncome, travelIncome);
+  renderFitList(elements.langFit, languageFit);
+  renderFitList(elements.travelFit, travelFit);
   renderYiwuPoints();
 }
 
@@ -128,9 +158,13 @@ function openDialog(dialog, trigger) {
   updateDialogBodyState();
 }
 
-function openApplication(trigger) {
-  resetFormState(elements.applyForm);
-  openDialog(elements.applyDialog, trigger);
+function openApplication(track, trigger) {
+  const config = tracks[track] ?? tracks.language;
+  const dialog = document.querySelector(`#${config.dialogId}`);
+  const form = document.querySelector(`#${config.formId}`);
+  if (!dialog || !form) return;
+  resetFormState(form);
+  openDialog(dialog, trigger);
 }
 
 function setLanguage(language) {
@@ -232,18 +266,22 @@ function handleSubmission(form, storageKey, successKey) {
 document.addEventListener('click', (event) => {
   const action = event.target.closest('[data-action]')?.dataset.action;
   if (action === 'toggle-language') setLanguage(state.language === 'en' ? 'zh' : 'en');
-  if (action === 'open-apply') openApplication(event.target.closest('[data-action]'));
   if (action === 'clear-local-data') {
     const status = document.querySelector('#data-clear-status');
     status.textContent = '';
     delete status.dataset.copyKey;
     status.removeAttribute('role');
-    const cleared = clearStorageKey(getStorage(), APPLICATIONS_KEY);
+    const storage = getStorage();
+    const cleared = clearStorageKey(storage, APPLICATIONS_KEY)
+      && clearStorageKey(storage, TRAVEL_APPLICATIONS_KEY);
     const copyKey = cleared ? 'clearSuccess' : 'clearFailure';
     status.dataset.copyKey = copyKey;
     status.textContent = copyFor(copy, state.language, copyKey);
     status.setAttribute('role', cleared ? 'status' : 'alert');
   }
+
+  const applyTrigger = event.target.closest('[data-apply-track]');
+  if (applyTrigger) openApplication(applyTrigger.dataset.applyTrack, applyTrigger);
 
   const closeButton = event.target.closest('[data-close-dialog]');
   if (closeButton) closeButton.closest('dialog').close();
@@ -266,9 +304,13 @@ document.querySelectorAll('dialog').forEach((dialog) => {
   });
 });
 
-elements.applyForm.addEventListener('submit', (event) => {
-  event.preventDefault();
-  handleSubmission(elements.applyForm, APPLICATIONS_KEY, 'applicationSuccess');
+Object.values(tracks).forEach(({ formId, storageKey }) => {
+  const form = document.querySelector(`#${formId}`);
+  if (!form) return;
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    handleSubmission(form, storageKey, 'applicationSuccess');
+  });
 });
 
 renderAll();

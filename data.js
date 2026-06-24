@@ -1,22 +1,26 @@
 export const copy = {
   pageTitle: {
-    en: 'Yiwu Global Trade Creator Partner — turn your language into real orders',
-    zh: '义乌全球贸易合伙人 — 把你的语言变成真实订单',
+    en: 'Yiwu Global Trade Creator Partner — two tracks for language creators and travel scouts',
+    zh: '义乌全球贸易合伙人 — 语言博主与旅游博主，两条路线',
   },
   pageDescription: {
-    en: 'A partner program for language content creators: use your English and content skills to bring overseas buyers to Yiwu and earn from real trade orders. Not a desk job.',
-    zh: '面向语言类内容创作者的合伙人计划：用你的英语和内容能力，帮海外客户读懂义乌，带来真实询盘与订单，按结果分成。非坐班。',
+    en: 'A partner program with two tracks: language creators who bring overseas buyers to Yiwu (the Zheng He Project), and travel bloggers who scout real market demand on the road (the Marco Polo Project). Both paid on real trade results, not a base salary.',
+    zh: '面向内容创作者的合伙人计划，两条并列路线：把海外客户带进义乌的语言博主（郑和计划），以及在路上侦察真实市场需求的旅游博主（马可波罗计划）。都按真实贸易结果分成，非坐班、非底薪。',
   },
   skipLink: { en: 'Skip to content', zh: '跳到主要内容' },
   primaryNavigationLabel: { en: 'Primary navigation', zh: '主导航' },
   homeLabel: { en: 'YiwuHire home', zh: 'YiwuHire 首页' },
   languageSwitchLabel: { en: 'Switch language to Chinese', zh: '切换语言' },
-  howStepsLabel: { en: 'How the partnership works', zh: '合伙人流程' },
-  incomePointsLabel: { en: 'How income is shared', zh: '收入构成' },
+  langStepsLabel: { en: 'What language creators do', zh: '语言博主的流程' },
+  travelStepsLabel: { en: 'What travel scouts do', zh: '旅游博主的任务' },
+  langIncomeLabel: { en: 'How language creators earn', zh: '语言博主的收入构成' },
+  travelIncomeLabel: { en: 'How travel scouts earn', zh: '旅游博主的阶梯奖励' },
+  langFitLabel: { en: 'Who fits the language track', zh: '语言博主招募对象' },
+  travelFitLabel: { en: 'Who fits the travel track', zh: '旅游博主招募对象' },
   storySectionLabel: { en: 'Yiwu partner manifesto', zh: '合伙人计划宣言' },
   footerSlogan: {
-    en: 'Connecting Yiwu and the world — in your language.',
-    zh: '用你的语言，连接义乌与世界。',
+    en: 'Connecting Yiwu and the world — in your language, and on the road.',
+    zh: '用你的语言，也用你的旅途，连接义乌与世界。',
   },
   footerNavigationLabel: { en: 'Footer navigation', zh: '页脚导航' },
   languageEntry: { en: '中文', zh: 'English' },
@@ -31,84 +35,82 @@ export const copy = {
     zh: '概念演示。你填写的内容仅暂存在本浏览器，不会被发送。请勿填写敏感信息。',
   },
 
-  navAbout: { en: 'The program', zh: '计划介绍' },
+  navAbout: { en: 'Two tracks', zh: '两条路线' },
   navHow: { en: 'What you do', zh: '你要做什么' },
   navIncome: { en: 'How you earn', zh: '收入怎么算' },
   navFit: { en: 'Who it’s for', zh: '适合谁' },
   navYiwu: { en: 'Why Yiwu', zh: '为什么义乌' },
   applyNav: { en: 'Apply', zh: '申请加入' },
 
-  heroEyebrow: { en: 'YIWU × LANGUAGE CREATORS', zh: '义乌 × 语言内容创作者' },
-  heroLineOne: { en: 'Turn your language', zh: '把你的语言能力，' },
-  heroLineTwo: { en: 'into real global orders.', zh: '变成真实的全球订单。' },
+  heroEyebrow: { en: 'YIWU × GLOBAL CREATORS', zh: '义乌 × 全球内容创作者' },
+  heroLineOne: { en: 'Two kinds of creators,', zh: '两种创作者，' },
+  heroLineTwo: { en: 'one Yiwu supply chain.', zh: '一条义乌供应链。' },
   heroBody: {
-    en: 'We run an export supply chain in Yiwu. We’re recruiting language content creators to use their English (or other languages) and content skills to help overseas buyers understand Yiwu — and bring in real inquiries and orders. Not a desk job. You’re paid on results.',
-    zh: '我们在义乌做外贸供应链。现在招募语言类内容创作者，用你的英文（或其他语言）表达和内容能力，帮海外客户读懂义乌，带来真实询盘与订单。非坐班，按结果分成。',
+    en: 'We run an export supply chain in Yiwu and recruit two kinds of content creators — language creators who bring overseas buyers in, and travel bloggers who scout real market demand on the road. Two parallel tracks, same back end. Both paid on real results, not a base salary.',
+    zh: '我们在义乌做外贸供应链，招募两类内容创作者：用语言把海外客户带进来的语言博主，和在路上侦察真实市场需求的旅游博主。两条并列路线，同一套后端。都按真实结果分成，不是底薪。',
   },
-  heroApply: { en: 'Apply to partner', zh: '申请成为合伙人' },
-  heroLearn: { en: 'See how it works →', zh: '了解这个计划 →' },
 
-  aboutEyebrow: { en: 'THE PROGRAM', zh: '这是什么' },
+  // Track identity — reused across hero cards, columns, dialogs, closing.
+  trackLanguageName: { en: 'Language Creator · Zheng He', zh: '语言博主 · 郑和计划' },
+  trackLanguageTag: {
+    en: 'Turn your language into real global orders.',
+    zh: '把你的语言能力，变成真实的全球订单。',
+  },
+  trackLanguageApply: { en: 'Apply as a language creator', zh: '申请语言博主' },
+  trackTravelName: { en: 'Travel Scout · Marco Polo', zh: '旅游博主 · 马可波罗计划' },
+  trackTravelTag: {
+    en: 'Travel like a tourist. Think like a trader.',
+    zh: '像游客一样旅行，像商人一样思考。',
+  },
+  trackTravelApply: { en: 'Apply as a travel scout', zh: '申请旅游博主' },
+
+  aboutEyebrow: { en: 'TWO TRACKS', zh: '两条路线' },
   aboutTitle: {
-    en: 'The Yiwu Global Trade Creator Partner program.',
-    zh: '义乌全球贸易合伙人计划。',
+    en: 'One Yiwu, two ways to earn from it.',
+    zh: '一座义乌，两种赚法。',
+  },
+  aboutTagline: {
+    en: 'Zheng He brought the world in. Marco Polo went out to find it.',
+    zh: '郑和把世界请进来，马可波罗到世界里去找。',
   },
   aboutBody: {
-    en: 'You don’t need to become a traditional sales rep first. You use your language and content skills to help overseas buyers understand Yiwu’s supply chain. We provide the products, quotes, supply chain, and the back end that closes deals. You own the content and the customer. Real inquiries, real orders, real shares.',
-    zh: '你不需要先成为传统外贸业务员。你只需要用语言表达和内容能力，让海外客户了解义乌的供应链。产品、报价、供应链和成交后端由我们提供；你负责内容表达和客户开发。真实询盘、真实订单、真实分成。',
+    en: 'You don’t need to become a traditional sales rep. We provide the products, quotes, supply chain, and the back end that closes deals. You bring the content and the connection — through language, or through travel. Real inquiries, real orders, real shares.',
+    zh: '你不需要先成为传统外贸业务员。产品、报价、供应链和成交后端由我们提供；你负责内容和连接——用语言，或用旅途。真实询盘、真实订单、真实分成。',
   },
   aboutNote: {
-    en: 'This is a partnership, not a desk job — you create freely and share in the results you bring in.',
-    zh: '这是一种合作关系，不是坐班岗位——你自由创作，按你带来的结果获得分成。',
+    en: 'This is a partnership, not a desk job — pick a track, create freely, and share in the results you bring in.',
+    zh: '这是一种合作关系，不是坐班岗位——选一条路线，自由创作，按你带来的结果获得分成。',
+  },
+  aboutLangBody: {
+    en: 'You use your English (or other languages) and content skills to help overseas buyers understand Yiwu’s supply chain, then bring their inquiries to us. Old idea, sharper: speak the world’s language, sell Yiwu’s goods.',
+    zh: '用你的英文（或其他语言）表达和内容能力，帮海外客户读懂义乌供应链，把他们的询盘带给我们。说世界的语言，卖义乌的货。',
+  },
+  aboutTravelBody: {
+    en: 'On your existing trips you add one commercial mission: film local markets, find real demand, and connect it to China’s supply chain — upgrading travel content into global trade intelligence. Old travelers discovered the world; new travelers discover the market.',
+    zh: '在你原本的旅途中加一个商业任务：拍当地市场、找到真实需求、连接中国供应链，把旅游内容升级成全球贸易情报。旧旅行者发现世界；新旅行者发现市场。',
   },
 
   howEyebrow: { en: 'WHAT YOU DO', zh: '你要做什么' },
-  howTitle: { en: 'Three steps from content to orders.', zh: '三步，把内容变成订单。' },
+  howTitle: { en: 'Two creators, two playbooks.', zh: '两种创作者，各自的打法。' },
 
   incomeEyebrow: { en: 'HOW YOU EARN', zh: '收入怎么算' },
   incomeTitle: {
-    en: 'Paid on real results. The stronger you are, the more you make.',
-    zh: '按真实结果分成，能力越强，拿得越多。',
+    en: 'Both paid on real results.',
+    zh: '两条路线，都按真实结果分成。',
   },
   incomeBody: {
-    en: 'Income comes from qualified overseas inquiries, closed orders, and the long-term repeat business of customers you bring in. You share in real order results — this is not a fixed base salary. The exact split is agreed one-to-one after an initial conversation, based on the product category and how we work together.',
-    zh: '收入来自有效海外询盘、成交订单，以及你开发客户的长期复购。我们按真实订单结果给你分成，不是固定底薪。具体分成比例在初步沟通后，根据品类和合作方式一对一确定。',
+    en: 'Neither track is a fixed base salary. Language creators earn from inquiries, closed orders, and repeat buyers. Travel scouts earn step by step — for content, for leads, for deals, and for building a lasting market network. The exact split is agreed one-to-one.',
+    zh: '两条路线都不是固定底薪。语言博主赚询盘、成交和复购的钱；旅游博主一步一步赚——内容、线索、成交，到长期市场网络。具体分成在初步沟通后一对一确定。',
   },
 
   fitEyebrow: { en: 'WHO IT’S FOR', zh: '适合谁' },
   fitTitle: {
-    en: 'We want creators who can sell — not just speak.',
-    zh: '我们找的是会语言的销售型创作者。',
+    en: 'Who we want on each track.',
+    zh: '两条路线，各自招谁。',
   },
-  fitForTitle: { en: 'A good fit', zh: '适合' },
-  fitFor1: {
-    en: 'You express yourself well in English or another language, and already make language content.',
-    zh: '英语或其他语言表达好，已经在做语言类内容。',
-  },
-  fitFor2: {
-    en: 'You’re willing to face strangers — voice, video, WhatsApp — directly with overseas buyers.',
-    zh: '敢用语音、视频、WhatsApp 直接面对陌生海外客户。',
-  },
-  fitFor3: {
-    en: 'You’ll actually walk the Yiwu market, not just film “aesthetic English” in a café.',
-    zh: '愿意走进义乌市场，而不只是在咖啡馆拍“精致英语”。',
-  },
-  fitFor4: {
-    en: 'You want to turn content skill into real commercial ability.',
-    zh: '想把内容能力变成真实的商业能力。',
-  },
-  fitAgainstTitle: { en: 'Not a fit', zh: '不适合' },
-  fitAgainst1: {
-    en: 'You only want a stable base salary and certainty.',
-    zh: '只想要稳定底薪和确定性。',
-  },
-  fitAgainst2: {
-    en: 'You don’t want to face customers or do sales.',
-    zh: '不愿意面对客户，也不愿意做销售。',
-  },
-  fitAgainst3: {
-    en: 'Buyers go quiet, push on price, and ask again and again — a thin skin will wear you out.',
-    zh: '外贸客户会消失、压价、反复问——玻璃心会很累。',
+  fitNote: {
+    en: 'Not a fit either way: you only want a stable base salary, or you don’t want to face customers and do the legwork. Buyers go quiet, push on price, and ask again and again — a thin skin will wear you out.',
+    zh: '两条路线都不适合：只想要稳定底薪，或不愿面对客户、不愿亲自跑市场跑客户的人。客户会消失、压价、反复问——玻璃心会很累。',
   },
 
   yiwuEyebrow: { en: 'WHY YIWU', zh: '为什么义乌' },
@@ -125,14 +127,19 @@ export const copy = {
 
   closingEyebrow: { en: 'YIWU / GLOBAL', zh: '义乌 / 全球' },
   closingTitle: {
-    en: 'Your language is worth a real order.',
-    zh: '你的语言，值一笔真实的订单。',
+    en: 'Pick your track. Earn from a real order.',
+    zh: '选一条路线，从真实订单里赚钱。',
   },
-  closingApply: { en: 'Apply to partner', zh: '申请成为合伙人' },
 
+  // ----- Language apply dialog -----
   applyTitle: {
-    en: 'Apply to become a Yiwu Global Trade Creator Partner',
-    zh: '申请成为义乌全球贸易合伙人',
+    en: 'Apply as a Zheng He language creator',
+    zh: '申请加入郑和计划（语言博主）',
+  },
+  // ----- Travel apply dialog -----
+  applyTravelTitle: {
+    en: 'Apply as a Marco Polo travel scout',
+    zh: '申请成为马可波罗旅游侦察员',
   },
   contactTitle: { en: 'Prefer to talk now? Reach us:', zh: '想直接聊？联系我们：' },
   contactWeChat: { en: 'WeChat: yiwu-partner', zh: '微信：yiwu-partner' },
@@ -146,6 +153,10 @@ export const copy = {
   contactLabel: { en: 'Email or WeChat', zh: '邮箱或微信' },
   socialLabel: { en: 'Your Xiaohongshu / social profile link', zh: '你的小红书/社媒主页链接' },
   focusLabel: { en: 'Your languages & content focus', zh: '你的语言与内容方向' },
+  regionsLabel: {
+    en: 'Countries / markets you travel or plan to visit',
+    zh: '你常去或计划去的国家 / 市场',
+  },
   submitApplication: { en: 'Submit application', zh: '提交申请' },
   closeDialogLabel: { en: 'Close', zh: '关闭' },
 
@@ -162,8 +173,8 @@ export const copy = {
   },
 };
 
-// The three steps of the partnership, rendered as cards.
-export const steps = [
+// ---------- Language track: three steps from content to orders ----------
+export const languageSteps = [
   {
     id: 'show-yiwu',
     en: {
@@ -199,8 +210,56 @@ export const steps = [
   },
 ];
 
-// What income is built from — described, never priced.
-export const incomePoints = [
+// ---------- Travel track (Marco Polo): scout tasks on the road ----------
+export const travelSteps = [
+  {
+    id: 'walk-markets',
+    en: {
+      title: 'Walk the local markets',
+      body: 'On your trip, step into wholesale markets, small-commodity bazaars, night markets, hardware, clothing, and phone-accessory stalls — not just the photogenic spots.',
+    },
+    zh: {
+      title: '去当地市场',
+      body: '旅途中走进批发市场、小商品市场、夜市，以及五金、服装、手机配件摊位——不只是拍景点。',
+    },
+  },
+  {
+    id: 'spot-gaps',
+    en: {
+      title: 'Spot the price gaps',
+      body: 'Notice what’s expensive locally — and whether a low-cost Chinese product has a real price gap or supply gap there.',
+    },
+    zh: {
+      title: '看什么东西贵',
+      body: '看当地什么东西贵，判断中国低成本产品在这里有没有高价差和缺口。',
+    },
+  },
+  {
+    id: 'ask-owners',
+    en: {
+      title: 'Ask shop owners what they need',
+      body: 'Ask local bosses where they source, what sells well, and which purchasing costs they most want to cut.',
+    },
+    zh: {
+      title: '问小老板需求',
+      body: '问当地老板从哪进货、什么卖得好、最想降低哪类采购成本。',
+    },
+  },
+  {
+    id: 'bring-contacts',
+    en: {
+      title: 'Bring back the contacts',
+      body: 'Collect importers, wholesalers, shop owners, warehouses, and local agents — the real network behind the demand.',
+    },
+    zh: {
+      title: '带回联系方式',
+      body: '带回进口商、批发商、店主、仓库、本地代理——需求背后真实的人脉网络。',
+    },
+  },
+];
+
+// ---------- Language track: what income is built from ----------
+export const languageIncome = [
   {
     id: 'inquiries',
     en: { title: 'Qualified inquiries', body: 'The real overseas purchase intent you bring in.' },
@@ -215,6 +274,83 @@ export const incomePoints = [
     id: 'repeat',
     en: { title: 'Repeat buyers', body: 'Customers you develop keep ordering — and you keep benefiting.' },
     zh: { title: '长期复购', body: '你开发的客户持续下单，你持续受益。' },
+  },
+];
+
+// ---------- Travel track: stepped reward ladder ----------
+export const travelIncome = [
+  {
+    id: 'content-reward',
+    en: { title: 'Content reward', body: 'Capture valuable market footage and get paid for the content itself.' },
+    zh: { title: '内容奖励', body: '拍到有价值的市场内容，内容本身就有回报。' },
+  },
+  {
+    id: 'lead-reward',
+    en: { title: 'Lead reward', body: 'Bring back a real shop-owner need and earn for the qualified lead.' },
+    zh: { title: '线索奖励', body: '拿到真实老板需求，有效线索就有奖励。' },
+  },
+  {
+    id: 'deal-commission',
+    en: { title: 'Deal commission', body: 'When a quote, sample, or order closes, you take a commission.' },
+    zh: { title: '成交佣金', body: '报价、样品或订单成交，你拿佣金。' },
+  },
+  {
+    id: 'city-partner',
+    en: { title: 'City partner', body: 'Become a lasting node in a market — the long-term network pays off.' },
+    zh: { title: '城市合伙人', body: '成为某个市场的长期网络节点，长期网络带来长期回报。' },
+  },
+];
+
+// ---------- Language track: who fits ----------
+export const languageFit = [
+  {
+    id: 'lang-1',
+    en: 'You express yourself well in English or another language, and already make language content.',
+    zh: '英语或其他语言表达好，已经在做语言类内容。',
+  },
+  {
+    id: 'lang-2',
+    en: 'You’re willing to face strangers — voice, video, WhatsApp — directly with overseas buyers.',
+    zh: '敢用语音、视频、WhatsApp 直接面对陌生海外客户。',
+  },
+  {
+    id: 'lang-3',
+    en: 'You’ll actually walk the Yiwu market, not just film “aesthetic English” in a café.',
+    zh: '愿意走进义乌市场，而不只是在咖啡馆拍“精致英语”。',
+  },
+  {
+    id: 'lang-4',
+    en: 'You want to turn content skill into real commercial ability.',
+    zh: '想把内容能力变成真实的商业能力。',
+  },
+];
+
+// ---------- Travel track: who fits ----------
+export const travelFit = [
+  {
+    id: 'travel-1',
+    en: 'You speak English or a regional language and can chat naturally with local shopkeepers.',
+    zh: '会英文或小语种，能和当地商家自然交流。',
+  },
+  {
+    id: 'travel-2',
+    en: 'You’ll step into the market — not afraid of mess, not only filming the scenery.',
+    zh: '愿意进市场，不怕脏乱，不只拍景点。',
+  },
+  {
+    id: 'travel-3',
+    en: 'You update for the long run, with a sense of series and ongoing missions.',
+    zh: '能长期更新，有连续任务和系列感。',
+  },
+  {
+    id: 'travel-4',
+    en: 'You’re commercially curious — see a price gap and you chase the source.',
+    zh: '有商业好奇心，看到价格差会追问来源。',
+  },
+  {
+    id: 'travel-5',
+    en: 'Your audience is precise (startups, overseas life, travel, trade) and you execute on a template.',
+    zh: '粉丝精准（创业、海外生活、旅行、贸易），能按模板交付，执行力强。',
   },
 ];
 
@@ -234,22 +370,22 @@ export const yiwuPoints = [
     id: 'built-for-world',
     en: {
       title: 'Built for the world',
-      body: 'Yiwu deals with different countries, languages, and buyers every day — your language skill fits right in.',
+      body: 'Yiwu deals with different countries, languages, and buyers every day — both tracks plug straight in.',
     },
     zh: {
       title: '天生面向全球',
-      body: '义乌每天都在和不同国家、语言、买家打交道，你的语言能力正好用得上。',
+      body: '义乌每天都在和不同国家、语言、买家打交道，两条路线都能直接接上。',
     },
   },
   {
     id: 'fast-feedback',
     en: {
       title: 'Fast feedback',
-      body: 'One piece of content, one inquiry, one order — feedback comes quickly and effort shows.',
+      body: 'One piece of content, one lead, one order — feedback comes quickly and effort shows.',
     },
     zh: {
       title: '结果来得快',
-      body: '一条内容、一个询盘、一笔订单，反馈很快，努力看得见。',
+      body: '一条内容、一个线索、一笔订单，反馈很快，努力看得见。',
     },
   },
 ];
