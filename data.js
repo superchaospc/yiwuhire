@@ -56,13 +56,13 @@ export const copy = {
     en: 'Turn your language into real global orders.',
     zh: '把你的语言能力，变成真实的全球订单。',
   },
-  trackLanguageApply: { en: 'Apply as a language creator', zh: '申请语言博主' },
+  trackLanguageApply: { en: 'Apply to the Zheng He Project', zh: '申请郑和计划' },
   trackTravelName: { en: 'Travel Scout · Marco Polo', zh: '旅游博主 · 马可波罗计划' },
   trackTravelTag: {
     en: 'Travel like a tourist. Think like a trader.',
     zh: '像游客一样旅行，像商人一样思考。',
   },
-  trackTravelApply: { en: 'Apply as a travel scout', zh: '申请旅游博主' },
+  trackTravelApply: { en: 'Apply to the Marco Polo Project', zh: '申请马可波罗计划' },
 
   aboutEyebrow: { en: 'TWO TRACKS', zh: '两条路线' },
   aboutTitle: {
