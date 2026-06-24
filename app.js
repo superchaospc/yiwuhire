@@ -313,4 +313,28 @@ Object.values(tracks).forEach(({ formId, storageKey }) => {
   });
 });
 
+function initScrollReveal() {
+  const prefersReducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReducedMotion || typeof IntersectionObserver === 'undefined') return;
+
+  const targets = document.querySelectorAll(
+    '.hero h1, .hero > p:not(.eyebrow), .track-cards-hero, .section-heading,'
+      + ' .compare-grid, .yiwu-grid, .manifesto, .closing-section h2, .closing-actions',
+  );
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      obs.unobserve(entry.target);
+    });
+  }, { rootMargin: '0px 0px -10% 0px', threshold: 0.1 });
+
+  targets.forEach((target) => {
+    target.classList.add('reveal');
+    observer.observe(target);
+  });
+}
+
 renderAll();
+initScrollReveal();

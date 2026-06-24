@@ -20,7 +20,13 @@
   --gutter: 22px;
   --radius: 18px;
   --radius-sm: 12px;
+  --radius-lg: 28px;
   --transition: 200ms ease;
+  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --grad-brand: linear-gradient(120deg, #0071e3 0%, #42a5f5 45%, #c2410c 100%);
+  --grad-hero: radial-gradient(120% 90% at 50% -10%, #eef4ff 0%, rgba(245, 245, 247, 0) 55%);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04), 0 6px 16px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06), 0 18px 44px rgba(0, 0, 0, 0.09);
 }
 
 *,
@@ -308,9 +314,11 @@ main > section h2 {
 
 /* ---------- Hero ---------- */
 .hero {
+  position: relative;
   text-align: center;
   padding-top: clamp(80px, 12vw, 150px);
   padding-bottom: clamp(64px, 9vw, 110px);
+  background: var(--grad-hero);
 }
 
 .hero .eyebrow {
@@ -331,7 +339,11 @@ main > section h2 {
 .hero h1 em {
   display: block;
   font-style: normal;
-  color: var(--text-secondary);
+  background: var(--grad-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 
 .hero > p:not(.eyebrow) {
@@ -976,6 +988,150 @@ html[lang="zh-CN"] .track-card-tag,
 html[lang="zh-CN"] .track-col-body,
 html[lang="zh-CN"] .fit-note {
   line-height: 1.7;
+}
+
+/* ========== Apple-style polish ========== */
+
+/* Alternating section backgrounds for a calmer, premium vertical rhythm. */
+#how,
+#fit {
+  background: var(--bg-alt);
+}
+
+.yiwu-section {
+  background: var(--bg-alt);
+}
+
+/* Eyebrow labels: a hair more tracking reads cleaner at small sizes. */
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 13px;
+}
+
+/* Headlines pick up the SF Pro Display optical look. */
+main > section h2,
+.hero h1 {
+  font-feature-settings: "ss01";
+}
+
+/* Buttons: subtle depth + tactile press, the way Apple's CTAs feel. */
+.button {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+  transition: background var(--transition), transform var(--transition),
+    box-shadow var(--transition);
+}
+
+.button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0, 113, 227, 0.28);
+}
+
+.button-travel:hover {
+  box-shadow: 0 6px 18px rgba(194, 65, 12, 0.28);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+/* Hero track cards: glassy, elevated, lift on hover. */
+.track-card {
+  background: rgba(255, 255, 255, 0.7);
+  border-color: rgba(255, 255, 255, 0.8);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.track-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.track-card-language {
+  border-top: 3px solid transparent;
+  border-image: linear-gradient(90deg, #0071e3, #42a5f5) 1;
+}
+
+.track-card-travel {
+  border-top: 3px solid transparent;
+  border-image: linear-gradient(90deg, #c2410c, #f97316) 1;
+}
+
+/* Step / income / yiwu cards: white, soft border, lift on hover — so they
+   float crisply whether the section behind them is white or grey. */
+.service-card {
+  background: #fff;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.service-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.fit-card {
+  background: #fff;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Numbered step badges get the brand gradient + a little depth. */
+.step-cards .service-card::before {
+  background: linear-gradient(135deg, #0071e3, #42a5f5);
+  box-shadow: 0 4px 12px rgba(0, 113, 227, 0.3);
+}
+
+.track-col-travel .step-cards .service-card::before {
+  background: linear-gradient(135deg, #c2410c, #f97316);
+  box-shadow: 0 4px 12px rgba(194, 65, 12, 0.3);
+}
+
+/* Manifesto: full-bleed dark hero moment, like Apple's editorial breaks. */
+.story-section {
+  background: radial-gradient(120% 120% at 50% 0%, #2b2b30 0%, #1d1d1f 60%);
+  color: #f5f5f7;
+}
+
+.story-section .manifesto p:first-child {
+  background: linear-gradient(120deg, #f5f5f7 0%, #c9d6ff 60%, #ffd6bf 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.story-section .manifesto p:last-child {
+  color: rgba(245, 245, 247, 0.55);
+}
+
+/* Closing: gentle gradient wash so the final CTA feels like a destination. */
+.closing-section {
+  background: var(--grad-hero);
+}
+
+/* Scroll-reveal: content eases up into place as you scroll (opt-in via JS). */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 700ms var(--ease-out), transform 700ms var(--ease-out);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 /* ---------- Responsive ---------- */
