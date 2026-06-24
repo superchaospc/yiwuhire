@@ -154,6 +154,19 @@
     </section>
   </main>
 
+  <audio id="bgm" src="bgm.mp3" loop preload="auto"></audio>
+  <button type="button" id="bgm-toggle" class="bgm-toggle is-paused" aria-pressed="false"
+          aria-label="Play background music" data-aria-copy="bgmPlayLabel">
+    <svg class="bgm-icon-on" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M4 9v6h4l5 5V4L8 9H4z" fill="currentColor"/>
+      <path d="M16 8.5a4 4 0 0 1 0 7M18.5 6a7 7 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    </svg>
+    <svg class="bgm-icon-off" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M4 9v6h4l5 5V4L8 9H4z" fill="currentColor"/>
+      <path d="M16.5 9l5 5M21.5 9l-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    </svg>
+  </button>
+
   <footer class="site-footer">
     <a class="brand" href="#top" aria-label="YiwuHire home" data-aria-copy="homeLabel" data-copy="brandName">Yiwu Global Trade Creator Partner program</a>
     <nav class="footer-links" aria-label="Footer navigation" data-aria-copy="footerNavigationLabel"><a href="#about" data-copy="navAbout">The program</a><a href="#how" data-copy="navHow">What you do</a><a href="#fit" data-copy="navFit">Who it’s for</a><button type="button" class="text-button" data-action="toggle-language" data-copy="languageEntry">中文</button><button type="button" class="text-button" data-action="clear-local-data" data-copy="clearLocalData">Clear demo data</button></nav>

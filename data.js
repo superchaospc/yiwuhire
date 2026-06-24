@@ -15,6 +15,8 @@ export const copy = {
     zh: '义乌全球贸易创作者合作计划',
   },
   languageSwitchLabel: { en: 'Switch language to Chinese', zh: '切换语言' },
+  bgmPlayLabel: { en: 'Play background music', zh: '播放背景音乐' },
+  bgmPauseLabel: { en: 'Pause background music', zh: '暂停背景音乐' },
   langStepsLabel: { en: 'What language creators do', zh: '语言博主的流程' },
   travelStepsLabel: { en: 'What travel scouts do', zh: '旅游博主的任务' },
   langIncomeLabel: { en: 'How language creators earn', zh: '语言博主的收入构成' },

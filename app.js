@@ -336,5 +336,72 @@ function initScrollReveal() {
   });
 }
 
+const BGM_KEY = 'yiwuhire-bgm-paused';
+
+function setupBackgroundMusic() {
+  const bgm = document.querySelector('#bgm');
+  const toggle = document.querySelector('#bgm-toggle');
+  if (!bgm || !toggle) return;
+
+  let userPaused = false;
+  try {
+    userPaused = getStorage()?.getItem(BGM_KEY) === '1';
+  } catch {
+    // Persisted preference is optional.
+  }
+
+  function reflectState() {
+    const playing = !bgm.paused;
+    toggle.classList.toggle('is-paused', !playing);
+    toggle.setAttribute('aria-pressed', playing ? 'true' : 'false');
+    toggle.dataset.ariaCopy = playing ? 'bgmPauseLabel' : 'bgmPlayLabel';
+    toggle.setAttribute('aria-label', copyFor(copy, state.language, toggle.dataset.ariaCopy));
+  }
+
+  function remember(paused) {
+    userPaused = paused;
+    try {
+      const storage = getStorage();
+      if (paused) storage?.setItem(BGM_KEY, '1');
+      else storage?.removeItem(BGM_KEY);
+    } catch {
+      // Ignore storage failures; playback still works for this session.
+    }
+  }
+
+  // Browsers block audible autoplay until the user interacts with the page;
+  // fall back to starting playback on the first gesture if autoplay is denied.
+  function startOnFirstGesture() {
+    const events = ['pointerdown', 'keydown', 'touchstart', 'scroll'];
+    const start = () => {
+      events.forEach((type) => window.removeEventListener(type, start));
+      if (!userPaused) bgm.play().catch(() => {});
+    };
+    events.forEach((type) => window.addEventListener(type, start, { passive: true }));
+  }
+
+  bgm.addEventListener('play', reflectState);
+  bgm.addEventListener('pause', reflectState);
+
+  toggle.addEventListener('click', () => {
+    if (bgm.paused) {
+      remember(false);
+      bgm.play().catch(() => {});
+    } else {
+      remember(true);
+      bgm.pause();
+    }
+  });
+
+  reflectState();
+  if (userPaused) return;
+
+  bgm.play().then(reflectState).catch(() => {
+    reflectState();
+    startOnFirstGesture();
+  });
+}
+
 renderAll();
 initScrollReveal();
+setupBackgroundMusic();
