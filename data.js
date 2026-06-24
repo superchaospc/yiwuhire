@@ -1,7 +1,7 @@
 export const copy = {
   pageTitle: {
     en: 'Yiwu Global Trade Creator Partner — two tracks for language creators and travel scouts',
-    zh: '义乌全球贸易合伙人 — 语言博主与旅游博主，两条路线',
+    zh: '义乌全球贸易创作者合作计划 — 语言博主与旅游博主，两条路线',
   },
   pageDescription: {
     en: 'A partner program with two tracks: language creators who bring overseas buyers to Yiwu (the Zheng He Project), and travel bloggers who scout real market demand on the road (the Marco Polo Project). Both paid on real trade results, not a base salary.',
@@ -129,7 +129,7 @@ export const copy = {
     en: '“In Yiwu, global business is not a slide in a strategy deck. It is what happens before lunch.”',
     zh: '“在义乌，全球生意不是 PPT 里的战略，而是午饭前就在发生的日常。”',
   },
-  storyByline: { en: 'Yiwu Global Trade Creator Partner program', zh: '义乌全球贸易合伙人计划' },
+  storyByline: { en: 'Yiwu Global Trade Creator Partner program', zh: '义乌全球贸易创作者合作计划' },
 
   closingEyebrow: { en: 'YIWU / GLOBAL', zh: '义乌 / 全球' },
   closingTitle: {

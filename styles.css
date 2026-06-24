@@ -309,6 +309,7 @@ main > section h2 {
   font-weight: 600;
   letter-spacing: -0.02em;
   line-height: 1.08;
+  text-wrap: balance;
 }
 
 .section-heading {
