@@ -1146,6 +1146,11 @@ main > section h2,
     display: none;
   }
 
+  /* nav-links normally pushes the actions right; keep them right once it is hidden. */
+  .nav-actions {
+    margin-left: auto;
+  }
+
   .service-grid,
   .fit-grid,
   .yiwu-grid,
