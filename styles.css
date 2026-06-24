@@ -872,12 +872,14 @@ dialog h2 {
   line-height: 1.4;
 }
 
-#apply-form label {
+/* Both apply forms (language + travel) live inside dialogs; scope to
+   `dialog form` so the travel form gets the same field layout. */
+dialog form label {
   display: block;
   margin-bottom: 1rem;
 }
 
-#apply-form label span {
+dialog form label span {
   display: block;
   margin-bottom: 0.4rem;
   font-size: 14px;
@@ -885,8 +887,8 @@ dialog h2 {
   color: var(--text);
 }
 
-#apply-form input,
-#apply-form textarea {
+dialog form input,
+dialog form textarea {
   width: 100%;
   padding: 0.7rem 0.85rem;
   border: 1px solid var(--border);
@@ -896,20 +898,20 @@ dialog h2 {
   letter-spacing: -0.01em;
 }
 
-#apply-form textarea {
+dialog form textarea {
   resize: vertical;
   min-height: 5rem;
 }
 
-#apply-form input:focus,
-#apply-form textarea:focus {
+dialog form input:focus,
+dialog form textarea:focus {
   border-color: var(--accent);
   outline: none;
   box-shadow: 0 0 0 4px rgba(0, 113, 227, 0.15);
 }
 
-#apply-form input[aria-invalid="true"],
-#apply-form textarea[aria-invalid="true"] {
+dialog form input[aria-invalid="true"],
+dialog form textarea[aria-invalid="true"] {
   border-color: var(--error);
 }
 
@@ -927,7 +929,7 @@ dialog h2 {
   color: var(--error);
 }
 
-#apply-form .button {
+dialog form .button {
   width: 100%;
 }
 
