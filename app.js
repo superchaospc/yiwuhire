@@ -343,12 +343,46 @@ function setupBackgroundMusic() {
   const toggle = document.querySelector('#bgm-toggle');
   if (!bgm || !toggle) return;
 
+  // Start (and loop) from this offset so the track's intro is skipped.
+  const startAt = Number(bgm.dataset.start) || 0;
+
   let userPaused = false;
   try {
     userPaused = getStorage()?.getItem(BGM_KEY) === '1';
   } catch {
     // Persisted preference is optional.
   }
+
+  function seekToStart() {
+    try {
+      bgm.currentTime = startAt;
+    } catch {
+      // currentTime isn't settable until metadata loads; retry then.
+    }
+  }
+
+  // Begin playback from the intro-skip offset. Used for autoplay, the
+  // first-gesture fallback, and looping — but not for manual resume,
+  // which should continue from wherever the user paused.
+  function playFromStart() {
+    if (bgm.readyState >= 1) {
+      seekToStart();
+      return bgm.play();
+    }
+    return new Promise((resolve, reject) => {
+      bgm.addEventListener('loadedmetadata', () => {
+        seekToStart();
+        bgm.play().then(resolve, reject);
+      }, { once: true });
+    });
+  }
+
+  // Manual loop at the start offset (native loop would replay the intro).
+  bgm.addEventListener('ended', () => {
+    if (userPaused) return;
+    seekToStart();
+    bgm.play().catch(() => {});
+  });
 
   function reflectState() {
     const playing = !bgm.paused;
@@ -373,9 +407,11 @@ function setupBackgroundMusic() {
   // fall back to starting playback on the first gesture if autoplay is denied.
   function startOnFirstGesture() {
     const events = ['pointerdown', 'keydown', 'touchstart', 'scroll'];
-    const start = () => {
+    const start = (event) => {
+      // The toggle has its own handler; don't let it double-trigger here.
+      if (event?.target?.closest?.('#bgm-toggle')) return;
       events.forEach((type) => window.removeEventListener(type, start));
-      if (!userPaused) bgm.play().catch(() => {});
+      if (!userPaused && bgm.paused) playFromStart().catch(() => {});
     };
     events.forEach((type) => window.addEventListener(type, start, { passive: true }));
   }
@@ -396,7 +432,7 @@ function setupBackgroundMusic() {
   reflectState();
   if (userPaused) return;
 
-  bgm.play().then(reflectState).catch(() => {
+  playFromStart().then(reflectState).catch(() => {
     reflectState();
     startOnFirstGesture();
   });
