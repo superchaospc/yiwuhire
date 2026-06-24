@@ -171,12 +171,13 @@ textarea:focus-visible {
 }
 
 .brand {
-  flex: none;
+  flex: 0 1 auto;
+  min-width: 0;
   color: var(--text);
-  font-size: 18px;
+  font-size: clamp(12px, 1.5vw, 17px);
   font-weight: 600;
   letter-spacing: -0.01em;
-  line-height: 1;
+  line-height: 1.2;
   text-decoration: none;
 }
 
@@ -218,12 +219,14 @@ textarea:focus-visible {
 }
 
 .language-button {
+  flex: none;
   padding: 0.3rem 0.85rem;
   border: 1px solid var(--border);
   border-radius: 980px;
   background: transparent;
   color: var(--text);
   font-size: 13px;
+  white-space: nowrap;
 }
 
 .language-button:hover {
@@ -243,6 +246,7 @@ textarea:focus-visible {
   font-weight: 400;
   letter-spacing: -0.01em;
   line-height: 1.2;
+  white-space: nowrap;
   text-decoration: none;
   transition: background var(--transition);
 }
@@ -1148,8 +1152,14 @@ main > section h2,
     display: none;
   }
 
+  /* Tighten the header so the long wordmark keeps room beside the actions. */
+  .site-header nav {
+    gap: 0.6rem;
+  }
+
   /* nav-links normally pushes the actions right; keep them right once it is hidden. */
   .nav-actions {
+    flex: none;
     margin-left: auto;
   }
 

@@ -10,6 +10,10 @@ export const copy = {
   skipLink: { en: 'Skip to content', zh: '跳到主要内容' },
   primaryNavigationLabel: { en: 'Primary navigation', zh: '主导航' },
   homeLabel: { en: 'YiwuHire home', zh: 'YiwuHire 首页' },
+  brandName: {
+    en: 'Yiwu Global Trade Creator Partner program',
+    zh: '义乌全球贸易创作者合作计划',
+  },
   languageSwitchLabel: { en: 'Switch language to Chinese', zh: '切换语言' },
   langStepsLabel: { en: 'What language creators do', zh: '语言博主的流程' },
   travelStepsLabel: { en: 'What travel scouts do', zh: '旅游博主的任务' },
