@@ -360,6 +360,18 @@ export const travelFit = [
   },
 ];
 
+// ---------- Marquee keywords (decorative ticker under the hero) ----------
+export const marqueeItems = [
+  { id: 'm-yiwu', en: 'YIWU × GLOBAL', zh: '义乌 × 全球' },
+  { id: 'm-zhenghe', en: 'Zheng He Project', zh: '郑和计划' },
+  { id: 'm-orders', en: 'Real orders, real shares', zh: '真实订单 · 真实分成' },
+  { id: 'm-marco', en: 'Marco Polo Project', zh: '马可波罗计划' },
+  { id: 'm-lang', en: 'Speak the world’s language', zh: '说世界的语言' },
+  { id: 'm-travel', en: 'Travel like a tourist, think like a trader', zh: '像游客旅行 · 像商人思考' },
+  { id: 'm-market', en: 'The world’s largest small-commodities market', zh: '全球最大小商品市场' },
+  { id: 'm-platforms', en: 'Xiaohongshu · TikTok · YouTube', zh: '小红书 · TikTok · YouTube' },
+];
+
 export const yiwuPoints = [
   {
     id: 'goods-here',

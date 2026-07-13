@@ -1,32 +1,48 @@
 :root {
-  --bg: #ffffff;
-  --bg-alt: #f5f5f7;
-  --bg-dark: #1d1d1f;
-  --text: #1d1d1f;
-  --text-secondary: #6e6e73;
-  --text-tertiary: #86868b;
-  --accent: #0071e3;
-  --accent-hover: #0077ed;
+  --bg: #f4f4f4;
+  --bg-alt: #ffffff;
+  --bg-dark: #121212;
+  --text: #111111;
+  --text-secondary: #55555c;
+  --text-tertiary: #7c7c84;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --accent-bright: #3b82f6;
   --accent-travel: #c2410c;
   --accent-travel-hover: #d24a12;
+  --accent-travel-bright: #ff5c1f;
   --accent-travel-soft: rgba(194, 65, 12, 0.1);
-  --link: #0066cc;
-  --border: #d2d2d7;
-  --border-light: #e8e8ed;
+  --lime: #cdeb8b;
+  --link: #2563eb;
+  --border: #d4d4d8;
+  --border-light: #e8e8ea;
   --success: #008009;
   --error: #b3261e;
   --sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "PingFang SC", "Helvetica Neue", Helvetica, Arial, "Microsoft YaHei", sans-serif;
+  --display: "Archivo Black", -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft YaHei", sans-serif;
   --content: 980px;
   --gutter: 22px;
-  --radius: 18px;
-  --radius-sm: 12px;
-  --radius-lg: 28px;
+  --radius: 24px;
+  --radius-sm: 14px;
+  --radius-lg: 32px;
   --transition: 200ms ease;
   --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
-  --grad-brand: linear-gradient(120deg, #0071e3 0%, #42a5f5 45%, #c2410c 100%);
-  --grad-hero: radial-gradient(120% 90% at 50% -10%, #eef4ff 0%, rgba(245, 245, 247, 0) 55%);
+  --ease-appear: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --grad-brand: linear-gradient(120deg, #2563eb 0%, #3b82f6 45%, #ff5c1f 100%);
+  --grad-hero: radial-gradient(120% 90% at 50% -10%, #ffffff 0%, rgba(244, 244, 244, 0) 55%);
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04), 0 6px 16px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06), 0 18px 44px rgba(0, 0, 0, 0.09);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.07), 0 24px 56px rgba(0, 0, 0, 0.12);
+}
+
+/* Self-hosted (fonts/): latin-only subset, so CJK glyphs in headings fall
+   back to the heavy system CJK faces in --display. */
+@font-face {
+  font-family: "Archivo Black";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/archivo-black-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+2000-206F, U+20AC, U+2122;
 }
 
 *,
@@ -146,50 +162,65 @@ textarea:focus-visible {
   outline: none;
 }
 
-/* ---------- Header ---------- */
+/* ---------- Header: floating glass capsule ---------- */
 .site-header {
   position: sticky;
   z-index: 100;
-  top: 0;
-  border-bottom: 1px solid var(--border-light);
-  background: rgba(255, 255, 255, 0.72);
-  backdrop-filter: saturate(180%) blur(20px);
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  top: 10px;
+  padding-inline: max(var(--gutter), calc((100% - var(--content) - 2rem) / 2));
 }
 
-.site-header nav,
 .site-footer {
   width: min(calc(100% - (2 * var(--gutter))), var(--content));
   margin-inline: auto;
 }
 
 .site-header nav {
-  min-height: 48px;
+  min-height: 56px;
   display: flex;
   align-items: center;
   gap: clamp(1rem, 3vw, 2.5rem);
+  padding: 0.5rem 1rem;
+  border-radius: 18px;
+  background: rgba(252, 252, 252, 0.82);
+  backdrop-filter: saturate(180%) blur(18px);
+  -webkit-backdrop-filter: saturate(180%) blur(18px);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 8px 28px rgba(0, 0, 0, 0.07);
 }
 
 .brand {
   flex: 0 1 auto;
   min-width: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
   color: var(--text);
-  font-size: clamp(12px, 1.5vw, 17px);
-  font-weight: 600;
+  font-size: clamp(12px, 1.5vw, 16px);
+  font-weight: 700;
   letter-spacing: -0.01em;
   line-height: 1.2;
   text-decoration: none;
 }
 
-.brand:hover {
-  text-decoration: none;
+/* Logo tile with the dual-track gradient glow (kept outside the data-copy
+   span so language re-renders don't wipe it). */
+.brand-mark {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: #111;
+  color: #fff;
+  font-family: var(--display);
+  font-size: 15px;
+  line-height: 1;
+  box-shadow: 0 0 0 2px var(--accent-bright), 0 0 14px 1px rgba(255, 92, 31, 0.6);
 }
 
-.brand span {
-  display: inline-block;
-  margin-inline: 0.1em;
-  color: var(--accent);
-  font-weight: 400;
+.brand:hover {
+  text-decoration: none;
 }
 
 .nav-links {
@@ -220,9 +251,9 @@ textarea:focus-visible {
 
 .language-button {
   flex: none;
-  padding: 0.3rem 0.85rem;
+  padding: 0.35rem 0.85rem;
   border: 1px solid var(--border);
-  border-radius: 980px;
+  border-radius: 11px;
   background: transparent;
   color: var(--text);
   font-size: 13px;
@@ -238,12 +269,12 @@ textarea:focus-visible {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.7rem 1.4rem;
-  border-radius: 980px;
+  padding: 0.75rem 1.4rem;
+  border-radius: var(--radius-sm);
   background: var(--accent);
   color: #fff;
-  font-size: 17px;
-  font-weight: 400;
+  font-size: 16px;
+  font-weight: 600;
   letter-spacing: -0.01em;
   line-height: 1.2;
   white-space: nowrap;
@@ -305,10 +336,11 @@ main > section {
 }
 
 main > section h2 {
-  font-size: clamp(32px, 4.6vw, 48px);
-  font-weight: 600;
+  font-family: var(--display);
+  font-size: clamp(34px, 5.5vw, 62px);
+  font-weight: 800;
   letter-spacing: -0.02em;
-  line-height: 1.08;
+  line-height: 1.02;
   text-wrap: balance;
 }
 
@@ -331,12 +363,13 @@ main > section h2 {
 }
 
 .hero h1 {
-  max-width: 18ch;
-  margin: 0 auto 1.4rem;
-  font-size: clamp(32px, 7vw, 80px);
-  font-weight: 600;
-  letter-spacing: -0.022em;
-  line-height: 1.05;
+  max-width: 16ch;
+  margin: 0 auto 1.6rem;
+  font-family: var(--display);
+  font-size: clamp(38px, 8.5vw, 104px);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 0.98;
   text-wrap: balance;
   overflow-wrap: break-word;
 }
@@ -709,10 +742,11 @@ main > section h2 {
 
 .story-section .manifesto p:first-child {
   margin-bottom: 1.4rem;
-  font-size: clamp(28px, 4vw, 48px);
-  font-weight: 600;
+  font-family: var(--display);
+  font-size: clamp(30px, 5vw, 60px);
+  font-weight: 800;
   letter-spacing: -0.02em;
-  line-height: 1.12;
+  line-height: 1.06;
 }
 
 .story-section .manifesto p:last-child {
@@ -997,147 +1031,259 @@ html[lang="zh-CN"] .fit-note {
   line-height: 1.7;
 }
 
-/* ========== Apple-style polish ========== */
-
-/* Alternating section backgrounds for a calmer, premium vertical rhythm. */
-#how,
-#fit {
-  background: var(--bg-alt);
-}
-
-.yiwu-section {
-  background: var(--bg-alt);
-}
+/* ========== Budarina-style polish ========== */
 
 /* Eyebrow labels: a hair more tracking reads cleaner at small sizes. */
 .eyebrow {
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.12em;
   font-size: 13px;
+  font-weight: 700;
 }
 
-/* Headlines pick up the SF Pro Display optical look. */
-main > section h2,
-.hero h1 {
-  font-feature-settings: "ss01";
-}
-
-/* Buttons: subtle depth + tactile press, the way Apple's CTAs feel. */
+/* Buttons: tactile scale-up, deeper shadow. */
 .button {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
-  transition: background var(--transition), transform var(--transition),
-    box-shadow var(--transition);
+  transition: background var(--transition), transform 250ms var(--ease-appear),
+    box-shadow 250ms var(--ease-appear);
 }
 
 .button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(0, 113, 227, 0.28);
+  transform: scale(1.045);
+  box-shadow: 0 8px 22px rgba(37, 99, 235, 0.32);
 }
 
 .button-travel:hover {
-  box-shadow: 0 6px 18px rgba(194, 65, 12, 0.28);
+  box-shadow: 0 8px 22px rgba(194, 65, 12, 0.32);
 }
 
 .button:active {
-  transform: translateY(0);
+  transform: scale(0.99);
 }
 
-/* Hero track cards: glassy, elevated, lift on hover. */
+/* Hero track cards: solid white, big radius, tilt-ready, with a gradient
+   accent bar along the top edge (border-image would square the corners). */
 .track-card {
-  background: rgba(255, 255, 255, 0.7);
-  border-color: rgba(255, 255, 255, 0.8);
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  border-color: #fff;
   box-shadow: var(--shadow-sm);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  transition: transform var(--transition), box-shadow var(--transition);
 }
 
-.track-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
+.track-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
 }
 
 .track-card-language {
-  border-top: 3px solid transparent;
-  border-image: linear-gradient(90deg, #0071e3, #42a5f5) 1;
+  border-top: 0;
+}
+
+.track-card-language::before {
+  background: linear-gradient(90deg, var(--accent), var(--accent-bright));
 }
 
 .track-card-travel {
-  border-top: 3px solid transparent;
-  border-image: linear-gradient(90deg, #c2410c, #f97316) 1;
+  border-top: 0;
 }
 
-/* Step / income / yiwu cards: white, soft border, lift on hover — so they
-   float crisply whether the section behind them is white or grey. */
+.track-card-travel::before {
+  background: linear-gradient(90deg, var(--accent-travel), var(--accent-travel-bright));
+}
+
+/* Step / income / fit cards: white cards floating on the warm-grey page. */
 .service-card {
   background: #fff;
-  border: 1px solid var(--border-light);
+  border: 1px solid #fff;
   box-shadow: var(--shadow-sm);
-  transition: transform var(--transition), box-shadow var(--transition);
-}
-
-.service-card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
 }
 
 .fit-card {
+  padding: clamp(1.6rem, 2.6vw, 2.25rem);
+  border-radius: var(--radius);
   background: #fff;
-  border: 1px solid var(--border-light);
+  border: 1px solid #fff;
   box-shadow: var(--shadow-sm);
 }
 
-/* Numbered step badges get the brand gradient + a little depth. */
+/* Cards that tilt in 3D under the pointer (JS drives the transform). */
+.tilt-card {
+  transform-style: preserve-3d;
+  transition: transform 180ms ease-out, box-shadow 300ms var(--ease-appear);
+  will-change: transform;
+  position: relative;
+  overflow: hidden;
+}
+
+.tilt-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* Shine sweep across a tilting card. */
+.tilt-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 40%, rgba(255, 255, 255, 0.55) 50%, transparent 60%);
+  transform: translateX(-130%);
+  transition: transform 650ms ease;
+  pointer-events: none;
+}
+
+.tilt-card:hover::after {
+  transform: translateX(130%);
+}
+
+/* Numbered step badges keep the dual-track gradients. */
 .step-cards .service-card::before {
-  background: linear-gradient(135deg, #0071e3, #42a5f5);
-  box-shadow: 0 4px 12px rgba(0, 113, 227, 0.3);
+  background: linear-gradient(135deg, var(--accent), var(--accent-bright));
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
 }
 
 .track-col-travel .step-cards .service-card::before {
-  background: linear-gradient(135deg, #c2410c, #f97316);
+  background: linear-gradient(135deg, var(--accent-travel), var(--accent-travel-bright));
   box-shadow: 0 4px 12px rgba(194, 65, 12, 0.3);
 }
 
-/* Manifesto: full-bleed dark hero moment, like Apple's editorial breaks. */
-.story-section {
-  background: radial-gradient(120% 120% at 50% 0%, #2b2b30 0%, #1d1d1f 60%);
-  color: #f5f5f7;
+/* Marquee: infinite keyword ticker with faded edges (decorative). */
+.marquee {
+  overflow: hidden;
+  padding: clamp(20px, 3vw, 36px) 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
 }
 
-.story-section .manifesto p:first-child {
-  background: linear-gradient(120deg, #f5f5f7 0%, #c9d6ff 60%, #ffd6bf 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
+.marquee-track {
+  display: flex;
+  align-items: center;
+  gap: clamp(2.2rem, 5vw, 4rem);
+  width: max-content;
+  animation: marquee-scroll 26s linear infinite;
+}
+
+.marquee-track span {
+  font-family: var(--display);
+  font-size: clamp(16px, 2vw, 22px);
+  font-weight: 800;
+  white-space: nowrap;
+  color: var(--text);
+  opacity: 0.28;
+}
+
+.marquee-track span:nth-child(4n + 2) {
+  color: var(--accent);
+  opacity: 0.5;
+}
+
+.marquee-track span:nth-child(4n + 4) {
+  color: var(--accent-travel);
+  opacity: 0.5;
+}
+
+@keyframes marquee-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Manifesto: dark editorial break, flat near-white display type. */
+.story-section {
+  background: var(--bg-dark);
+  color: #f5f5f5;
 }
 
 .story-section .manifesto p:last-child {
-  color: rgba(245, 245, 247, 0.55);
+  color: rgba(245, 245, 245, 0.5);
 }
 
-/* Closing: gentle gradient wash so the final CTA feels like a destination. */
+/* Word-by-word reveal inside the manifesto quote (spans built by JS). */
+.manifesto .word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(0.45em);
+  filter: blur(6px);
+  transition: opacity 600ms var(--ease-appear), transform 600ms var(--ease-appear),
+    filter 600ms var(--ease-appear);
+  transition-delay: var(--d, 0s);
+}
+
+.manifesto.is-visible .word {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+/* Byline fades in after the quote finishes. */
+.manifesto.reveal-words p:last-child {
+  opacity: 0;
+  transition: opacity 700ms var(--ease-appear) 0.9s;
+}
+
+.manifesto.reveal-words.is-visible p:last-child {
+  opacity: 1;
+}
+
+/* Closing: soft white glow behind the final CTA. */
 .closing-section {
   background: var(--grad-hero);
 }
 
-/* Scroll-reveal: content eases up into place as you scroll (opt-in via JS). */
+/* Scroll-reveal, Framer style: fade + rise + blur-away (opt-in via JS). */
 .reveal {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 700ms var(--ease-out), transform 700ms var(--ease-out);
-  will-change: opacity, transform;
+  transform: translateY(36px);
+  filter: blur(8px);
+  transition: opacity 800ms var(--ease-appear), transform 800ms var(--ease-appear),
+    filter 800ms var(--ease-appear);
+  transition-delay: var(--d, 0s);
+  will-change: opacity, transform, filter;
 }
 
 .reveal.is-visible {
   opacity: 1;
   transform: none;
+  filter: none;
+}
+
+/* Hero elements enter staggered on page load. */
+.hero .eyebrow.reveal { --d: 0s; }
+.hero h1.reveal { --d: 0.1s; }
+.hero > p:not(.eyebrow).reveal { --d: 0.25s; }
+.track-cards-hero.reveal { --d: 0.4s; }
+
+/* Grids reveal their children with a cascade (JS sets --i per child). */
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(28px);
+  filter: blur(6px);
+  transition: opacity 700ms var(--ease-appear), transform 700ms var(--ease-appear),
+    filter 700ms var(--ease-appear);
+  transition-delay: calc(var(--d, 0s) + var(--i, 0) * 110ms);
+}
+
+.reveal-stagger.is-visible > * {
+  opacity: 1;
+  transform: none;
+  filter: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .reveal {
+  .reveal,
+  .reveal-stagger > *,
+  .manifesto .word,
+  .manifesto.reveal-words p:last-child {
     opacity: 1;
     transform: none;
+    filter: none;
+  }
+
+  .marquee-track {
+    animation: none;
   }
 }
 

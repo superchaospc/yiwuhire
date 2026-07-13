@@ -7,6 +7,7 @@ import {
   languageFit,
   travelFit,
   yiwuPoints,
+  marqueeItems,
 } from './data.js';
 import { copyFor, saveSubmission } from './core.js';
 
@@ -62,6 +63,10 @@ const elements = {
 
 const dialogTriggers = new WeakMap();
 const formTimers = new WeakMap();
+
+// Entrance/tilt effects are skipped together under reduced motion.
+const motionOK = !window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
+  && typeof IntersectionObserver !== 'undefined';
 
 function localized(value) {
   return value?.[state.language] ?? value?.en ?? '';
@@ -137,6 +142,42 @@ function renderYiwuPoints() {
   });
 }
 
+function renderMarquee() {
+  const track = document.querySelector('#marquee-track');
+  if (!track) return;
+  track.replaceChildren();
+  // Two copies of the sequence make the -50% translate loop seamless.
+  for (let lap = 0; lap < 2; lap += 1) {
+    marqueeItems.forEach((item) => {
+      addTextElement(track, 'span', localized(item));
+    });
+  }
+}
+
+// Split the manifesto quote into per-word (per-character for Chinese) spans
+// so it can cascade in. renderCopy rewrites the element's textContent on
+// every language switch, so this re-runs after each render.
+function splitStoryQuote() {
+  if (!motionOK) return;
+  const quote = document.querySelector('[data-copy="storyQuote"]');
+  if (!quote) return;
+  const text = quote.textContent;
+  const parts = state.language === 'zh' ? [...text] : text.split(/(\s+)/);
+  quote.replaceChildren();
+  let index = 0;
+  const step = state.language === 'zh' ? 0.045 : 0.09;
+  parts.forEach((part) => {
+    if (!part) return;
+    if (!part.trim()) {
+      quote.append(document.createTextNode(part));
+      return;
+    }
+    const word = addTextElement(quote, 'span', part, 'word');
+    word.style.setProperty('--d', `${(index * step).toFixed(3)}s`);
+    index += 1;
+  });
+}
+
 function renderAll() {
   renderCopy();
   renderCards(elements.langSteps, languageSteps);
@@ -146,6 +187,16 @@ function renderAll() {
   renderFitList(elements.langFit, languageFit);
   renderFitList(elements.travelFit, travelFit);
   renderYiwuPoints();
+  renderMarquee();
+  splitStoryQuote();
+  // Language switches rebuild card lists, so re-number cascade children
+  // and re-bind tilt (both are no-ops before the effects initialize).
+  document.querySelectorAll('.reveal-stagger').forEach((container) => {
+    [...container.children].forEach((child, index) => {
+      child.style.setProperty('--i', index);
+    });
+  });
+  bindTiltCards();
 }
 
 function updateDialogBodyState() {
@@ -314,13 +365,7 @@ Object.values(tracks).forEach(({ formId, storageKey }) => {
 });
 
 function initScrollReveal() {
-  const prefersReducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
-  if (prefersReducedMotion || typeof IntersectionObserver === 'undefined') return;
-
-  const targets = document.querySelectorAll(
-    '.hero h1, .hero > p:not(.eyebrow), .track-cards-hero, .section-heading,'
-      + ' .compare-grid, .yiwu-grid, .manifesto, .closing-section h2, .closing-actions',
-  );
+  if (!motionOK) return;
 
   const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach((entry) => {
@@ -330,9 +375,57 @@ function initScrollReveal() {
     });
   }, { rootMargin: '0px 0px -10% 0px', threshold: 0.1 });
 
-  targets.forEach((target) => {
+  // Blocks fade/rise/unblur as one unit.
+  document.querySelectorAll(
+    '.hero .eyebrow, .hero h1, .hero > p:not(.eyebrow), .section-heading,'
+      + ' .closing-section h2, .fit-note',
+  ).forEach((target) => {
     target.classList.add('reveal');
     observer.observe(target);
+  });
+
+  // Grids cascade child by child (CSS keys the delay off --i).
+  document.querySelectorAll(
+    '.track-cards-hero, .compare-grid, .yiwu-grid, .closing-actions',
+  ).forEach((target) => {
+    target.classList.add('reveal-stagger');
+    [...target.children].forEach((child, index) => {
+      child.style.setProperty('--i', index);
+    });
+    observer.observe(target);
+  });
+
+  // Manifesto quote cascades word by word; the byline follows.
+  document.querySelectorAll('.manifesto').forEach((target) => {
+    target.classList.add('reveal-words');
+    observer.observe(target);
+  });
+}
+
+// Pointer-follow 3D tilt on cards — mouse/trackpad only, and skipped
+// under reduced motion (touch has no hover, so tilt would only misfire).
+// Idempotent: language switches rebuild cards, so renderAll re-binds.
+const tiltEnabled = () => motionOK
+  && window.matchMedia?.('(hover: hover) and (pointer: fine)').matches;
+
+function bindTiltCards() {
+  if (!tiltEnabled()) return;
+
+  const MAX_DEG = 7;
+  document.querySelectorAll('.track-card, .service-card').forEach((card) => {
+    if (card.dataset.tiltBound) return;
+    card.dataset.tiltBound = '1';
+    card.classList.add('tilt-card');
+    card.addEventListener('mousemove', (event) => {
+      const rect = card.getBoundingClientRect();
+      const x = (event.clientX - rect.left) / rect.width - 0.5;
+      const y = (event.clientY - rect.top) / rect.height - 0.5;
+      card.style.transform = `perspective(900px) rotateY(${(x * MAX_DEG).toFixed(2)}deg)`
+        + ` rotateX(${(-y * MAX_DEG).toFixed(2)}deg) scale(1.02)`;
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+    });
   });
 }
 
