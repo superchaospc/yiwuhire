@@ -150,7 +150,7 @@ export const copy = {
   contactTitle: { en: 'Prefer to talk now? Reach us:', zh: '想直接聊？联系我们：' },
   contactWeChat: { en: 'WeChat: yiwu-partner', zh: '微信：yiwu-partner' },
   contactWhatsApp: { en: 'WhatsApp: +86 188 0000 0000', zh: 'WhatsApp：+86 188 0000 0000' },
-  contactEmail: { en: 'Email: partner@yiwuhire.com', zh: '邮箱：partner@yiwuhire.com' },
+  contactEmail: { en: 'Email: mollysu666@gmail.com', zh: '邮箱：mollysu666@gmail.com' },
   contactPlaceholderNote: {
     en: '(Placeholder contacts — to be replaced before launch.)',
     zh: '（占位联系方式，上线前替换。）',
