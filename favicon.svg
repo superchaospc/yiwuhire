@@ -1,3 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Molly Global">
-  <defs><linearGradient id="mg" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#2563eb"/><stop offset=".6" stop-color="#e0457b"/><stop offset="1" stop-color="#ff5c1f"/></linearGradient></defs><rect width="64" height="64" rx="18" fill="url(#mg)"/><g fill="#fff" transform="translate(32 32) scale(.8) translate(-32 -32)"><path d="M32 31C25 27 22 17 28 6C36 9 40 21 32 31Z"/><path d="M32 31C25 27 22 17 28 6C36 9 40 21 32 31Z" transform="rotate(72 32 32)"/><path d="M32 31C25 27 22 17 28 6C36 9 40 21 32 31Z" transform="rotate(144 32 32)"/><path d="M32 31C25 27 22 17 28 6C36 9 40 21 32 31Z" transform="rotate(216 32 32)"/><path d="M32 31C25 27 22 17 28 6C36 9 40 21 32 31Z" transform="rotate(288 32 32)"/></g><circle cx="32" cy="32" r="3.4" fill="#ffc23d"/>
+  <path fill="#2563eb" d="M32 4C45 15 44 23 32 27C20 23 19 15 32 4Z"/>
+  <path fill="#ff5c1f" d="M60 32C49 45 41 44 37 32C41 20 49 19 60 32Z"/>
+  <path fill="#2563eb" d="M32 60C19 49 20 41 32 37C44 41 45 49 32 60Z"/>
+  <path fill="#2563eb" d="M4 32C15 19 23 20 27 32C23 44 15 45 4 32Z"/>
 </svg>

@@ -202,20 +202,19 @@ textarea:focus-visible {
   text-decoration: none;
 }
 
-/* Jasmine (茉莉) logo tile on the dual-track gradient (kept outside the
-   data-copy span so language re-renders don't wipe it). */
+/* "花开四海" mark: four jasmine petals as a compass, the orange petal
+   points overseas (kept outside the data-copy span so language
+   re-renders don't wipe it). */
 .brand-mark {
   flex: none;
   display: block;
-  width: 32px;
-  height: 32px;
-  border-radius: 9px;
-  box-shadow: 0 4px 14px rgba(224, 69, 123, 0.32);
-  transition: transform var(--transition);
+  width: 30px;
+  height: 30px;
+  transition: transform 600ms var(--ease-out);
 }
 
 .brand:hover .brand-mark {
-  transform: rotate(-8deg) scale(1.05);
+  transform: rotate(360deg);
 }
 
 .brand:hover {
