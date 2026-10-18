@@ -202,21 +202,20 @@ textarea:focus-visible {
   text-decoration: none;
 }
 
-/* Logo tile with the dual-track gradient glow (kept outside the data-copy
-   span so language re-renders don't wipe it). */
+/* Jasmine (茉莉) logo tile on the dual-track gradient (kept outside the
+   data-copy span so language re-renders don't wipe it). */
 .brand-mark {
   flex: none;
-  display: grid;
-  place-items: center;
+  display: block;
   width: 32px;
   height: 32px;
-  border-radius: 10px;
-  background: #111;
-  color: #fff;
-  font-family: var(--display);
-  font-size: 15px;
-  line-height: 1;
-  box-shadow: 0 0 0 2px var(--accent-bright), 0 0 14px 1px rgba(255, 92, 31, 0.6);
+  border-radius: 9px;
+  box-shadow: 0 4px 14px rgba(224, 69, 123, 0.32);
+  transition: transform var(--transition);
+}
+
+.brand:hover .brand-mark {
+  transform: rotate(-8deg) scale(1.05);
 }
 
 .brand:hover {
