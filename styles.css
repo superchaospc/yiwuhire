@@ -809,6 +809,9 @@ main > section h2 {
 }
 
 .footer-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.25rem;
   margin: 0.3rem 0;
 }
 
@@ -893,12 +896,6 @@ dialog h2 {
 
 .dialog-contact a {
   color: var(--link);
-}
-
-.dialog-contact-note {
-  margin: 0.7rem 0 0;
-  color: var(--text-tertiary);
-  font-size: 13px;
 }
 
 .demo-privacy-notice {

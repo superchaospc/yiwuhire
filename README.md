@@ -37,4 +37,4 @@ python3 -m http.server 4173
 
 本仓库通过 GitHub Pages 部署到 [yiwuhire.com](https://yiwuhire.com/)。
 
-当前为概念演示页：申请表单只保存在访问者当前浏览器中，不会提交到服务器。上线真实招募时，把申请入口替换为真实联系方式（微信 / WhatsApp / 邮箱 / 表单后端）即可。
+申请表单目前只保存在访问者当前浏览器中，不会提交到服务器；真实联系方式（微信、邮箱、TikTok、Instagram、两个小红书账号）在页脚和申请弹窗中，文案在 `data.js` 的 `contact*` 键。
