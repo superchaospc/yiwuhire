@@ -1,6 +1,6 @@
-# YiwuHire
+# Molly Global · 义乌茉莉出海
 
-招募页：**义乌全球贸易合伙人（Yiwu Global Trade Creator Partner）**。
+**Molly Global（义乌茉莉出海）** 主页，招募计划：**义乌全球贸易合伙人（Yiwu Global Trade Creator Partner）**。
 
 两条并列招募路线，同一套外贸供应链后端，都按真实结果分成、非坐班、非底薪。双语（中 / EN）单页。
 

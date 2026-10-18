@@ -1,7 +1,7 @@
 export const copy = {
   pageTitle: {
-    en: 'Yiwu Global Trade Creator Partner — two tracks for language creators and travel scouts',
-    zh: '义乌全球贸易创作者合作计划 — 语言博主与旅游博主，两条路线',
+    en: 'Molly Global — Yiwu Global Trade Creator Partner: two tracks for language creators and travel scouts',
+    zh: '义乌茉莉出海 — 义乌全球贸易创作者合作计划：语言博主与旅游博主，两条路线',
   },
   pageDescription: {
     en: 'A partner program with two tracks: language creators who bring overseas buyers to Yiwu (the Zheng He Project), and travel bloggers who scout real market demand on the road (the Marco Polo Project). Both paid on real trade results, not a base salary.',
@@ -9,10 +9,10 @@ export const copy = {
   },
   skipLink: { en: 'Skip to content', zh: '跳到主要内容' },
   primaryNavigationLabel: { en: 'Primary navigation', zh: '主导航' },
-  homeLabel: { en: 'YiwuHire home', zh: 'YiwuHire 首页' },
+  homeLabel: { en: 'Molly Global home', zh: '义乌茉莉出海 首页' },
   brandName: {
-    en: 'Yiwu Global Trade Creator Partner program',
-    zh: '义乌全球贸易创作者合作计划',
+    en: 'Molly Global',
+    zh: '义乌茉莉出海',
   },
   languageSwitchLabel: { en: 'Switch language to Chinese', zh: '切换语言' },
   bgmPlayLabel: { en: 'Play background music', zh: '播放背景音乐' },
@@ -129,7 +129,7 @@ export const copy = {
     en: '“In Yiwu, global business is not a slide in a strategy deck. It is what happens before lunch.”',
     zh: '“在义乌，全球生意不是 PPT 里的战略，而是午饭前就在发生的日常。”',
   },
-  storyByline: { en: 'Yiwu Global Trade Creator Partner program', zh: '义乌全球贸易创作者合作计划' },
+  storyByline: { en: 'Molly Global · Yiwu Global Trade Creator Partner program', zh: '义乌茉莉出海 · 义乌全球贸易创作者合作计划' },
 
   closingEyebrow: { en: 'YIWU / GLOBAL', zh: '义乌 / 全球' },
   closingTitle: {
