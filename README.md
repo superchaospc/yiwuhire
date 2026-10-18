@@ -11,12 +11,24 @@
 
 **Two kinds of creators, one Yiwu supply chain.**
 
+## 品牌与联系方式
+
+v1.3.0 起品牌由 YiwuHire 更名为 **Molly Global · 义乌茉莉出海**（导航、页脚、标题、meta、结构化数据全部更新；域名仍为 yiwuhire.com）。
+
+- **Logo「花开四海」**（由 Codex 设计）：四片茉莉花瓣组成罗盘，三蓝一橙，橙色花瓣指向海外；导航 logo（`index.html` 内联 SVG）与 `favicon.svg` 共用同一图形，鼠标悬停时罗盘旋转一圈。
+- **联系方式**（页脚 + 两个申请弹窗，文案在 `data.js` 的 `contact*` 键，中英文随语言切换）：
+  - 微信：shping1985
+  - 邮箱：[mollysu666@gmail.com](mailto:mollysu666@gmail.com)
+  - TikTok：[@mollyadventure6](https://www.tiktok.com/@mollyadventure6)
+  - Instagram：[@mollysu888](https://www.instagram.com/mollysu888)
+  - 小红书：[Molly茉莉全球小生意](https://www.xiaohongshu.com/user/profile/5846ffaa6a6a69493f91bce6)、[Molly外贸出海](https://www.xiaohongshu.com/user/profile/6a196a890000000001007000)
+
 ## 设计与技术
 
 v1.2.0 起整站换肤为 Budarina 风格(超大黑体标题的现代作品集风),零依赖、零构建,纯 HTML/CSS/JS:
 
 - 米白底 + 纯白大圆角卡片;英文大标题使用自托管 **Archivo Black**(`fonts/`,仅 latin 子集约 10KB,SIL OFL 许可),中文标题回退系统粗黑体——不请求任何第三方 CDN。
-- 悬浮胶囊毛玻璃导航,品牌 logo 块带蓝→橙双轨渐变发光。
+- 悬浮胶囊毛玻璃导航,左侧为「花开四海」罗盘花瓣 logo。
 - Framer 式入场动画:淡入 + 上移 + 模糊消散,hero 与卡片网格交错浮现(IntersectionObserver,`--d`/`--i` 自定义属性控制延迟)。
 - 鼠标跟随的 3D 倾斜卡片 + 扫光(仅 `hover: hover` 且 `pointer: fine` 的设备启用)。
 - hero 下方双语无限跑马灯(词条在 `data.js` 的 `marqueeItems`,跟随语言切换)。
@@ -37,4 +49,6 @@ python3 -m http.server 4173
 
 本仓库通过 GitHub Pages 部署到 [yiwuhire.com](https://yiwuhire.com/)。
 
-申请表单目前只保存在访问者当前浏览器中，不会提交到服务器；真实联系方式（微信、邮箱、TikTok、Instagram、两个小红书账号）在页脚和申请弹窗中，文案在 `data.js` 的 `contact*` 键。
+申请表单目前只保存在访问者当前浏览器中，不会提交到服务器；访客通过页脚和申请弹窗中的联系方式直接联系 Molly。
+
+`styles.css` 与 `favicon.svg` 的引用带 `?v=` 版本号，改样式或图标后更新该参数，避免访客看到缓存的旧版本。
