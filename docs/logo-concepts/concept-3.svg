@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Molly Global · 双向之门</title>
+  <desc id="desc">A custom lowercase m joins two open portals for language and travel.</desc>
+  <path fill="#ff5c1f" d="M27 51V29C27 18 32 12 42 12C52 12 58 18 58 29V51H47V29C47 25 45 23 42 23C39 23 37 25 37 29V51H27Z"/>
+  <path fill="#2563eb" d="M6 51V29C6 18 12 12 22 12C32 12 38 18 38 29V51H27V29C27 25 25 23 22 23C19 23 17 25 17 29V51H6Z"/>
+</svg>

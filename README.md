@@ -15,7 +15,7 @@
 
 v1.3.0 起品牌由 YiwuHire 更名为 **Molly Global · 义乌茉莉出海**（导航、页脚、标题、meta、结构化数据全部更新；域名仍为 yiwuhire.com）。
 
-- **Logo「花开四海」**（由 Codex 设计）：四片茉莉花瓣组成罗盘，三蓝一橙，橙色花瓣指向海外；导航 logo（`index.html` 内联 SVG）与 `favicon.svg` 共用同一图形，鼠标悬停时罗盘旋转一圈。
+- **Logo「花开四海」**（由 Codex 设计）：四片茉莉花瓣组成罗盘，三蓝一橙，橙色花瓣指向海外；导航 logo（`index.html` 内联 SVG）与 `favicon.svg` 共用同一图形，鼠标悬停时罗盘旋转一圈。Codex 的 6 个备选方案（SVG + 展示页）存于 `docs/logo-concepts/`，线上可在 [yiwuhire.com/docs/logo-concepts/](https://yiwuhire.com/docs/logo-concepts/) 查看。
 - **联系方式**（页脚 + 两个申请弹窗，文案在 `data.js` 的 `contact*` 键，中英文随语言切换）：
   - 微信：shping1985
   - 邮箱：[mollysu666@gmail.com](mailto:mollysu666@gmail.com)

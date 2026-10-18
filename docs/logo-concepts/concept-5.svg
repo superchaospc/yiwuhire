@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Molly Global · 花开四海</title>
+  <desc id="desc">Four sculpted petals form a compass, with one orange petal pointing outward.</desc>
+  <path fill="#2563eb" d="M32 4C45 15 44 23 32 27C20 23 19 15 32 4Z"/>
+  <path fill="#ff5c1f" d="M60 32C49 45 41 44 37 32C41 20 49 19 60 32Z"/>
+  <path fill="#2563eb" d="M32 60C19 49 20 41 32 37C44 41 45 49 32 60Z"/>
+  <path fill="#2563eb" d="M4 32C15 19 23 20 27 32C23 44 15 45 4 32Z"/>
+</svg>

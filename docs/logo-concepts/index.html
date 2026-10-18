@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="description" content="Molly Global / 义乌茉莉出海，六款品牌标志提案。深浅背景、中英文导航栏与实际尺寸对比。">
+<title>Molly Global — 六种出海的表达</title>
+<link rel="icon" type="image/svg+xml" href="concept-5.svg">
+<style>
+@font-face{font-family:"Archivo Black";src:url("../fonts/archivo-black-latin.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+:root{--paper:#f4f4f4;--ink:#111;--muted:#626269;--blue:#2563eb;--orange:#ff5c1f;--dark:#121212;--rule:#dedee2;--sans:-apple-system,BlinkMacSystemFont,"SF Pro Display","PingFang SC","Helvetica Neue","Microsoft YaHei",sans-serif;--display:"Archivo Black",var(--sans)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}a:focus-visible{outline:3px solid var(--blue);outline-offset:5px}img{display:block;flex:none}button,a{-webkit-tap-highlight-color:transparent}.wrap{width:min(1360px,calc(100% - 80px));margin:0 auto}.masthead{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:28px 0;border-bottom:1px solid var(--rule)}.wordmark{font-family:var(--display);font-size:20px;letter-spacing:-.7px}.edition{font-size:11px;font-weight:600;letter-spacing:1.4px;color:var(--muted)}.intro{display:grid;grid-template-columns:1.3fr 1fr;gap:70px;align-items:end;padding:64px 0 40px}.eyebrow{font-size:12px;font-weight:700;color:var(--blue);letter-spacing:2px;margin:0 0 19px}h1{font-size:clamp(36px,4.4vw,64px);line-height:1.15;font-weight:850;letter-spacing:-2.8px;margin:0}.intro-copy{font-size:15px;line-height:1.9;color:var(--muted);margin:0 0 5px;max-width:400px}.intro-copy strong{font-weight:600;color:var(--ink)}.palette{display:flex;gap:7px;margin-top:20px}.palette span{height:8px;width:35px;border-radius:3px}.palette .blue{background:#2563eb}.palette .bright-blue{background:#3b82f6}.palette .rust{background:#c2410c}.palette .orange{background:#ff5c1f}.palette .black{background:#111}.overview{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;padding-bottom:40px}.overview a{background:#fff;border-radius:16px;padding:20px 14px 16px;display:flex;flex-direction:column;align-items:center;gap:14px;border:1px solid transparent;transition:border-color .15s,transform .15s}.overview a:hover{border-color:var(--blue);transform:translateY(-3px)}.overview img{width:56px;height:56px}.overview-label{display:flex;gap:9px;font-size:12px;font-weight:600;white-space:nowrap}.overview-label span{color:#86868d;font-weight:400}.reading-key{display:flex;justify-content:space-between;gap:20px;padding:22px 0;border-top:1px solid var(--rule);color:var(--muted);font-size:12px;line-height:1.7}.reading-key strong{font-weight:600;color:var(--ink)}.concepts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px}.concept{overflow:hidden;background:#fff;border:1px solid #e4e4e7;border-radius:22px;scroll-margin-top:24px}.concept-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:25px 26px 20px}.concept-label{display:flex;align-items:center;gap:10px;margin:0 0 10px;color:var(--muted);font-size:11px;letter-spacing:.8px}.concept-number{color:var(--blue);font-variant-numeric:tabular-nums}.recommended{background:#eaf0ff;color:var(--blue);padding:4px 8px;border-radius:100px;font-size:10px;font-weight:600;letter-spacing:0}h2{font-size:24px;letter-spacing:-.6px;line-height:1.2;margin:0}.download{font-size:11px;border:1px solid var(--rule);padding:8px 11px;border-radius:100px;white-space:nowrap;margin-top:4px}.download:hover{border-color:var(--blue);color:var(--blue)}.rationale{margin:0;padding:0 26px 23px;min-height:65px;font-size:13px;color:var(--muted);line-height:1.75}.specimens{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));margin:0 12px;border-radius:14px;overflow:hidden}.surface{min-width:0;padding:17px 17px 20px;background:#f4f4f4;color:#111}.surface.dark{background:#121212;color:#f4f4f4}.surface-name{display:flex;justify-content:space-between;gap:5px;font:10px/1.4 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.1px;color:#717178}.dark .surface-name{color:#aaaab2}.large-mark{height:211px;display:flex;align-items:center;justify-content:center}.large-mark img{width:160px;height:160px}.sample-label{font:10px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;color:#717178;margin-bottom:10px}.dark .sample-label{color:#aaaab2}.nav-pill{height:52px;display:flex;align-items:center;gap:9px;background:rgba(255,255,255,.88);backdrop-filter:blur(18px) saturate(180%);-webkit-backdrop-filter:blur(18px) saturate(180%);border-radius:18px;padding:10px 12px;margin-top:8px;color:#111;box-shadow:0 1px 2px #00000008,0 7px 20px #00000006;white-space:nowrap}.dark .nav-pill{background:rgba(255,255,255,.94)}.nav-pill img{width:32px;height:32px}.nav-pill span{font-size:15px;font-weight:700;line-height:1.2;letter-spacing:-.15px}.nav-pill .zh{font-size:14px}.favicon-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:25px;padding-top:17px;border-top:1px solid #dddddf}.dark .favicon-row{border-color:#353538}.favicon-row img{width:16px;height:16px}.favicon-row .sample-label{margin:0}.concept-foot{padding:21px 26px 24px}.idea{font-size:11px;font-weight:650;color:var(--blue);margin:0 0 8px;letter-spacing:.3px}.judgment{font-size:12px;line-height:1.7;color:var(--muted);margin:0}.recommendation{display:grid;grid-template-columns:96px 1fr auto;gap:30px;align-items:center;padding:40px 0;margin-top:40px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}.recommendation img{width:80px;height:80px}.recommendation h2{font-size:25px;margin-bottom:12px}.recommendation p{max-width:680px;font-size:14px;line-height:1.8;color:var(--muted);margin:0}.recommendation a{font-size:13px;color:var(--blue);font-weight:600;white-space:nowrap}.footer{display:flex;justify-content:space-between;gap:20px;padding:26px 0 36px;color:var(--muted);font-size:11px;line-height:1.8}.footer p{margin:0}.skip{position:absolute;left:20px;top:-80px;background:white;padding:12px;z-index:2}.skip:focus{top:12px}
+@media(min-width:1600px){.intro{padding-top:80px}}
+@media(max-width:1150px){.wrap{width:calc(100% - 48px)}.concepts{gap:18px}.concept-head{padding:22px 20px 18px}.rationale{padding-left:20px;padding-right:20px;min-height:88px}.specimens{margin:0 8px}.surface{padding:15px 12px 18px}.nav-pill{padding:10px 8px;gap:7px}.nav-pill span{font-size:13px}.nav-pill .zh{font-size:12px}.concept-foot{padding:20px}.intro{gap:40px}.overview-label{gap:6px;font-size:11px}}
+@media(max-width:950px){.concepts{grid-template-columns:1fr}.specimens{margin:0 14px}.surface{padding:20px 26px 24px}.nav-pill{padding:10px 16px;gap:10px}.nav-pill span{font-size:16px}.nav-pill .zh{font-size:15px}.rationale{min-height:0;padding-bottom:24px}.intro{grid-template-columns:1fr;gap:28px;padding-top:44px}.intro-copy{max-width:570px}.overview{gap:8px}.overview a{padding:18px 7px 14px}.overview-label{flex-direction:column;align-items:center;gap:5px}.recommendation{grid-template-columns:80px 1fr;gap:22px}.recommendation a{grid-column:2}}
+@media(max-width:560px){.wrap{width:calc(100% - 28px)}.masthead{padding:22px 0}.wordmark{font-size:18px}.edition{font-size:9px;letter-spacing:.5px}.intro{padding:36px 0 28px}h1{font-size:38px;letter-spacing:-1.8px}.eyebrow{font-size:10px}.intro-copy{font-size:13px}.overview{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;padding-bottom:28px}.overview a{padding:17px 8px 13px}.overview-label{flex-direction:row;font-size:11px}.overview img{width:48px;height:48px}.reading-key{flex-direction:column;gap:6px;font-size:11px}.concept-head{padding:20px 17px 16px}.rationale{padding:0 17px 20px;font-size:12px}.concepts{gap:20px}.concept{border-radius:19px}.specimens{margin:0 6px;border-radius:11px}.surface{padding:14px 7px 16px}.surface-name{font-size:9px}.large-mark{height:194px}.nav-pill{padding:10px 6px;gap:5px;border-radius:15px}.nav-pill span{font-size:12px;letter-spacing:-.25px}.nav-pill .zh{font-size:11px;letter-spacing:-.2px}.sample-label{font-size:9px}.favicon-row{gap:5px}.concept-foot{padding:20px 17px}.recommendation{grid-template-columns:56px 1fr;gap:15px;margin-top:30px;padding:30px 0}.recommendation img{width:56px;height:56px}.recommendation h2{font-size:21px}.recommendation p{font-size:12px}.footer{flex-direction:column;gap:9px}}
+@media(max-width:359px){.specimens{grid-template-columns:1fr}.surface{padding:18px 24px}.nav-pill span{font-size:15px}.nav-pill .zh{font-size:14px}.large-mark{height:204px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.overview a{transition:none}}
+@media print{body{background:white}.wrap{width:100%}.concepts{display:block}.concept{break-inside:avoid;page-break-inside:avoid;margin-bottom:20px}.surface{-webkit-print-color-adjust:exact;print-color-adjust:exact}.overview,.download,.skip{display:none}.intro{padding:28px 0}.recommendation{break-inside:avoid}.footer{padding-bottom:0}}
+</style>
+</head>
+<body>
+<a class="skip" href="#concepts">跳至六款提案</a>
+<div class="wrap">
+<header class="masthead"><a class="wordmark" href="#top" lang="en">Molly Global</a><span class="edition" lang="en">BRAND MARK EXPLORATIONS / 2026</span></header>
+<main id="top">
+<section class="intro" aria-labelledby="page-title">
+<div><p class="eyebrow">义乌茉莉出海 · 标志提案</p><h1 id="page-title">一朵茉莉，<br>六种出海的表达。</h1></div>
+<div><p class="intro-copy">从 Molly 的名字出发，把花、航行与连接变成六种不同的品牌语言。<strong>同一组蓝橙色，不同的记忆点。</strong><br>先看轮廓，再看放进网站后的感觉。</p><div class="palette" role="img" aria-label="沿用网站配色：蓝色 2563eb、亮蓝 3b82f6、陶橙 c2410c、亮橙 ff5c1f、近黑 111111"><span class="blue"></span><span class="bright-blue"></span><span class="rust"></span><span class="orange"></span><span class="black"></span></div></div>
+</section>
+<nav class="overview" aria-label="六款概念快速浏览">
+<a href="#concept-1"><img src="concept-1.svg" width="56" height="56" alt=""><span class="overview-label"><span>01</span>茉莉扬帆</span></a>
+<a href="#concept-2"><img src="concept-2.svg" width="56" height="56" alt=""><span class="overview-label"><span>02</span>环球花信</span></a>
+<a href="#concept-3"><img src="concept-3.svg" width="56" height="56" alt=""><span class="overview-label"><span>03</span>双向之门</span></a>
+<a href="#concept-4"><img src="concept-4.svg" width="56" height="56" alt=""><span class="overview-label"><span>04</span>茉莉方印</span></a>
+<a href="#concept-5"><img src="concept-5.svg" width="56" height="56" alt=""><span class="overview-label"><span>05</span>花开四海</span></a>
+<a href="#concept-6"><img src="concept-6.svg" width="56" height="56" alt=""><span class="overview-label"><span>06</span>一线环球</span></a>
+</nav>
+<div class="reading-key"><span><strong>在真实使用尺寸里，选择一个能记住的标志。</strong></span><span>大图 160px · 导航 32px · 网站图标 16px · 深浅背景均使用同一 SVG</span></div>
+<div class="concepts" id="concepts">
+<article class="concept" id="concept-1" aria-labelledby="title-1">
+<header class="concept-head"><div><p class="concept-label"><span class="concept-number">01</span><span lang="en">Petals in motion</span></p><h2 id="title-1">茉莉扬帆</h2></div><a class="download" href="concept-1.svg" download="concept-1.svg" aria-label="下载茉莉扬帆 SVG">SVG ↗</a></header>
+<p class="rationale">把两片茉莉花瓣化作迎风的帆，让「出海」成为一眼可见的品牌动作。</p><div class="specimens">
+<section class="surface light" aria-label="茉莉扬帆 · 浅色背景">
+<div class="surface-name"><span>LIGHT</span><span>#f4f4f4</span></div>
+<div class="large-mark"><img src="concept-1.svg" width="160" height="160" alt="茉莉扬帆标志，160 像素"></div>
+<div class="sample-label">NAVIGATION / 32px</div>
+<div class="nav-pill"><img src="concept-1.svg" width="32" height="32" alt=""><span lang="en">Molly Global</span></div>
+<div class="nav-pill"><img src="concept-1.svg" width="32" height="32" alt=""><span class="zh">义乌茉莉出海</span></div>
+<div class="favicon-row"><span class="sample-label">FAVICON / 16px</span><img src="concept-1.svg" width="16" height="16" alt="茉莉扬帆标志，16 像素"></div>
+</section>
+<section class="surface dark" aria-label="茉莉扬帆 · 深色背景">
+<div class="surface-name"><span>DARK</span><span>#121212</span></div>
+<div class="large-mark"><img src="concept-1.svg" width="160" height="160" alt="茉莉扬帆标志，160 像素"></div>
+<div class="sample-label">NAVIGATION / 32px</div>
+<div class="nav-pill"><img src="concept-1.svg" width="32" height="32" alt=""><span lang="en">Molly Global</span></div>
+<div class="nav-pill"><img src="concept-1.svg" width="32" height="32" alt=""><span class="zh">义乌茉莉出海</span></div>
+<div class="favicon-row"><span class="sample-label">FAVICON / 16px</span><img src="concept-1.svg" width="16" height="16" alt="茉莉扬帆标志，16 像素"></div>
+</section>
+</div><div class="concept-foot"><p class="idea">花瓣 × 风帆</p><p class="judgment">轮廓鲜明，业务联想直接；适合以出海贸易为主的品牌表达。</p></div></article>
+<article class="concept" id="concept-2" aria-labelledby="title-2">
+<header class="concept-head"><div><p class="concept-label"><span class="concept-number">02</span><span lang="en">A bloom goes global</span></p><h2 id="title-2">环球花信</h2></div><a class="download" href="concept-2.svg" download="concept-2.svg" aria-label="下载环球花信 SVG">SVG ↗</a></header>
+<p class="rationale">蓝色地球与上扬航线托起橙色茉莉，连接义乌与世界各地的创作者。</p><div class="specimens">
+<section class="surface light" aria-label="环球花信 · 浅色背景">
+<div class="surface-name"><span>LIGHT</span><span>#f4f4f4</span></div>
+<div class="large-mark"><img src="concept-2.svg" width="160" height="160" alt="环球花信标志，160 像素"></div>
+<div class="sample-label">NAVIGATION / 32px</div>
+<div class="nav-pill"><img src="concept-2.svg" width="32" height="32" alt=""><span lang="en">Molly Global</span></div>
+<div class="nav-pill"><img src="concept-2.svg" width="32" height="32" alt=""><span class="zh">义乌茉莉出海</span></div>
+<div class="favicon-row"><span class="sample-label">FAVICON / 16px</span><img src="concept-2.svg" width="16" height="16" alt="环球花信标志，16 像素"></div>
+</section>
+<section class="surface dark" aria-label="环球花信 · 深色背景">
+<div class="surface-name"><span>DARK</span><span>#121212</span></div>
+<div class="large-mark"><img src="concept-2.svg" width="160" height="160" alt="环球花信标志，160 像素"></div>
+<div class="sample-label">NAVIGATION / 32px</div>
+<div class="nav-pill"><img src="concept-2.svg" width="32" height="32" alt=""><span lang="en">Molly Global</span></div>
+<div class="nav-pill"><img src="concept-2.svg" width="32" height="32" alt=""><span class="zh">义乌茉莉出海</span></div>
+<div class="favicon-row"><span class="sample-label">FAVICON / 16px</span><img src="concept-2.svg" width="16" height="16" alt="环球花信标志，16 像素"></div>
+</section>
+</div><div class="concept-foot"><p class="idea">地球 × 茉莉</p><p class="judgment">品牌故事最完整；细节较多，更适合导航栏和较大的应用。</p></div></article>
+<article class="concept" id="concept-3" aria-labelledby="title-3">
+<header class="concept-head"><div><p class="concept-label"><span class="concept-number">03</span><span lang="en">Open doors, shared worlds</span></p><h2 id="title-3">双向之门</h2></div><a class="download" href="concept-3.svg" download="concept-3.svg" aria-label="下载双向之门 SVG">SVG ↗</a></header>
+<p class="rationale">定制小写 m 化成两座相连的门，以蓝橙双拱对应语言与旅行两条路径。</p><div class="specimens">
+<section class="surface light" aria-label="双向之门 · 浅色背景">
+<div class="surface-name"><span>LIGHT</span><span>#f4f4f4</span></div>
+<div class="large-mark"><img src="concept-3.svg" width="160" height="160" alt="双向之门标志，160 像素"></div>
+<div class="sample-label">NAVIGATION / 32px</div>
+<div class="nav-pill"><img src="concept-3.svg" width="32" height="32" alt=""><span lang="en">Molly Global</span></div>
+<div class="nav-pill"><img src="concept-3.svg" width="32" height="32" alt=""><span class="zh">义乌茉莉出海</span></div>
+<div class="favicon-row"><span class="sample-label">FAVICON / 16px</span><img src="concept-3.svg" width="16" height="16" alt="双向之门标志，16 像素"></div>
+</section>
+<section class="surface dark" aria-label="双向之门 · 深色背景">
+<div class="surface-name"><span>DARK</span><span>#121212</span></div>
+<div class="large-mark"><img src="concept-3.svg" width="160" height="160" alt="双向之门标志，160 像素"></div>
+<div class="sample-label">NAVIGATION / 32px</div>
+<div class="nav-pill"><img src="concept-3.svg" width="32" height="32" alt=""><span lang="en">Molly Global</span></div>
+<div class="nav-pill"><img src="concept-3.svg" width="32" height="32" alt=""><span class="zh">义乌茉莉出海</span></div>
+<div class="favicon-row"><span class="sample-label">FAVICON / 16px</span><img src="concept-3.svg" width="16" height="16" alt="双向之门标志，16 像素"></div>
+</section>
+</div><div class="concept-foot"><p class="idea">字母 m × 双拱</p><p class="judgment">强调 Molly 的个人品牌，开放亲切，适合创作者招募。</p></div></article>
+<article class="concept" id="concept-4" aria-labelledby="title-4">
+<header class="concept-head"><div><p class="concept-label"><span class="concept-number">04</span><span lang="en">Rooted in Yiwu</span></p><h2 id="title-4">茉莉方印</h2></div><a class="download" href="concept-4.svg" download="concept-4.svg" aria-label="下载茉莉方印 SVG">SVG ↗</a></header>
+<p class="rationale">以手绘几何「茉」字入印，用陶橙与留白保留品牌的中文名字和东方出处。</p><div class="specimens">
+<section class="surface light" aria-label="茉莉方印 · 浅色背景">
+<div class="surface-name"><span>LIGHT</span><span>#f4f4f4</span></div>
+<div class="large-mark"><img src="concept-4.svg" width="160" height="160" alt="茉莉方印标志，160 像素"></div>
+<div class="sample-label">NAVIGATION / 32px</div>
+<div class="nav-pill"><img src="concept-4.svg" width="32" height="32" alt=""><span lang="en">Molly Global</span></div>
+<div class="nav-pill"><img src="concept-4.svg" width="32" height="32" alt=""><span class="zh">义乌茉莉出海</span></div>
+<div class="favicon-row"><span class="sample-label">FAVICON / 16px</span><img src="concept-4.svg" width="16" height="16" alt="茉莉方印标志，16 像素"></div>
+</section>
+<section class="surface dark" aria-label="茉莉方印 · 深色背景">
+<div class="surface-name"><span>DARK</span><span>#121212</span></div>
+<div class="large-mark"><img src="concept-4.svg" width="160" height="160" alt="茉莉方印标志，160 像素"></div>
+<div class="sample-label">NAVIGATION / 32px</div>
+<div class="nav-pill"><img src="concept-4.svg" width="32" height="32" alt=""><span lang="en">Molly Global</span></div>
+<div class="nav-pill"><img src="concept-4.svg" width="32" height="32" alt=""><span class="zh">义乌茉莉出海</span></div>
+<div class="favicon-row"><span class="sample-label">FAVICON / 16px</span><img src="concept-4.svg" width="16" height="16" alt="茉莉方印标志，16 像素"></div>
+</section>
+</div><div class="concept-foot"><p class="idea">茉字 × 方印</p><p class="judgment">文化辨识度最强；16px 看印记，放大后读到「茉」字。</p></div></article>
+<article class="concept" id="concept-5" aria-labelledby="title-5">
+<header class="concept-head"><div><p class="concept-label"><span class="concept-number">05</span><span lang="en">A flower with direction</span><span class="recommended">首选推荐</span></p><h2 id="title-5">花开四海</h2></div><a class="download" href="concept-5.svg" download="concept-5.svg" aria-label="下载花开四海 SVG">SVG ↗</a></header>
+<p class="rationale">四枚花瓣构成开放的罗盘，向外的一瓣橙色，让茉莉带着方向走向世界。</p><div class="specimens">
+<section class="surface light" aria-label="花开四海 · 浅色背景">
+<div class="surface-name"><span>LIGHT</span><span>#f4f4f4</span></div>
+<div class="large-mark"><img src="concept-5.svg" width="160" height="160" alt="花开四海标志，160 像素"></div>
+<div class="sample-label">NAVIGATION / 32px</div>
+<div class="nav-pill"><img src="concept-5.svg" width="32" height="32" alt=""><span lang="en">Molly Global</span></div>
+<div class="nav-pill"><img src="concept-5.svg" width="32" height="32" alt=""><span class="zh">义乌茉莉出海</span></div>
+<div class="favicon-row"><span class="sample-label">FAVICON / 16px</span><img src="concept-5.svg" width="16" height="16" alt="花开四海标志，16 像素"></div>
+</section>
+<section class="surface dark" aria-label="花开四海 · 深色背景">
+<div class="surface-name"><span>DARK</span><span>#121212</span></div>
+<div class="large-mark"><img src="concept-5.svg" width="160" height="160" alt="花开四海标志，160 像素"></div>
+<div class="sample-label">NAVIGATION / 32px</div>
+<div class="nav-pill"><img src="concept-5.svg" width="32" height="32" alt=""><span lang="en">Molly Global</span></div>
+<div class="nav-pill"><img src="concept-5.svg" width="32" height="32" alt=""><span class="zh">义乌茉莉出海</span></div>
+<div class="favicon-row"><span class="sample-label">FAVICON / 16px</span><img src="concept-5.svg" width="16" height="16" alt="花开四海标志，16 像素"></div>
+</section>
+</div><div class="concept-foot"><p class="idea">花瓣 × 罗盘</p><p class="judgment">轮廓简洁，蓝橙层次清楚，在中英文导航和小尺寸中都容易辨认。</p></div></article>
+<article class="concept" id="concept-6" aria-labelledby="title-6">
+<header class="concept-head"><div><p class="concept-label"><span class="concept-number">06</span><span lang="en">One continuous connection</span></p><h2 id="title-6">一线环球</h2></div><a class="download" href="concept-6.svg" download="concept-6.svg" aria-label="下载一线环球 SVG">SVG ↗</a></header>
+<p class="rationale">一笔开放的 G 勾出全球航线，橙色节点代表从义乌建立的每一次连接。</p><div class="specimens">
+<section class="surface light" aria-label="一线环球 · 浅色背景">
+<div class="surface-name"><span>LIGHT</span><span>#f4f4f4</span></div>
+<div class="large-mark"><img src="concept-6.svg" width="160" height="160" alt="一线环球标志，160 像素"></div>
+<div class="sample-label">NAVIGATION / 32px</div>
+<div class="nav-pill"><img src="concept-6.svg" width="32" height="32" alt=""><span lang="en">Molly Global</span></div>
+<div class="nav-pill"><img src="concept-6.svg" width="32" height="32" alt=""><span class="zh">义乌茉莉出海</span></div>
+<div class="favicon-row"><span class="sample-label">FAVICON / 16px</span><img src="concept-6.svg" width="16" height="16" alt="一线环球标志，16 像素"></div>
+</section>
+<section class="surface dark" aria-label="一线环球 · 深色背景">
+<div class="surface-name"><span>DARK</span><span>#121212</span></div>
+<div class="large-mark"><img src="concept-6.svg" width="160" height="160" alt="一线环球标志，160 像素"></div>
+<div class="sample-label">NAVIGATION / 32px</div>
+<div class="nav-pill"><img src="concept-6.svg" width="32" height="32" alt=""><span lang="en">Molly Global</span></div>
+<div class="nav-pill"><img src="concept-6.svg" width="32" height="32" alt=""><span class="zh">义乌茉莉出海</span></div>
+<div class="favicon-row"><span class="sample-label">FAVICON / 16px</span><img src="concept-6.svg" width="16" height="16" alt="一线环球标志，16 像素"></div>
+</section>
+</div><div class="concept-foot"><p class="idea">字母 G × 航线</p><p class="judgment">最克制的商务方向，适合强调全球网络与供应链连接。</p></div></article>
+</div>
+<aside class="recommendation" aria-labelledby="recommend-title"><img src="concept-5.svg" width="80" height="80" alt="花开四海"><div><p class="eyebrow">设计师的选择 / 05</p><h2 id="recommend-title">让花成为方向。</h2><p>推荐「花开四海」：保留茉莉的联想，又用罗盘表达走向世界。四瓣结构和中央留白在小尺寸下仍清楚，橙色的一瓣带出行动感；放在 Molly Global 和中文品牌名旁都不抢字标。如果更希望一眼看出「出海」，可以选 01「茉莉扬帆」。</p></div><a href="concept-5.svg" download>下载推荐方案 ↗</a></aside>
+</main>
+<footer class="footer"><p>Molly Global / 义乌茉莉出海<br>六个独立 SVG · 64 × 64 viewBox · 手写矢量路径 · 无图片与字体依赖</p><p>比较时请使用浏览器 100% 缩放。<br>此页为独立设计提案，尚未替换网站标志。</p></footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Molly Global · 茉莉方印</title>
+  <desc id="desc">A hand-drawn geometric 茉 character carved in white into a terracotta seal.</desc>
+  <rect x="3" y="3" width="58" height="58" rx="10" fill="#c2410c"/>
+  <g fill="#fff">
+    <path d="M14 15H22V10H28V15H36V10H42V15H50V21H42V25H36V21H28V25H22V21H14V15Z"/>
+    <path d="M14 28H50V34H35V38H47V44H39C42 47 46 49 51 50L48 55C43 53 38 50 35 47V56H29V47C26 50 21 53 16 55L13 50C18 49 22 47 25 44H17V38H29V34H14V28Z"/>
+  </g>
+</svg>
