@@ -27,3 +27,8 @@ header{position:sticky;top:0;z-index:5;background:rgb(255 255 255/.93);backdrop-
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.studio svg{transition:none}}
 
 .top-seller-label{margin-bottom:9px;padding:3px 9px;border-radius:999px;background:#fff1cc;color:#674513;font-size:12px;line-height:1.4;font-weight:650}
+
+.hero-actions{display:flex;align-items:center;flex-wrap:wrap;gap:10px}
+.coffee-link{display:inline-flex;align-items:center;gap:7px;padding:11px 16px;border:1px solid #bda471;color:#513b20;background:#fff7dc;border-radius:999px;font-size:14px;font-weight:550}
+.coffee-link:hover{background:#ffeab7}
+@media(max-width:560px){.hero-actions{justify-content:center}.coffee-link{padding:9px 12px}}
