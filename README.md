@@ -1,6 +1,6 @@
-# FoodieChina888 · The Chinese Kitchen
+# foodiechina888 · The Chinese Kitchen
 
-The public prototype for FoodieChina888’s Amazon US affiliate collection is served at https://yiwuhire.com/ by GitHub Pages from the root of main.
+The public prototype for foodiechina888’s Amazon US affiliate collection is served at https://yiwuhire.com/ by GitHub Pages from the root of main.
 
 The catalog, product notes, disclosures and tagged product links are in index.html. Category filtering and layout live in kitchen/. The hero illustrations and avatar come from superchaospc/foodiechina888. The catalog drawings are original editorial illustrations.
 
