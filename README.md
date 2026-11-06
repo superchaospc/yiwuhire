@@ -1,22 +1,12 @@
-# foodiechina888 · The Chinese Kitchen
+# foodiechina888 kitchen store · 公开测试站
 
-[打开网站](https://yiwuhire.com/) · [浏览商品](https://yiwuhire.com/#collection) · [下载旧版招募站](https://github.com/superchaospc/yiwuhire/archive/refs/tags/v1.3.1.zip)
+[测试站](https://yiwuhire.com/) · [正式站](https://foodiechina888.com/) · [当前 Release](https://github.com/superchaospc/yiwuhire/releases/tag/v2.1.0)
 
-这里是 foodiechina888 面向英文观众的中餐选品站，也是未来 foodiechina888.com 商店的公开测试版。访客可以按烹饪场景浏览商品，点击图片、品名或卡片上的说明，直接进入相应的 Amazon 美国站商品页。
+这个仓库发布到 yiwuhire.com。正式站使用独立仓库，只有站主明确要求同步某项改动时，才将该改动应用到 foodiechina888.com。
 
-## v2.0.0 商品目录
+## v2.1.0 商品目录
 
-2026 年 11 月 6 日发布时共 26 件商品。
-
-| 分类 | 件数 |
-| --- | ---: |
-| Cookware · 锅具与蒸具 | 2 |
-| Prep tools · 备菜工具 | 4 |
-| Tableware · 餐具 | 4 |
-| Pantry · 调味品 | 8 |
-| Cookbooks · 英文中餐食谱 | 8 |
-
-选品考虑中餐观众的实际用途，以及商品在核对日是否进入 Amazon 美国站相关细分类前 30 名。排名会随时间变化。书卡 *A Very Chinese Cookbook* 的 “Our #1 seller of 2025” 来自本账号 2025 年 Amazon 联盟热销榜。
+页面按顺序展示中餐食谱、锅具、刀具、蒸具、空气炸锅、备菜工具、餐具和调味品。每类 4 件，共 32 件。每组第一件标为 **Best seller**。桌面按类目排成四列，手机可横滑分类按钮。点击整张商品卡即可进入 Amazon 商品页。
 
 ## 维护与预览
 
