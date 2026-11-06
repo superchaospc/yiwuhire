@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 180">
+<defs>
+ <linearGradient id="iron" x2=".8" y2="1" gradientUnits="objectBoundingBox"><stop stop-color="#80888d"/><stop offset=".35" stop-color="#39414a"/><stop offset="1" stop-color="#131619"/></linearGradient>
+ <linearGradient id="metal" x2=".8" y2="1"><stop stop-color="#798691"/><stop offset=".38" stop-color="#e8edf1"/><stop offset=".62" stop-color="#b8c0c6"/><stop offset="1" stop-color="#f5f8fa"/></linearGradient>
+ <linearGradient id="wood" x2=".15" y2="1"><stop stop-color="#b8793f"/><stop offset=".32" stop-color="#efd0a2"/><stop offset=".64" stop-color="#d8a76d"/><stop offset="1" stop-color="#965b2a"/></linearGradient>
+ <linearGradient id="china" x2=".8" y2="1"><stop stop-color="#ebf0f7"/><stop offset=".4" stop-color="#fff"/><stop offset=".8" stop-color="#cfdaeb"/><stop offset="1" stop-color="#acbfd5"/></linearGradient>
+ <linearGradient id="glass"><stop stop-color="#352016"/><stop offset=".16" stop-color="#634331"/><stop offset=".28" stop-color="#44281a"/><stop offset=".76" stop-color="#27160e"/><stop offset=".92" stop-color="#4c3021"/><stop offset="1" stop-color="#20140f"/></linearGradient>
+ <pattern id="weave" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(24)"><rect width="9" height="9" fill="#e0b67c"/><path d="M0 0h9M0 0v9" stroke="#a97849" stroke-width="1.5"/></pattern>
+ <pattern id="floral" width="20" height="16" patternUnits="userSpaceOnUse"><path d="M1 8q6-9 13 0t12 0M9 8q1-10 5-6 2 4-5 6m0 0q4 8 7 4-1-4-7-4" fill="none" stroke="#416393" stroke-width="1.5"/></pattern>
+ <g id="wokShape"><path d="M71 87q-21-21-28-13-4 8 22 22" fill="none" stroke="#555b5d" stroke-width="6"/><path d="M188 91l29-18 4 6-29 22z" fill="url(#metal)"/><path d="M212 73l53-35q6-3 9 2t-1 8l-56 34z" fill="url(#wood)"/><path d="M52 82q18 59 79 63 60 3 81-49z" fill="url(#iron)"/><ellipse cx="132" cy="89" rx="81" ry="27" transform="rotate(5 132 89)" fill="url(#iron)" stroke="#767d80" stroke-width="2"/><path d="M70 84q32-24 99-5" fill="none" stroke="#a1a7ab" opacity=".5"/></g>
+ <g id="basket"><path d="M71 65v70c0 25 157 25 157 0V65" fill="url(#wood)"/><g fill="none" stroke="#9e6e3c" stroke-width="2"><path d="M72 83c0 23 155 23 155 0M72 106c0 23 155 23 155 0M72 113c0 23 155 23 155 0M72 131c0 23 155 23 155 0"/><path d="M98 85v13m5-11v12m95 11v14m5-16v14"/></g><ellipse cx="149.5" cy="65" rx="79" ry="23" fill="url(#weave)" stroke="#bb8a50" stroke-width="4"/><path d="M132 60q17-22 32 0" fill="none" stroke="#ae7e49" stroke-width="6"/></g>
+ <g id="blade" transform="rotate(-18 150 90)"><path d="M58 48h129v66q-72 7-129-3z" fill="url(#metal)" stroke="#8e989e"/><path d="M61 107q53 7 123 2" stroke="white" fill="none"/><path d="M186 54h19v12h-19" fill="url(#metal)"/><rect x="200" y="50" width="57" height="20" rx="8" fill="url(#wood)"/></g>
+ <g id="longhandle"><path d="M149 90l84-47q6-3 9 2t-3 7l-86 46z" fill="url(#wood)"/></g>
+ <g id="scoop"><use href="#longhandle"/><ellipse cx="119" cy="105" rx="49" ry="26" transform="rotate(14 119 105)" fill="#e3e9ec" fill-opacity=".4" stroke="#78838a" stroke-width="2.6"/><g fill="none" stroke="#87949d" transform="rotate(14 119 105)"><ellipse cx="119" cy="105" rx="39" ry="20"/><ellipse cx="119" cy="105" rx="28" ry="14"/><ellipse cx="119" cy="105" rx="14" ry="7"/><path d="M70 105h98m-49-26v52m-36-44 72 36m-70-1 68-35"/></g></g>
+ <g id="turner" transform="rotate(-30 150 90)"><path d="M56 67q-7 19 0 45l58-3 28-12h95q9-6 0-12h-95l-27-14z" fill="url(#wood)"/><path d="M61 82q41 2 57 8m-57 6 43 1" fill="none" stroke="#a77743" opacity=".6"/></g>
+ <g id="boarddrawing" transform="rotate(-13 150 90)"><rect x="64" y="40" width="172" height="99" rx="11" fill="#a27546"/><rect x="64" y="36" width="172" height="99" rx="11" fill="url(#wood)"/><path d="M80 56h137M80 83h140M87 107h110M120 74h102M72 117h96" stroke="#ac7944" opacity=".45"/><circle cx="79" cy="50" r="4" fill="#f5f5f7"/></g>
+ <g id="pinshape" transform="rotate(-24 150 90)"><rect x="48" y="77" width="203" height="24" rx="7" fill="url(#wood)"/><ellipse cx="246" cy="89" rx="5" ry="11" fill="#b98955"/></g>
+ <g id="bowlshape"><path d="M75 72q8 60 63 66v7q11 6 27 0v-7q50-8 61-66" fill="url(#china)"/><path d="M77 85q70 23 146 0l-9 18q-56 22-129-1z" fill="url(#floral)"/><ellipse cx="150" cy="73" rx="76" ry="23" fill="url(#china)" stroke="#5577a1" stroke-width="2"/><ellipse cx="150" cy="74" rx="63" ry="15" fill="none" stroke="#8195b1"/></g>
+ <g id="spoonshape"><path d="M83 89q18-14 54-5l72-43q13-7 19 1 4 7-5 14l-73 56q-13 26-45 22-50-8-22-45z" fill="url(#china)" stroke="#8498b3"/><ellipse cx="112" cy="108" rx="31" ry="15" fill="url(#floral)" opacity=".8" transform="rotate(-12 112 108)"/><path d="M159 88l56-39" stroke="#3e6087" stroke-width="2"/></g>
+ <g id="chopshape" fill="url(#wood)"><path d="M54 130 235 41l4 7-184 84zM66 143 247 54l4 7-184 84z"/></g>
+ <g id="paddleshape" transform="rotate(-25 150 90)"><path d="M71 69q19-19 50-6 19 9 31 17l81 3q12 7 0 13l-82 1q-18 20-48 22-48 2-32-50z" fill="url(#wood)"/><path d="M82 81q14-12 42-1m-44 14q19-10 52-5m-45 16q19-7 37-7" fill="none" stroke="#b28452"/></g>
+ <g id="bottle"><path d="M138 33h24v18q0 6 8 12l7 9v66q0 7-7 7h-40q-7 0-7-7V72l7-9q8-6 8-12z" fill="url(#glass)"/><rect x="136" y="24" width="28" height="13" rx="3" fill="currentColor"/><rect x="123" y="83" width="54" height="43" rx="3" fill="#f9e8b8"/><path d="M123 84h54v8h-54zm0 34h54v8h-54z" fill="currentColor"/></g>
+ <g id="jar"><rect x="112" y="48" width="76" height="90" rx="12" fill="url(#glass)"/><rect x="111" y="41" width="78" height="16" rx="5" fill="#a62b22"/><rect x="112" y="76" width="76" height="46" rx="4" fill="#c43c26"/><ellipse cx="150" cy="99" rx="16" ry="18" fill="#ffe6aa"/></g>
+ <g id="bookshape" transform="rotate(-9 150 90)"><path d="M101 32h96v118h-96z" fill="#c8c8c3"/><path d="M97 27h97v119H97q-4-2-3-7V34q0-6 3-7z" fill="currentColor"/><path d="M100 29v114" stroke="#fff" opacity=".3"/><path d="M115 108h58" stroke="#fff" opacity=".7"/></g>
+</defs>
+<symbol id="wok" viewBox="0 0 300 180"><use href="#wokShape"/></symbol>
+<symbol id="peking" viewBox="0 0 300 180"><g transform="translate(300 0) scale(-1 1)"><use href="#wokShape"/></g></symbol>
+<symbol id="steamer" viewBox="0 0 300 180"><use href="#basket"/></symbol>
+<symbol id="knife" viewBox="0 0 300 180"><use href="#blade"/></symbol>
+<symbol id="spider" viewBox="0 0 300 180"><use href="#scoop"/></symbol>
+<symbol id="spatula" viewBox="0 0 300 180"><use href="#turner"/></symbol>
+<symbol id="board" viewBox="0 0 300 180"><use href="#boarddrawing"/></symbol>
+<symbol id="pin" viewBox="0 0 300 180"><use href="#pinshape"/></symbol>
+<symbol id="bowl" viewBox="0 0 300 180"><use href="#bowlshape"/></symbol>
+<symbol id="spoon" viewBox="0 0 300 180"><use href="#spoonshape"/></symbol>
+<symbol id="sticks" viewBox="0 0 300 180"><use href="#chopshape"/></symbol>
+<symbol id="paddle" viewBox="0 0 300 180"><use href="#paddleshape"/></symbol>
+<symbol id="soy" viewBox="0 0 300 180"><use href="#bottle" color="#a22c22"/><text x="150" y="110" text-anchor="middle" font-family="serif" font-weight="bold" font-size="15" fill="#70352c">SOY</text></symbol>
+<symbol id="dark" viewBox="0 0 300 180"><use href="#bottle" color="#423226"/><text x="150" y="109" text-anchor="middle" font-family="serif" font-size="12" fill="#332722">DARK</text></symbol>
+<symbol id="vinegar" viewBox="0 0 300 180"><use href="#bottle" color="#b89a3b"/><text x="150" y="109" text-anchor="middle" font-family="serif" font-size="10" fill="#403319">VINEGAR</text></symbol>
+<symbol id="chili" viewBox="0 0 300 180"><use href="#jar"/><text x="150" y="104" text-anchor="middle" font-family="serif" font-size="15" fill="#963125">辣</text></symbol>
+<symbol id="oyster" viewBox="0 0 300 180"><use href="#bottle" color="#47745b"/><text x="150" y="109" text-anchor="middle" font-family="serif" font-size="11" fill="#264533">OYSTER</text></symbol>
+<symbol id="ricebook" viewBox="0 0 300 180"><use href="#bookshape" color="#38745d"/><g transform="rotate(-9 150 90)" fill="white" font-family="Georgia" font-size="17"><text x="110" y="64">Every Grain</text><text x="110" y="85">of Rice</text></g></symbol>
+<symbol id="sichuanbook" viewBox="0 0 300 180"><use href="#bookshape" color="#ab4436"/><g transform="rotate(-9 150 90)" fill="white" font-family="Georgia" font-size="16"><text x="109" y="63">The Food</text><text x="109" y="84">of Sichuan</text></g></symbol>
+<symbol id="woksbook" viewBox="0 0 300 180"><use href="#bookshape" color="#374c68"/><g transform="rotate(-9 150 90)" fill="white" font-family="Georgia" font-size="17"><text x="109" y="63">The Woks</text><text x="109" y="84">of Life</text></g></symbol>
+</svg>
