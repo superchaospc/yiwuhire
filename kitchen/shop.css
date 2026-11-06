@@ -7,7 +7,14 @@ header{position:sticky;top:0;z-index:5;background:rgb(255 255 255/.93);backdrop-
 .selection{display:grid;grid-template-columns:1fr 2fr;gap:35px;border-top:1px solid var(--line);padding:47px 0 55px}.signature{display:flex;gap:12px;align-items:flex-start}.signature img{border-radius:50%}.signature b,.signature span{display:block}.signature b{margin-top:3px;letter-spacing:-.03em}.signature span{color:var(--secondary);font-size:13px}.selection h2{font-size:32px;margin-bottom:12px}.selection p{max-width:640px}.selection .fine{margin-top:12px}footer{background:#fff;border-top:1px solid var(--line)}footer .wrap{display:flex;gap:22px;align-items:center;padding-block:23px;font-size:13px}footer b{margin-right:auto}
 @media(min-width:1001px){
   .hero{background:#fff9ec}
-  .hero-art{left:auto;width:min(100%,1180px);background-size:cover;background-position:right 43%}
+  .hero-art{
+    inset-inline:0;
+    width:min(1180px,calc(100% - 96px));
+    margin-inline:auto;
+    background-size:cover;
+    background-position:center 24%;
+    mask-image:linear-gradient(to right,black 84%,transparent 100%);
+  }
   .hero-art:after{background:linear-gradient(90deg,#fff9ec 0%,rgb(255 249 236/.92) 12%,rgb(255 249 236/0) 54%)}
 }
 @media(max-width:1000px){.wrap{width:calc(100% - 56px)}.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.hero-art{background-position:calc(100% + 70px) 40%}.hero-art:after{background:linear-gradient(90deg,#fff9ec 4%,#fff9ec 24%,#fff9ecdd 37%,transparent 67%)}}
