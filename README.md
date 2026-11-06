@@ -1,10 +1,14 @@
 # foodiechina888 kitchen store · 公开测试站
 
-[测试站](https://yiwuhire.com/) · [正式站](https://foodiechina888.com/) · [当前 Release](https://github.com/superchaospc/yiwuhire/releases/tag/v2.1.0)
+[测试站](https://yiwuhire.com/) · [正式站](https://foodiechina888.com/) · [当前 Release](https://github.com/superchaospc/yiwuhire/releases/tag/v2.2.0)
 
 这个仓库发布到 yiwuhire.com。正式站使用独立仓库，只有站主明确要求同步某项改动时，才将该改动应用到 foodiechina888.com。
 
-## v2.1.0 商品目录
+## v2.2.0 测试版设计
+
+首页使用白底、双色标题和圆形频道插画。商品区采用浅灰背景、白色卡片和下划线分类导航。
+
+## 商品目录
 
 页面按顺序展示中餐食谱、锅具、刀具、蒸具、空气炸锅、备菜工具、餐具和调味品。每类 4 件，共 32 件。每组第一件标为 **Best seller**。桌面按类目排成四列，手机可横滑分类按钮。点击整张商品卡即可进入 Amazon 商品页。
 
