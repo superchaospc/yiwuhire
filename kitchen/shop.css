@@ -30,18 +30,50 @@ header nav { min-height: 53px; justify-content: space-between; }
 .brand span, .store-name { color: var(--brand); }
 .navlinks { gap: 26px; font-size: 13px; }
 .navlinks a { display: inline-flex; align-items: center; min-height: 44px; gap: 4px; }
-.navlinks a:hover, .coffee-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+.navlinks a:hover { text-decoration: underline; text-underline-offset: 4px; }
 
-.hero-content { position: relative; display: grid; grid-template-columns: 1.2fr 1fr; align-items: center; gap: 6%; padding-block: clamp(40px, 5vw, 76px); }
-.hero-art { grid-area: 1 / 2; justify-self: center; width: min(100%, 375px); aspect-ratio: 1; border-radius: 50%; background: #f7e2ae url("foodiechina888-hero-wide.webp") no-repeat 79% center / auto 108%; }
-.headline { grid-area: 1 / 1; }
-h1 { font-size: clamp(40px, 5.7vw, 83px); font-weight: 660; letter-spacing: -.065em; line-height: 1; }
-.lead { margin-top: 20px; max-width: 37ch; color: var(--secondary); font-size: clamp(16px, 1.5vw, 21px); letter-spacing: -.015em; line-height: 1.4; }
-.hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 22px; margin-top: 22px; }
-.primary, .coffee-link { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; font-size: 15px; }
-.primary { color: white; background: var(--ink); border-radius: 40px; padding: 10px 20px; }
-.primary:hover { background: #39393c; }
-.coffee-link { color: var(--secondary); }
+.hero-content.wrap { width: min(1180px, 100% - 96px); margin-inline: auto; }
+.hero { position: relative; isolation: isolate; overflow: hidden; background: rgb(255, 247, 225); }
+.hero-art { position: absolute; inset: 0px; z-index: -1; background: url("foodiechina888-hero-wide.webp") right 43% / auto 119% no-repeat; }
+.hero-art::after { content: ""; position: absolute; inset: 0px; background: linear-gradient(90deg, rgb(255, 249, 236) 8%, rgb(255, 249, 236) 25%, rgba(255, 249, 236, 0.9) 36%, rgba(255, 249, 236, 0) 63%); }
+.hero-content { container-type: inline-size; min-height: clamp(430px, 39vw, 560px); display: flex; align-items: center; padding-block: 50px; }
+.headline { max-width: 48%; }
+h1 { font-size: clamp(36px, 7.1cqi, 83px); line-height: 0.94; font-weight: 690; letter-spacing: -0.067em; }
+.lead { margin: 22px 0px 25px; max-width: 394px; font-size: clamp(17px, 1.45vw, 21px); line-height: 1.38; letter-spacing: -0.02em; color: rgb(63, 59, 55); }
+.primary { display: inline-flex; gap: 12px; align-items: center; padding: 12px 21px; background: rgb(0, 113, 227); color: white; border-radius: 999px; font-size: 15px; font-weight: 550; }
+.primary:hover { background: rgb(0, 100, 206); }
+@media (min-width: 1001px) {
+  .hero { background: rgb(255, 249, 236); }
+  .hero-art { inset-inline: 0px; width: min(1180px, 100% - 96px); margin-inline: auto; background-size: cover; background-position: center 24%; mask-image: linear-gradient(to right, black 84%, transparent 100%); }
+  .hero-art::after { background: linear-gradient(90deg, rgb(255, 249, 236) 0%, rgba(255, 249, 236, 0.92) 12%, rgba(255, 249, 236, 0) 54%); }
+}
+@media (max-width: 1000px) {
+  .hero-content.wrap { width: calc(100% - 56px); }
+  .hero-art { background-position: calc(100% + 70px) 40%; }
+  .hero-art::after { background: linear-gradient(90deg, rgb(255, 249, 236) 4%, rgb(255, 249, 236) 24%, rgba(255, 249, 236, 0.867) 37%, transparent 67%); }
+}
+@media (max-width: 760px) {
+  .hero-content { min-height: 400px; }
+  .headline { max-width: 54%; }
+  .hero-art { background-size: auto 105%; background-position: calc(100% + 110px) 45%; }
+}
+@media (max-width: 560px) {
+  .hero-content.wrap { width: calc(100% - 32px); }
+  .hero { --portrait-height: clamp(150px,42vw,210px); background: rgb(255, 247, 231); }
+  .hero-art { inset: 0px 0px auto; height: var(--portrait-height); background: url("foodiechina888-hero-mobile.webp") center 42% / cover no-repeat; }
+  .hero-art::after { background: linear-gradient(0deg, rgb(255, 247, 231), transparent 13%), linear-gradient(90deg, rgb(255, 247, 231) 0%, rgba(255, 247, 231, 0.85) 31%, transparent 64%); }
+  .hero-content { display: block; min-height: 0px; padding: 0px 0px 22px; }
+  .headline { max-width: 100%; }
+  h1 { align-content: center; min-height: var(--portrait-height); font-size: clamp(27px, 8.8cqi, 45px); }
+  .lead { max-width: 37ch; font-size: 15px; margin: 8px 0px 14px; line-height: 1.4; }
+  .hero-actions .primary, .hero-actions .coffee-link { min-height: 44px; padding: 9px 12px; font-size: 14px; }
+}
+@media (max-width: 360px) {
+  .hero-actions { column-gap: 6px; }
+}
+.hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; }
+.coffee-link { display: inline-flex; align-items: center; gap: 7px; padding: 11px 16px; border: 1px solid rgb(189, 164, 113); color: rgb(81, 59, 32); background: rgb(255, 247, 220); border-radius: 999px; font-size: 14px; font-weight: 550; }
+.coffee-link:hover { background: rgb(255, 234, 183); }
 
 .collection { background: var(--paper); }
 .collection.wrap { width: 100%; padding: clamp(32px, 4.8vw, 68px) max(40px, calc((100% - 1160px) / 2)) clamp(42px, 5vw, 76px); }
@@ -88,14 +120,6 @@ footer { border-top: 1px solid var(--line); }
   .wrap { width: calc(100% - 36px); }
   .navlinks { gap: 14px; }
   .navlinks .channel { display: none; }
-  .hero-content { display: block; container-type: inline-size; padding-block: 28px; }
-  .hero-art { position: absolute; right: 0; top: 22px; width: 31%; background-image: url("foodiechina888-hero-mobile.webp"); }
-  h1 { display: grid; align-content: center; min-height: 31cqi; width: 68%; font-size: clamp(28px, 9.25cqi, 52px); }
-  h1 br { display: none; }
-  .lead { margin-top: 14px; font-size: 16px; }
-  .hero-actions { margin-top: 12px; gap: 4px 16px; }
-  .primary, .coffee-link { font-size: 14px; }
-  .primary { padding-inline: 15px; }
   .collection.wrap { padding-inline: 18px; }
   .catalog-controls { margin: 9px 0 15px; }
   #filters { gap: 12px; }

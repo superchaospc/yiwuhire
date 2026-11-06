@@ -1,12 +1,12 @@
 # foodiechina888 kitchen store · 公开测试站
 
-[测试站](https://yiwuhire.com/) · [正式站](https://foodiechina888.com/) · [当前 Release](https://github.com/superchaospc/yiwuhire/releases/tag/v2.2.0)
+[测试站](https://yiwuhire.com/) · [正式站](https://foodiechina888.com/) · [当前 Release](https://github.com/superchaospc/yiwuhire/releases/tag/v2.2.1)
 
 这个仓库发布到 yiwuhire.com。正式站使用独立仓库，只有站主明确要求同步某项改动时，才将该改动应用到 foodiechina888.com。
 
-## v2.2.0 测试版设计
+## v2.2.1 测试版设计
 
-首页使用白底、双色标题和圆形频道插画。商品区采用浅灰背景、白色卡片和下划线分类导航。
+首页恢复暖色宽幅频道插画、双色标题和蓝色购物按钮。商品区采用浅灰背景、白色卡片和下划线分类导航。
 
 ## 商品目录
 
