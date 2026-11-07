@@ -1,10 +1,10 @@
 # foodiechina888 kitchen store · 公开测试站
 
-[测试站](https://yiwuhire.com/) · [正式站](https://foodiechina888.com/) · [当前 Release](https://github.com/superchaospc/yiwuhire/releases/tag/v2.3.0)
+[测试站](https://yiwuhire.com/) · [正式站](https://foodiechina888.com/) · [当前 Release](https://github.com/superchaospc/yiwuhire/releases/tag/v2.3.1)
 
 这个仓库发布到 yiwuhire.com。正式站使用独立仓库，只有站主明确要求同步某项改动时，才将该改动应用到 foodiechina888.com。
 
-## v2.3.0 测试版设计
+## v2.3.1 测试版设计
 
 - **暖色调**：整页改用米白底和暖灰商品区，主按钮改为棕红色，与首屏插画同一色系。
 - **等高商品卡**：每张图放在统一的 1:1 浅色底框里，描述最多 3 行，卡片右下角是一个圆形箭头按钮。页面上除必需的联盟声明外不出现 Amazon 字样。Best seller 改为压在图片左上角的白色胶囊标签。
@@ -13,7 +13,7 @@
 - **咖啡打赏**：首屏只保留购物按钮。“Buy me a coffee” 放在 The lore 区；右下角另有咖啡杯浮动按钮，滚过首屏后出现，回到首屏或到达 The lore 区时隐藏，手机上只显示圆形图标。
 - **缓存**：样式和脚本链接带 `?v=` 版本号，避免访客读到旧文件。
 
-该设计已于 2026 年 11 月 7 日按站主要求同步至[正式站 v2.2.0](https://github.com/superchaospc/foodiechina888/releases/tag/v2.2.0)。上一版设计见 [v2.2.1](https://github.com/superchaospc/yiwuhire/releases/tag/v2.2.1)（蓝色购物按钮、浅灰商品区与白色卡片）。
+该设计已于 2026 年 11 月 7 日按站主要求同步至[正式站 v2.2.1](https://github.com/superchaospc/foodiechina888/releases/tag/v2.2.1)。上一版设计见 [v2.2.1](https://github.com/superchaospc/yiwuhire/releases/tag/v2.2.1)（蓝色购物按钮、浅灰商品区与白色卡片）。
 
 ## 商品目录
 
