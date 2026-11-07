@@ -21,3 +21,16 @@ filters.addEventListener('click', event => {
   const top = document.querySelector('#collection').getBoundingClientRect().top;
   if (top < 0) document.querySelector('#shop-title').scrollIntoView({ block: 'start' });
 });
+
+const coffee = document.querySelector('.coffee-fab');
+if (coffee && 'IntersectionObserver' in window) {
+  const watched = new Map([[document.querySelector('.hero'), false], [document.querySelector('#lore'), false]]);
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => watched.set(entry.target, entry.isIntersecting));
+    const hide = [...watched.values()].some(Boolean);
+    coffee.dataset.hidden = String(hide);
+  });
+  watched.forEach((_, element) => observer.observe(element));
+} else if (coffee) {
+  coffee.dataset.hidden = 'false';
+}
