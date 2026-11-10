@@ -4,6 +4,12 @@
 
 这个仓库发布到 yiwuhire.com。正式站使用独立仓库，只有站主明确要求同步某项改动时，才将该改动应用到 foodiechina888.com。
 
+## SEO 测试与同步
+
+测试首页允许抓取，使用仅测试站的 `noindex, follow`，canonical 指回正式首页。不要把测试站的 noindex 同步到正式首页。分享预览和 sitemap 在测试时使用 yiwuhire.com；正式同步时将这些 URL 换为 foodiechina888.com。仅在对应页面实质变更时更新 lastmod。
+
+正式站另用 Cloudflare Pages。同步获批后，在正式站验证任意不存在的路径返回 404，再配置 www 到主域名的永久跳转（保留路径及查询参数），并单独处理 pages.dev 别名；测试域名由 GitHub Pages 托管，不能用它验证 Cloudflare 的规则。
+
 ## v2.3.1 测试版设计
 
 - **暖色调**：整页改用米白底和暖灰商品区，主按钮改为棕红色，与首屏插画同一色系。
