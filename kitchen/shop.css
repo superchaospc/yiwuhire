@@ -112,7 +112,7 @@ h2 { font-size: clamp(31px, 3.6vw, 49px); letter-spacing: -.05em; line-height: 1
 }
 
 .selection { display: grid; grid-template-columns: 1fr 2fr; gap: 30px; padding-block: clamp(38px, 6vw, 82px); }
-.signature { display: flex; gap: 12px; align-items: center; align-self: start; }
+.signature { display: flex; flex-direction: column; align-items: center; align-self: center; gap: 8px; }
 .signature b { letter-spacing: -.035em; }
 .selection h2 { margin-bottom: 14px; font-size: 32px; }
 .selection p { max-width: 57ch; color: var(--secondary); }
