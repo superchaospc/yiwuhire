@@ -28,7 +28,7 @@ header { position: sticky; top: 0; z-index: 5; background: rgb(255 252 246 / 92%
 nav, .brand, .navlinks { display: flex; align-items: center; }
 header nav { min-height: 53px; justify-content: space-between; }
 .brand { min-height: 44px; font-size: 18px; font-weight: 700; letter-spacing: -.055em; }
-.brand img, .signature img { border-radius: 50%; }
+.brand img, .signature-portrait { border-radius: 50%; }
 .brand img { margin-right: 8px; width: 27px; height: 27px; }
 .brand span, .store-name { color: var(--brand); }
 .navlinks { gap: 26px; font-size: 13px; }
@@ -112,7 +112,9 @@ h2 { font-size: clamp(31px, 3.6vw, 49px); letter-spacing: -.05em; line-height: 1
 }
 
 .selection { display: grid; grid-template-columns: 1fr 2fr; gap: 30px; padding-block: clamp(38px, 6vw, 82px); }
-.signature { display: flex; flex-direction: column; align-items: center; align-self: center; gap: 8px; }
+.signature { display: flex; gap: 12px; align-items: center; align-self: start; }
+/* Frame the face using the extra sky above it in the original illustration. */
+.signature-portrait { width: 54px; height: 54px; flex: none; background: url("foodiechina888-hero-wide.webp") 81.2% 4% / 300% auto no-repeat; }
 .signature b { letter-spacing: -.035em; }
 .selection h2 { margin-bottom: 14px; font-size: 32px; }
 .selection p { max-width: 57ch; color: var(--secondary); }
@@ -156,7 +158,7 @@ footer { border-top: 1px solid var(--line); background: var(--paper); }
   #count, .spec { font-size: 13px; }
   .disclosure { font-size: 12px; }
   .selection { grid-template-columns: 1fr; gap: 20px; }
-  .signature img { width: 38px; height: 38px; }
+  .signature-portrait { width: 38px; height: 38px; }
 }
 @media (max-width: 360px) {
   .grid { grid-template-columns: 1fr; }
